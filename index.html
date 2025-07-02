@@ -8,10 +8,10 @@
 </head>
 
 <body style="font-size: 16px">
-<input id="lookup-input" type="text"/> <button onclick="lookup()">DICTIONARY</button>
+<input id="lookup-input" type="text"/> <button onclick="clearLookup()">X</button> <button onclick="lookup()">DICTIONARY</button>
 <ul id="lookup-results"></ul>
 
-<input id="filter-input" type="text"/> <button onclick="filter()">MULTI-RADICAL</button>
+<input id="filter-input" type="text"/> <button onclick="clearFilter()">X</button> <button onclick="filter()">MULTI-RADICAL</button>
 <ul id="filter-results"></ul>
 
 <p id="radical-buttons"></p>
@@ -79,6 +79,11 @@ function add(radical) {
     filterInput.value += radical
 }
 
+function clearFilter() {
+
+    filterInput.value = ""
+}
+
 function filter() {
     const components = Array.from(filterInput.value)
 
@@ -93,15 +98,21 @@ function filter() {
             }
         }
         if (!match) continue
-        html += '<li onclick="select(\'' + kanji + '\')">' + kanji + ' (' + decomp + ')</li> '
+        html += '<li onclick="select(\'' + kanji + '\')">' + kanji + ' (' + decomp + ')</li>'
     }
 
-    filterResults.innerHTML = html
+    if (html == "") filterResults.innerHTML = "<li>no matches</li>"
+    else filterResults.innerHTML = html
 }
 
 function select(kanji) {
 
     lookupInput.value += kanji
+}
+
+function clearLookup() {
+
+    lookupInput.value = ""
 }
 
 function lookup() {
@@ -111,7 +122,7 @@ function lookup() {
         if (entry[0].includes(query)) html += "<li><b>" + entry[0] + "</b> " + entry[1] + "</li>" 
     })
 
-    if (html == "") lookupResults.innerHTML = "no matches"
+    if (html == "") lookupResults.innerHTML = "<li>no matches</li>"
     else lookupResults.innerHTML = html
 }
 
