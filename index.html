@@ -14,44 +14,85 @@
 <input id="filter-input" type="text"/> <button onclick="filter()">MULTI-RADICAL</button>
 <p id="filter-results"></p>
 <hr/>
-<p>
-🔄 冂凵匚囗厂广疒尸戸弋戈辶門虍<br/>
-⬆️ 亠冖宀𠆢癶⺾罒⺌竹雨<br/>
-⬅️ 冫氵⺅彳忄扌犭衤⻖木禾石糸言舟虫足食車金酉魚弓爿<br/>
-<hr/>
-1️⃣ 一｜丶ノ乙亅<br/>
-2️⃣ 二人儿ハ几刀刂力勹匕十卜卩厶又マ九<br/>
-3️⃣ 口土士夂夕大女子寸小山巛工已巾干幺廾ヨ彡⻏<br/>
-4️⃣ ⺹心手攵斤方日月欠止歹殳比氏水火灬爪牛犬王勿<br/>
-5️⃣ 甘用田疋白皿目矢示禸穴立礻冊<br/>
-6️⃣ 米缶羊羽耳聿自至臼艮衣臣西<br/>
-7️⃣ 見豆豕貝辛釆<br/>
-8️⃣ 里長隹革<br/>
-9️⃣ 音頁品<br/>
-🔟 馬<br/>
-*️⃣ 鳥<br/>
-<hr/>
-2️⃣ 入ユ乃<br/>
-3️⃣ 尢屮川彑也亡及久廴<br/>
-4️⃣ 支元井并文父爻无尤毛屯五曰片巴毋斗气<br/>
-5️⃣ 生世巨玄母矛牙皮瓦<br/>
-6️⃣ 色舌血行瓜肉耒而舛<br/>
-7️⃣ 谷豸角走身赤辰邑麦<br/>
-8️⃣ 青免斉非奄岡隶<br/>
-9️⃣ 面風首韭香飛<br/>
-🔟 鬥鬼骨韋鬲竜髟鬯高<br/>
-*️⃣ 亀黒麻黄鹿鹵歯無黍黹黽鼠鼓鼎鼻齊滴龠<br/>
-</p>
-
+<p id="radical-buttons"></p>
 <script>
 
+const radicals = {
+  "🔄": "冂凵匚囗厂广疒尸戸弋戈辶門虍",
+  "⬆️": "亠冖宀𠆢癶⺾罒⺌竹雨",
+  "⬅️": "冫氵⺅彳忄扌犭衤⻖木禾石糸言舟虫足食車金酉魚弓爿",
+  "1️⃣": "一｜丶ノ乙亅",
+  "2️⃣": "二人儿ハ几刀刂力勹匕十卜卩厶又マ九",
+  "3️⃣": "口土士夂夕大女子寸小山巛工已巾干幺廾ヨ彡⻏",
+  "4️⃣": "⺹心手攵斤方日月欠止歹殳比氏水火灬爪牛犬王勿",
+  "5️⃣": "甘用田疋白皿目矢示禸穴立礻冊",
+  "6️⃣": "米缶羊羽耳聿自至臼艮衣臣西",
+  "7️⃣": "見豆豕貝辛釆",
+  "8️⃣": "里長隹革",
+  "9️⃣": "音頁品",
+  "🔟": "馬",
+  "*️⃣": "鳥",
+  "2️⃣": "入ユ乃",
+  "3️⃣": "尢屮川彑也亡及久廴",
+  "4️⃣": "支元井并文父爻无尤毛屯五曰片巴毋斗气",
+  "5️⃣": "生世巨玄母矛牙皮瓦",
+  "6️⃣": "色舌血行瓜肉耒而舛",
+  "7️⃣": "谷豸角走身赤辰邑麦",
+  "8️⃣": "青免斉非奄岡隶",
+  "9️⃣": "面風首韭香飛",
+  "🔟": "鬥鬼骨韋鬲竜髟鬯高",
+  "*️⃣": "亀黒麻黄鹿鹵歯無黍黹黽鼠鼓鼎鼻齊滴龠",
+}
+
 var dictionary = {}
-var radicals = {}
+var krad = {}
 
 let lookupInput = document.getElementById("lookup-input")
 let lookupResults = document.getElementById("lookup-results")
 let filterInput = document.getElementById("filter-input")
 let filterResults = document.getElementById("filter-results")
+let radicalButtons = document.getElementById("radical-buttons")
+
+function build() {
+    let html = ""
+    for (let group in radicals) {
+        html += group + " "
+        for (let radical of radicals[group]) {
+            html += '<span onclick="add(\'' + radical + '\')">' + radical + '</span>'
+        }
+        html += "<br/>"
+        if ((group == "*️⃣") || (group == "⬅️")) html += "<hr/>";
+    }
+    radicalButtons.innerHTML = html
+}
+
+function add(radical) {
+
+    filterInput.value += radical
+}
+
+function filter() {
+    const components = filterInput.value
+    const matches = Array.from(components).map((r) => new Set(krad[r]))
+
+    let common = matches[0];
+
+    for (let i = 1; i < matches.length; i++) {
+        common = common.intersection(matches[i]);
+    }
+
+    let html = ""
+    for (let kanji of Array.from(common).sort()) {
+        html += '<span onclick="select(\'' + kanji + '\')">' + kanji + '</span> '
+    }
+
+    filterResults.innerHTML = html
+}
+
+function select(kanji) {
+
+    lookupInput.value += kanji
+}
 
 function lookup() {
     const query = lookupInput.value
@@ -60,30 +101,18 @@ function lookup() {
         if (entry[0].includes(query)) html += "<li><b>" + entry[0] + "</b> " + entry[1] + "</li>" 
     })
 
-  lookupResults.innerHTML = html
+    if (html == "") lookupResults.innerHTML = "no matches"
+    else lookupResults.innerHTML = html
 }
 
-
-function filter() {
-    const components = filterInput.value
-    const matches = Array.from(components).map((r) => new Set(radicals[r]))
-
-    let common = matches[0];
-
-  for (let i = 1; i < matches.length; i++) {
-    common = common.intersection(matches[i]);
-  }
-
-  filterResults.innerHTML = Array.from(common).sort().join(" . ")
-}
-
+build()
 
 fetch("edict2.json").then((res) => res.json()).then((data) => {
     dictionary = data
 })
 
-fetch("radicals.json").then((res) => res.json()).then((data) => {
-    radicals = data
+fetch("krad.json").then((res) => res.json()).then((data) => {
+    krad = data
 })
 
 </script>
