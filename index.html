@@ -12,7 +12,8 @@
 <ul id="lookup-results"></ul>
 
 <input id="filter-input" type="text"/> <button onclick="filter()">MULTI-RADICAL</button>
-<p id="filter-results"></p>
+<ul id="filter-results"></ul>
+
 <p id="radical-buttons"></p>
 <script>
 
@@ -79,18 +80,20 @@ function add(radical) {
 }
 
 function filter() {
-    const components = filterInput.value
-    const matches = Array.from(components).map((r) => new Set(krad[r]))
-
-    let common = matches[0];
-
-    for (let i = 1; i < matches.length; i++) {
-        common = common.intersection(matches[i]);
-    }
+    const components = Array.from(filterInput.value)
 
     let html = ""
-    for (let kanji of Array.from(common).sort()) {
-        html += '<span onclick="select(\'' + kanji + '\')">' + kanji + '</span> '
+    for (let kanji in krad) {
+        const decomp = krad[kanji]
+        let match = true
+        for (let radical of components) {
+            if (!decomp.includes(radical)) {
+                match = false
+                break
+            }
+        }
+        if (!match) continue
+        html += '<li onclick="select(\'' + kanji + '\')">' + kanji + ' (' + decomp + ')</li> '
     }
 
     filterResults.innerHTML = html
