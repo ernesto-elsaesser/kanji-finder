@@ -50,7 +50,7 @@ const radicals = {
     }
 }
 
-var dictionary = {}
+var edict = {}
 var krad = {}
 
 let lookupInput = document.getElementById("lookup-input")
@@ -120,7 +120,7 @@ function clearLookup() {
 function lookup() {
     const query = lookupInput.value
     let html = ""
-    Object.entries(dictionary).forEach((entry) => {
+    Object.entries(edict).forEach((entry) => {
         if (entry[0].includes(query)) html += "<li><b>" + entry[0] + "</b> " + entry[1] + "</li>" 
     })
 
@@ -130,8 +130,8 @@ function lookup() {
 
 build()
 
-fetch("edict2.json").then((res) => res.json()).then((data) => {
-    dictionary = data
+fetch("edict.json").then((res) => res.json()).then((data) => {
+    edict = data
 })
 
 fetch("krad.json").then((res) => res.json()).then((data) => {
