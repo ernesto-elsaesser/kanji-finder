@@ -18,7 +18,7 @@ rows = [l[:-2].split("/") for l in lines[1:]]
 
 # %%
 
-edict = {r[0]: "; ".join(r[1:-3])
+edict = {r[0][:-1]: "; ".join(r[1:-2])
          for r in rows if r[-2] == "(P)" and "[" in r[0]}
 
 # %%
