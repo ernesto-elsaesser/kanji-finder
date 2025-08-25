@@ -1,14 +1,19 @@
 # %%
 import io
+import csv
 import json
 import gzip
 import urllib.request
 
 KRAD_URL = "https://github.com/neocl/jamdict/raw/refs/heads/main/jamdict/data/kradfile-u.gz"
+JOYO_URL = "https://raw.githubusercontent.com/NHV33/joyo-kanji-compilation/refs/heads/master/joyo.csv"
 
 # %%
-with open("kyouiko.txt") as f:
-    kyouiko = set(f.read())
+with urllib.request.urlopen(JOYO_URL) as response:
+    csv_lines = response.read().decode("utf-8").splitlines()
+    reader = csv.reader(csv_lines)
+    next(reader)
+    jouyou = {r[1] for r in reader}
 
 # %%
 with urllib.request.urlopen(KRAD_URL) as response:
@@ -22,7 +27,7 @@ lines = [l[:-1] for l in lines if l[0] != "#"]
 
 # %%
 
-lines = [l for l in lines if l[0] in kyouiko]
+lines = [l for l in lines if l[0] in jouyou]
 
 # %%
 
