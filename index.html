@@ -130,11 +130,11 @@ function lookup() {
 
 build()
 
-fetch("edict.json").then((res) => res.json()).then((data) => {
+fetch("edict.json?v=2").then((res) => res.json()).then((data) => {
     edict = data
 })
 
-fetch("krad.json").then((res) => res.json()).then((data) => {
+fetch("krad.json?v=2").then((res) => res.json()).then((data) => {
     krad = data
 })
 
