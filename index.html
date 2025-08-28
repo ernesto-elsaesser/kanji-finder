@@ -8,16 +8,24 @@
 </head>
 
 <body style="font-size: 20px">
+
+<p id="root-radicals"></p>
+<hr/>
+<p id="common-radicals"></p>
+<hr/>
+<details>
+    <summary>Uncommon Components</summary>
+<p id="rare-radicals"></p>
+</details>
+<hr/>
+<input id="filter-input" type="text"/> <button onclick="clearFilter()">X</button> <button onclick="filter()">MULTI-RADICAL</button>
+<ul id="filter-results"></ul>
 <input id="lookup-input" type="text"/> <button onclick="clearLookup()">X</button> <button onclick="lookup()">DICTIONARY</button>
 <ul id="lookup-results"></ul>
 
-<input id="filter-input" type="text"/> <button onclick="clearFilter()">X</button> <button onclick="filter()">MULTI-RADICAL</button>
-<ul id="filter-results"></ul>
-
-<p id="radical-buttons"></p>
 <script>
 
-const radicals = {
+const COMPONENTS = {
     "roots": {
         "🔄": "冂凵匚囗厂广疒尸戸弋戈辶門虍",
         "⬆️": "亠冖宀𠆢癶⺾罒⺌竹雨",
@@ -57,21 +65,17 @@ let lookupInput = document.getElementById("lookup-input")
 let lookupResults = document.getElementById("lookup-results")
 let filterInput = document.getElementById("filter-input")
 let filterResults = document.getElementById("filter-results")
-let radicalButtons = document.getElementById("radical-buttons")
 
-function build() {
+function buildButtons(group, id) {
     let html = ""
-    for (let group in radicals) {
-        html += "<hr/>"
-        for (let subset in radicals[group]) {
-            html += subset + " "
-            for (let radical of radicals[group][subset]) {
-                html += '<span onclick="add(\'' + radical + '\')">' + radical + '</span>'
-            }
-            html += "<br/>"
+    for (let subset in COMPONENTS[group]) {
+        html += subset + " "
+        for (let radical of COMPONENTS[group][subset]) {
+            html += '<span onclick="add(\'' + radical + '\')">' + radical + '</span>'
         }
+        html += "<br/>"
     }
-    radicalButtons.innerHTML = html
+    document.getElementById(id).innerHTML = html
 }
 
 function add(radical) {
@@ -131,7 +135,9 @@ function lookup() {
     else lookupResults.innerHTML = html
 }
 
-build()
+buildButtons('roots', "root-radicals")
+buildButtons('common', "common-radicals")
+buildButtons('rare', "rare-radicals")
 
 fetch("edict.json?v=2").then((res) => res.json()).then((data) => {
     edict = data
