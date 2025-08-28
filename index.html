@@ -90,7 +90,8 @@ function filter() {
 
     let html = ""
     for (let kanji in krad) {
-        const decomp = krad[kanji]
+        const info = krad[kanji]
+        const decomp = info["decomp"]
         let match = true
         for (let radical of components) {
             if (!decomp.includes(radical)) {
@@ -99,7 +100,9 @@ function filter() {
             }
         }
         if (!match) continue
-        html += '<li onclick="select(\'' + kanji + '\')">' + kanji + ' (' + decomp + ')</li>'
+        const meanings = info["meanings"].toUpperCase()
+        const item = kanji + ' (' + decomp + ') ・ ' + meanings + ' ・ ' + info["on"] + " ・ " + info["kun"] + " ・ N" + info["jlpt"].toString()
+        html += '<li onclick="select(\'' + kanji + '\')">' + item + '</li>'
     }
 
     if (html == "") filterResults.innerHTML = "<li>no matches</li>"
