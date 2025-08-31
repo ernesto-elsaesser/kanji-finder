@@ -59,7 +59,7 @@ const RARE = {
 }
 
 var edict = {}
-var krad = {}
+var jouyou = {}
 
 let lookupInput = document.getElementById("lookup-input")
 let lookupResults = document.getElementById("lookup-results")
@@ -93,8 +93,8 @@ function filter() {
     const components = Array.from(filterInput.value)
 
     let html = ""
-    for (let kanji in krad) {
-        const info = krad[kanji]
+    for (let kanji in jouyou) {
+        const info = jouyou[kanji]
         const decomp = info["decomp"]
         let match = true
         for (let radical of components) {
@@ -141,12 +141,12 @@ function lookup() {
 buildButtons("common-radicals", COMMON)
 buildButtons("rare-radicals", RARE)
 
-fetch("edict.json?v=2").then((res) => res.json()).then((data) => {
+fetch("edict.json?v=3").then((res) => res.json()).then((data) => {
     edict = data
 })
 
-fetch("krad.json?v=2").then((res) => res.json()).then((data) => {
-    krad = data
+fetch("jouyou.json?v=1").then((res) => res.json()).then((data) => {
+    jouyou = data
 })
 
 </script>
