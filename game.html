@@ -3,28 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Kanji Quiz</title>
+    <title>Kanji Game</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <style>
-        * {
-            font-size: 20px;
-        }
-        body {
-            margin: 60px;
-        }
-        #reading {
-            margin-top: 10px;
-            font-size: 20px;
-        }
-        #word {
-            font-weight: bold;
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 
 <body>
+<label>JLPT</label>
 <select id="level">
     <option value="N5" selected>N5</option>
     <option value="N4">N4</option>
@@ -32,23 +16,12 @@
     <option value="N2">N2</option>
     <option value="N1">N1</option>
 </select>
-<button onclick="next()">NEXT</button>
-<div id="reading"></div>
-<div id="word"></div>
-<ol id="entries"></ol>
-<div id="options"></div>
-
 <script>
 
 var edict = {}
 var jouyou = {}
 var pairs = {}
-var subset = []
-
-const levelSelect = document.getElementById("level")
-const wordText = document.getElementById("word")
-const readingText = document.getElementById("reading")
-const entryList = document.getElementById("entries")
+var subset = {}
 
 async function load() {
     const res1 = await fetch("edict.json?1")
@@ -58,31 +31,18 @@ async function load() {
     const res3 = await fetch("pairs.json?1")
     pairs = await res3.json()
     select()
-    levelSelect.onchange = select
 }
 
 function select() {
     const levels = levelSelect.value.split(",")
     subset = levels.reduce((p, l) => p.concat(pairs[l]), [])
-    next()
+    start()
 }
 
-function next() {
-    const randomIndex = Math.floor(Math.random() * subset.length)
-    const word = subset[randomIndex]
-    wordText.innerText = word
-    const entry = edict[word][0]
-    const reading = entry[0]
-    readingText.innerText = reading
-    entryList.innerHTML = ""
-    entry.slice(1).forEach((term) => {
-        const pos = term[0]
-        const meanings = term[1]
-        const li = document.createElement("li")
-        li.innerText = "(" + pos + ") " +  meanings
-        entryList.appendChild(li)
-    })
+function start() {
+    // TBD
 }
+
 
 load()
 
