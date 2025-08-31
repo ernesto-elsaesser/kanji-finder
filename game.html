@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Kanji Combos</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link rel="stylesheet" href="game.css?2">
+    <link rel="stylesheet" href="game.css?3">
 </head>
 
 <body>
@@ -85,8 +85,9 @@ function nextRound() {
     rightPick = null
 
     feedbackDiv.textContent = ''
+    readingDiv.textContent = ''
     wordDiv.textContent = ''
-    translationDiv.textContent = subset[current][1]
+    translationDiv.innerHTML = subset[current][1].replace(" (", "<br/>(")
     nextBtn.hidden = true
 
     let options = Array.from(current)
@@ -161,7 +162,7 @@ function checkAnswer() {
     if (leftPick === left && rightPick === right) {
         feedbackDiv.textContent = 'Correct!'
     } else {
-        feedbackDiv.textContent = 'Wrong.'
+        feedbackDiv.textContent = 'Wrong!'
     }
 
     readingDiv.textContent = subset[current][0]

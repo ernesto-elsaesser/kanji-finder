@@ -76,13 +76,14 @@ h1 {
     padding-top: 1.5em;
 }
 #reading {
+    height: 1.4em;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: 6rem;
     color:#222;
 }
 #word {
-    height:1.2em;
+    height:4rem;
     font-size:3.5rem;
     color:#222;
     font-weight:bold;

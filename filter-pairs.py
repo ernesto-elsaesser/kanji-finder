@@ -21,7 +21,7 @@ for word, entry in edict.items():
     if info0 is None or info1 is None:
         continue
     meaning = entry[0][1][1]
-    if "(uk)" in meaning or "(abbr)" in meaning:
+    if "(uk)" in meaning or "(abbr)" in meaning or "(dated)" in meaning:
         continue
     reading = entry[0][0]
     min_jlpt = min(info0["jlpt"], info1["jlpt"])
