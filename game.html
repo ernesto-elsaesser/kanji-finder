@@ -15,26 +15,27 @@
         <label for="level">JLPT Level: </label>
         <select id="level">
             <option value="N5" selected>N5</option>
-            <option value="N4">N4</option>
-            <option value="N3">N3</option>
-            <option value="N2">N2</option>
-            <option value="N1">N1</option>
+            <option value="N4,N5">N4</option>
+            <option value="N3,N4,N5">N3</option>
+            <option value="N2,N3,N4,N5">N2</option>
+            <option value="N1,N2,N3,N4,N5">N1</option>
         </select>
     </div>
     <div class="game-flex">
         <div class="options-col" id="left-options"></div>
         <div class="translation-center">
+            <div class="feedback" id="feedback"></div>
             <div class="jukugo-word" id="jukugo-word"></div>
             <div class="translation" id="translation"></div>
+            <button class="next-btn" id="next-btn" hidden>NEXT</button>
         </div>
         <div class="options-col" id="right-options"></div>
     </div>
-    <div class="feedback" id="feedback"></div>
-    <button class="next-btn" id="next-btn" style="display:none;">Next</button>
 </div>
 <script>
 
 const levelSelect = document.getElementById('level')
+const wordDiv = document.getElementById('jukugo-word')
 const translationDiv = document.getElementById('translation')
 const leftOptionsDiv = document.getElementById('left-options')
 const rightOptionsDiv = document.getElementById('right-options')
@@ -68,14 +69,6 @@ function select() {
 function start() {
     // Pick a random jukugo from subset
     const keys = Object.keys(subset)
-    if (!keys.length) {
-        translationDiv.textContent = 'No data for this level.'
-        leftOptionsDiv.innerHTML = ''
-        rightOptionsDiv.innerHTML = ''
-        feedbackDiv.textContent = ''
-        nextBtn.style.display = 'none'
-        return
-    }
     const idx = Math.floor(Math.random() * keys.length)
     const jukugo = keys[idx]
     const meaning = subset[jukugo]
@@ -89,7 +82,7 @@ function renderRound() {
     document.getElementById('jukugo-word').textContent = ''
     translationDiv.textContent = current.meaning
     feedbackDiv.textContent = ''
-    nextBtn.style.display = 'none'
+    nextBtn.hidden = true
     // Get left and right kanji
     const left = current.jukugo[0]
     const right = current.jukugo[1]
@@ -177,14 +170,15 @@ function checkAnswer() {
             el.classList.add('incorrect')
         }
     })
+
+    wordDiv.textContent = `${left}${right}`
+
     if (leftPick === left && rightPick === right) {
-        document.getElementById('jukugo-word').textContent = `${left}${right}`
-        translationDiv.textContent = current.meaning
-        feedbackDiv.textContent = 'Correct! '
+        feedbackDiv.textContent = 'Correct!'
     } else {
-        feedbackDiv.textContent = `Incorrect. The answer is ${left}${right}`
+        feedbackDiv.textContent = 'Wrong.'
     }
-    nextBtn.style.display = 'block'
+    nextBtn.hidden = false
 }
 
 nextBtn.onclick = start
