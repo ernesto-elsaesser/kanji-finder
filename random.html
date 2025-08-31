@@ -13,13 +13,13 @@
             margin: 60px;
         }
         #reading {
-            margin-top: 10px;
+            margin-top: 20px;
             font-size: 20px;
         }
         #word {
             font-weight: bold;
             font-size: 48px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -69,8 +69,9 @@ function select() {
 }
 
 function next() {
-    const randomIndex = Math.floor(Math.random() * subset.length)
-    const word = subset[randomIndex]
+    const words = Object.keys(subset);
+    const randomIndex = Math.floor(Math.random() * words.length)
+    const word = words[randomIndex]
     wordText.innerText = word
     const entry = edict[word][0]
     const reading = entry[0]
