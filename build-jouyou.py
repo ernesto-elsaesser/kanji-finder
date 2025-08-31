@@ -66,7 +66,7 @@ for line in krad_lines:
 
 # %%
 
-with open("jouyou.json", "w") as f:
+with open("jouyou.json", "w", encoding="utf-8") as f:
     json.dump(jouyou, f, indent=4, ensure_ascii=False)
 
 # %%
