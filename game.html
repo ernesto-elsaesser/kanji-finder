@@ -8,13 +8,12 @@
 </head>
 
 <body>
-<label>JLPT</label>
 <select id="level">
-    <option value="N5" selected>N5</option>
-    <option value="N4">N4</option>
-    <option value="N3">N3</option>
-    <option value="N2">N2</option>
-    <option value="N1">N1</option>
+    <option value="N5" selected>JLPT N5</option>
+    <option value="N4">JLPT N4</option>
+    <option value="N3">JLPT N3</option>
+    <option value="N2">JLPT N2</option>
+    <option value="N1">JLPT N1</option>
 </select>
 <script>
 
@@ -24,18 +23,18 @@ var pairs = {}
 var subset = {}
 
 async function load() {
-    const res1 = await fetch("edict.json?1")
-    edict = await res1.json()
-    const res2 = await fetch("jouyou.json?1")
-    jouyou = await res2.json()
-    const res3 = await fetch("pairs.json?1")
-    pairs = await res3.json()
+    const res1 = await fetch("jouyou.json?1")
+    jouyou = await res1.json()
+    const res2 = await fetch("pairs.json?1")
+    pairs = await res2.json()
     select()
+    levelSelect.onchange = select
 }
 
 function select() {
     const levels = levelSelect.value.split(",")
-    subset = levels.reduce((p, l) => p.concat(pairs[l]), [])
+    subset = {}
+    levels.forEach((l) => Object.assign(subset, pairs[l]))
     start()
 }
 
