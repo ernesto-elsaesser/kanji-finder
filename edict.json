@@ -13636,19 +13636,6 @@
    ]
   ]
  ],
- "缶": [
-  [
-   "かん",
-   [
-    "ateji",
-    "(n,ctr) (1) can (dut: kan, eng: can); tin"
-   ],
-   [
-    "n",
-    "(abbr) canned food"
-   ]
-  ]
- ],
  "罠": [
   [
    "わな",
@@ -21469,19 +21456,6 @@
    ]
   ]
  ],
- "丁度": [
-  [
-   "ちょうど",
-   [
-    "ateji",
-    "(adv) (1) (uk) exactly; precisely; just; right; opportunely; fortunately"
-   ],
-   [
-    "adv",
-    "(uk) just (like); as if; as though"
-   ]
-  ]
- ],
  "丁目": [
   [
    "ちょうめ",
@@ -22674,17 +22648,6 @@
    [
     "n",
     "(sumo) underarm grip on opponent's belt"
-   ]
-  ],
-  [
-   "へた",
-   [
-    "gikun",
-    "(adj-na,n) (1) unskillful; poor; awkward"
-   ],
-   [
-    "adj-na,n",
-    "imprudent; untactful"
    ]
   ]
  ],
@@ -27528,13 +27491,6 @@
  ],
  "今日": [
   [
-   "きょう",
-   [
-    "gikun",
-    "(n,adv) today; this day"
-   ]
-  ],
-  [
    "こんにち",
    [
     "n,adv",
@@ -27605,15 +27561,6 @@
    [
     "n,adv",
     "this month"
-   ]
-  ]
- ],
- "今朝": [
-  [
-   "けさ",
-   [
-    "gikun",
-    "(n,adv) this morning"
    ]
   ]
  ],
@@ -30286,15 +30233,6 @@
    [
     "n",
     "how many degrees (temperature, angle, etc.)"
-   ]
-  ]
- ],
- "何故": [
-  [
-   "なぜ",
-   [
-    "gikun",
-    "(adv) (uk) why; how; for what reason"
    ]
   ]
  ],
@@ -33632,19 +33570,6 @@
    [
     "n",
     "older man; man older than oneself"
-   ]
-  ]
- ],
- "充分": [
-  [
-   "じゅうぶん",
-   [
-    "ateji",
-    "(adj-na) (1) enough; sufficient; plenty; adequate; satisfactory"
-   ],
-   [
-    "adv",
-    "sufficiently; fully; thoroughly; well; perfectly"
    ]
   ]
  ],
@@ -39609,15 +39534,6 @@
    [
     "n",
     "(judicial) precedent"
-   ]
-  ]
- ],
- "判子": [
-  [
-   "はんこ",
-   [
-    "ateji",
-    "(n) (uk) seal (used in lieu of a signature); stamp; chop"
    ]
   ]
  ],
@@ -48993,15 +48909,6 @@
    ]
   ]
  ],
- "呆気": [
-  [
-   "あっけ",
-   [
-    "ateji",
-    "(n) (uk) being taken aback; state of shock; dumbfoundedness"
-   ]
-  ]
- ],
  "呉服": [
   [
    "ごふく",
@@ -49111,15 +49018,6 @@
    [
     "v5m,vt",
     "to carry (a concealed dagger, etc.); to conceal (up one's sleeve, etc.)"
-   ]
-  ]
- ],
- "呑気": [
-  [
-   "のんき",
-   [
-    "ateji",
-    "(adj-na,n) (uk) easy; easygoing; carefree; happy-go-lucky; optimistic; leisurely; careless; thoughtless"
    ]
   ]
  ],
@@ -49268,19 +49166,6 @@
    [
     "exp",
     "(uk) (sl) (joc) try"
-   ]
-  ]
- ],
- "味方": [
-  [
-   "みかた",
-   [
-    "ateji",
-    "(n,adj-no) (1) friend; ally; supporter"
-   ],
-   [
-    "n,vs,vi",
-    "taking sides (with); supporting; standing by; backing up"
    ]
   ]
  ],
@@ -52570,23 +52455,6 @@
    ]
   ]
  ],
- "土産": [
-  [
-   "みやげ",
-   [
-    "gikun",
-    "(n) (1) local specialty or souvenir bought as a gift while travelling"
-   ],
-   [
-    "n",
-    "present brought by a visitor"
-   ],
-   [
-    "n",
-    "something unpleasant that one is given (e.g. an illness while on vacation); unwelcome gift; disservice"
-   ]
-  ]
- ],
  "土石": [
   [
    "どせき",
@@ -53842,19 +53710,6 @@
    [
     "n",
     "bank; weir; embankment; levee"
-   ]
-  ]
- ],
- "堪能": [
-  [
-   "たんのう",
-   [
-    "ateji",
-    "(adj-na,n) (1) proficient; skilled; skillful; good; accomplished"
-   ],
-   [
-    "n,vs,vt,vi",
-    "enjoying to the full; full satisfaction; being satiated (with); having one's fill (of)"
    ]
   ]
  ],
@@ -55820,15 +55675,6 @@
    [
     "adj-na",
     "safe; OK"
-   ]
-  ]
- ],
- "大人": [
-  [
-   "おとな",
-   [
-    "gikun",
-    "(n,adj-no,adj-na) adult; grown-up"
    ]
   ]
  ],
@@ -58216,19 +58062,6 @@
    ]
   ]
  ],
- "如何": [
-  [
-   "いかが",
-   [
-    "gikun",
-    "(adv) (1) (uk) how; in what way; how about"
-   ],
-   [
-    "adj-na",
-    "(uk) questionable"
-   ]
-  ]
- ],
  "如実": [
   [
    "にょじつ",
@@ -59070,15 +58903,6 @@
    [
     "n",
     "maintenance or abolition (of a system, institution, etc.); existence"
-   ]
-  ]
- ],
- "存知": [
-  [
-   "ぞんじ",
-   [
-    "ateji",
-    "(n) knowing; being aware (of)"
    ]
   ]
  ],
@@ -62559,15 +62383,6 @@
    ]
   ]
  ],
- "寿司": [
-  [
-   "すし",
-   [
-    "ateji",
-    "(n) (food) sushi; range of dishes made with vinegared rice combined with fish, vegetables, egg, etc."
-   ]
-  ]
- ],
  "寿命": [
   [
    "じゅみょう",
@@ -63296,15 +63111,6 @@
    ]
   ]
  ],
- "小火": [
-  [
-   "ぼや",
-   [
-    "gikun",
-    "(n) (uk) small fire"
-   ]
-  ]
- ],
  "小物": [
   [
    "こもの",
@@ -63382,15 +63188,6 @@
    [
     "n",
     "novel; story; (work of) fiction"
-   ]
-  ]
- ],
- "小豆": [
-  [
-   "あずき",
-   [
-    "gikun",
-    "(n) adzuki bean (Vigna angularis)"
    ]
   ]
  ],
@@ -65259,19 +65056,6 @@
    ]
   ]
  ],
- "巫女": [
-  [
-   "みこ",
-   [
-    "gikun",
-    "(n) (1) (Shinto) miko; shrine maiden; young girl or woman (trad. an unmarried virgin) who assists priests at shrines"
-   ],
-   [
-    "n",
-    "medium; sorceress; shamaness"
-   ]
-  ]
- ],
  "差す": [
   [
    "さす",
@@ -65609,19 +65393,6 @@
    [
     "n,vs,vt",
     "edict; ordinance; proclamation"
-   ]
-  ]
- ],
- "布団": [
-  [
-   "ふとん",
-   [
-    "ateji",
-    "(n) (1) futon; Japanese bedding consisting of a mattress and a duvet"
-   ],
-   [
-    "n",
-    "round cushion used for Zen meditation (traditionally made of woven bulrush leaves)"
    ]
   ]
  ],
@@ -70994,15 +70765,6 @@
    ]
   ]
  ],
- "心地": [
-  [
-   "ここち",
-   [
-    "ateji",
-    "(n,n-suf) feeling; sensation; mood"
-   ]
-  ]
- ],
  "心境": [
   [
    "しんきょう",
@@ -71806,27 +71568,6 @@
    ]
   ]
  ],
- "思惑": [
-  [
-   "おもわく",
-   [
-    "ateji",
-    "(n) (1) expectation; anticipation; prediction; forecast; calculations"
-   ],
-   [
-    "n",
-    "purpose; intention; motive; ulterior motive"
-   ],
-   [
-    "n",
-    "others' opinions of one"
-   ],
-   [
-    "n",
-    "(finc) speculation"
-   ]
-  ]
- ],
  "思想": [
   [
    "しそう",
@@ -72280,19 +72021,6 @@
    [
     "adj-na,n",
     "grotesque"
-   ]
-  ]
- ],
- "怪我": [
-  [
-   "けが",
-   [
-    "ateji",
-    "(n,vs) (1) injury; wound"
-   ],
-   [
-    "n,vs",
-    "mistake; accident; loss"
    ]
   ]
  ],
@@ -72919,31 +72647,6 @@
    [
     "n",
     "(law) malice"
-   ]
-  ]
- ],
- "悪戯": [
-  [
-   "いたずら",
-   [
-    "gikun",
-    "(n,vs,vt,vi) (1) (uk) mischief; prank; trick; practical joke"
-   ],
-   [
-    "adj-na",
-    "(uk) mischievous; naughty"
-   ],
-   [
-    "n,vs,vt",
-    "(uk) (hum) pastime; hobby"
-   ],
-   [
-    "n,vs,vt",
-    "(uk) playing with (e.g. a lighter); fooling around with; messing around with; amusing oneself with; tampering with"
-   ],
-   [
-    "n,vs,vi",
-    "(uk) (euph) lewd behaviour; sexual misconduct; sexual assault; molestation; rape"
    ]
   ]
  ],
@@ -75343,15 +75046,6 @@
    ]
   ]
  ],
- "所謂": [
-  [
-   "いわゆる",
-   [
-    "gikun",
-    "(adj-pn) (uk) what is called; what you call; what they call; so-called"
-   ]
-  ]
- ],
  "所轄": [
   [
    "しょかつ",
@@ -77526,15 +77220,6 @@
    [
     "n,vs,vt",
     "(hum) (pol) seeing; looking at"
-   ]
-  ]
- ],
- "拠出": [
-  [
-   "きょしゅつ",
-   [
-    "ateji",
-    "(n,vs,vt) donation; contribution"
    ]
   ]
  ],
@@ -83789,27 +83474,6 @@
    ]
   ]
  ],
- "日和": [
-  [
-   "ひより",
-   [
-    "ateji",
-    "(n) (1) weather; climatic conditions"
-   ],
-   [
-    "n",
-    "fine weather; clear day"
-   ],
-   [
-    "n",
-    "situation; state of affairs"
-   ],
-   [
-    "n",
-    "sea conditions; good day for sailing"
-   ]
-  ]
- ],
  "日報": [
   [
    "にっぽう",
@@ -84401,24 +84065,6 @@
  ],
  "明日": [
   [
-   "あした",
-   [
-    "gikun",
-    "(n,adv) tomorrow"
-   ]
-  ],
-  [
-   "あす",
-   [
-    "gikun",
-    "(n,adv) (1) tomorrow"
-   ],
-   [
-    "n,adv",
-    "near future"
-   ]
-  ],
-  [
    "みょうにち",
    [
     "n,adv",
@@ -84734,15 +84380,6 @@
    ]
   ]
  ],
- "昨夜": [
-  [
-   "ゆうべ",
-   [
-    "gikun",
-    "(n,adv) last night; yesterday evening"
-   ]
-  ]
- ],
  "昨年": [
   [
    "さくねん",
@@ -84753,13 +84390,6 @@
   ]
  ],
  "昨日": [
-  [
-   "きのう",
-   [
-    "gikun",
-    "(n,adv) yesterday"
-   ]
-  ],
   [
    "さくじつ",
    [
@@ -85103,15 +84733,6 @@
    ]
   ]
  ],
- "時計": [
-  [
-   "とけい",
-   [
-    "ateji",
-    "(n) clock; watch; timepiece"
-   ]
-  ]
- ],
  "時速": [
   [
    "じそく",
@@ -85218,19 +84839,6 @@
    [
     "n,vs,vt,vi",
     "diffusion; spread; popularization; promulgation; familiarization"
-   ]
-  ]
- ],
- "普段": [
-  [
-   "ふだん",
-   [
-    "ateji",
-    "(adj-no,n) (1) usual; normal; everyday; habitual; ordinary"
-   ],
-   [
-    "n,adv",
-    "usually; normally; generally; habitually; always"
    ]
   ]
  ],
@@ -88972,15 +88580,6 @@
    ]
   ]
  ],
- "果物": [
-  [
-   "くだもの",
-   [
-    "gikun",
-    "(n) fruit"
-   ]
-  ]
- ],
  "枝葉": [
   [
    "えだは",
@@ -89791,17 +89390,6 @@
   ]
  ],
  "梅雨": [
-  [
-   "つゆ",
-   [
-    "gikun",
-    "(n) (1) (East Asian) rainy season (in Japan, usu. from early June to mid-July)"
-   ],
-   [
-    "n",
-    "rain during the rainy season"
-   ]
-  ],
   [
    "ばいう",
    [
@@ -95740,19 +95328,6 @@
    ]
   ]
  ],
- "洒落": [
-  [
-   "しゃれ",
-   [
-    "ateji",
-    "(n) (1) joke; pun; jest; witticism; wordplay"
-   ],
-   [
-    "adj-na",
-    "smartly dressed; stylish; fashion-conscious; refined"
-   ]
-  ]
- ],
  "洗う": [
   [
    "あらう",
@@ -96282,23 +95857,6 @@
    ]
   ]
  ],
- "流石": [
-  [
-   "さすが",
-   [
-    "gikun",
-    "(adv,adj-na) (1) (uk) as one would expect; just as you'd expect (from); just like (someone)"
-   ],
-   [
-    "adv",
-    "(uk) still; all the same; after all"
-   ],
-   [
-    "adv",
-    "(uk) even ... (e.g. \"even a genius\")"
-   ]
-  ]
- ],
  "流血": [
   [
    "りゅうけつ",
@@ -96615,15 +96173,6 @@
    ]
   ]
  ],
- "浴衣": [
-  [
-   "ゆかた",
-   [
-    "gikun",
-    "(n) yukata; light cotton kimono worn in the summer or used as a bathrobe"
-   ]
-  ]
- ],
  "海上": [
   [
    "かいじょう",
@@ -96760,15 +96309,6 @@
    [
     "n",
     "(uk) prawn; shrimp; lobster"
-   ]
-  ]
- ],
- "海苔": [
-  [
-   "のり",
-   [
-    "gikun",
-    "(n) (uk) nori; laver; edible seaweed, usu. Porphyra yezoensis or P. tenera, usu. dried and pressed into sheets"
    ]
   ]
  ],
@@ -98443,19 +97983,6 @@
    ]
   ]
  ],
- "満更": [
-  [
-   "まんざら",
-   [
-    "ateji",
-    "(adv) (uk) (not) altogether"
-   ],
-   [
-    "not",
-    "wholly"
-   ]
-  ]
- ],
  "満月": [
   [
    "まんげつ",
@@ -98695,23 +98222,6 @@
    [
     "n,vs,vi",
     "downfall; ruin; collapse; destruction"
-   ]
-  ]
- ],
- "滅多": [
-  [
-   "めった",
-   [
-    "ateji",
-    "(adj-na) (1) thoughtless; reckless; careless; rash"
-   ],
-   [
-    "adj-na",
-    "ordinary; usual; common"
-   ],
-   [
-    "pref",
-    "excessive; indiscriminate"
    ]
   ]
  ],
@@ -99898,19 +99408,6 @@
    ]
   ]
  ],
- "火傷": [
-  [
-   "やけど",
-   [
-    "gikun",
-    "(n,vs,vi) (1) (uk) burn; scald"
-   ],
-   [
-    "n,vs,vi",
-    "(uk) getting one's fingers burned (e.g. poor investment, mixing with the wrong people)"
-   ]
-  ]
- ],
  "火力": [
   [
    "かりょく",
@@ -100392,19 +99889,6 @@
    [
     "conj",
     "(uk) because of; as a result of"
-   ]
-  ]
- ],
- "為替": [
-  [
-   "かわせ",
-   [
-    "gikun",
-    "(n) (1) money order; draft"
-   ],
-   [
-    "n",
-    "exchange (e.g. foreign)"
    ]
   ]
  ],
@@ -101003,27 +100487,6 @@
    ]
   ]
  ],
- "無茶": [
-  [
-   "むちゃ",
-   [
-    "ateji",
-    "(adj-na,n) (1) absurd; unreasonable; ridiculous"
-   ],
-   [
-    "adj-na,n",
-    "rash; reckless"
-   ],
-   [
-    "adj-na,n",
-    "excessive; immoderate; extreme"
-   ],
-   [
-    "adv",
-    "(ksb:) very; extremely; excessively"
-   ]
-  ]
- ],
  "無菌": [
   [
    "むきん",
@@ -101123,15 +100586,6 @@
    [
     "adj-no,n",
     "quiet (state of affairs); peaceful; stable; safe (electoral seat)"
-   ]
-  ]
- ],
- "無駄": [
-  [
-   "むだ",
-   [
-    "ateji",
-    "(n,adj-na) futility; waste; uselessness; pointlessness; idleness"
    ]
   ]
  ],
@@ -101332,19 +100786,6 @@
    [
     "n",
     "(sl) carrying a passenger without turning on the taximeter"
-   ]
-  ]
- ],
- "煙草": [
-  [
-   "たばこ",
-   [
-    "gikun",
-    "(n) (1) (uk) tobacco (por: tabaco); cigarette; cigar"
-   ],
-   [
-    "n",
-    "(uk) tobacco plant (Nicotiana tabacum)"
    ]
   ]
  ],
@@ -103525,19 +102966,6 @@
    ]
   ]
  ],
- "玩具": [
-  [
-   "おもちゃ",
-   [
-    "gikun",
-    "(n) (1) (uk) toy"
-   ],
-   [
-    "n",
-    "(uk) (person or thing treated as a) plaything"
-   ]
-  ]
- ],
  "珊瑚": [
   [
    "さんご",
@@ -104219,19 +103647,6 @@
    ]
   ]
  ],
- "甘味": [
-  [
-   "あまみ",
-   [
-    "ateji",
-    "(n) (1) sweetness; sugary taste"
-   ],
-   [
-    "n",
-    "sweets; dessert; cake"
-   ]
-  ]
- ],
  "甘美": [
   [
    "かんび",
@@ -104504,15 +103919,6 @@
    [
     "n",
     "mode of life; way of living"
-   ]
-  ]
- ],
- "生憎": [
-  [
-   "あいにく",
-   [
-    "ateji",
-    "(adj-na,adv,n,adj-no) (uk) unfortunately; sorry, but ..."
    ]
   ]
  ],
@@ -104936,19 +104342,6 @@
    ]
   ]
  ],
- "田舎": [
-  [
-   "いなか",
-   [
-    "gikun",
-    "(n) (1) rural area; countryside; the sticks"
-   ],
-   [
-    "n",
-    "hometown"
-   ]
-  ]
- ],
  "由来": [
   [
    "ゆらい",
@@ -104981,15 +104374,6 @@
    [
     "n",
     "superiority and (or) inferiority; distinction (in quality); discernment; discrimination"
-   ]
-  ]
- ],
- "甲斐": [
-  [
-   "かい",
-   [
-    "ateji",
-    "(n) result (that makes an act worthwhile); worth (in doing something); value; effect; use; benefit; avail"
    ]
   ]
  ],
@@ -107035,19 +106419,6 @@
    ]
   ]
  ],
- "白粉": [
-  [
-   "おしろい",
-   [
-    "gikun",
-    "(n) white makeup powder"
-   ],
-   [
-    "face",
-    "powder"
-   ]
-  ]
- ],
  "白紙": [
   [
    "はくし",
@@ -107231,19 +106602,6 @@
    [
     "num",
     "10,000,000,000; ten billion"
-   ]
-  ]
- ],
- "百合": [
-  [
-   "ゆり",
-   [
-    "gikun",
-    "(n) (1) (uk) lily (Lilium spp.)"
-   ],
-   [
-    "n",
-    "(col) yuri; genre of comics and novels about female homosexuality"
    ]
   ]
  ],
@@ -109154,23 +108512,6 @@
    [
     "n,adj-no",
     "ophthalmology"
-   ]
-  ]
- ],
- "眼鏡": [
-  [
-   "めがね",
-   [
-    "gikun",
-    "(n) (1) (uk) glasses; eyeglasses; spectacles"
-   ],
-   [
-    "n",
-    "judgment; judgement; discrimination; discernment; insight"
-   ],
-   [
-    "n",
-    "(uk) (derog) four-eyes"
    ]
   ]
  ],
@@ -111185,15 +110526,6 @@
    ]
   ]
  ],
- "神楽": [
-  [
-   "かぐら",
-   [
-    "gikun",
-    "(n) kagura; traditional Shinto music and dancing"
-   ]
-  ]
- ],
  "神様": [
   [
    "かみさま",
@@ -112330,31 +111662,6 @@
    [
     "n",
     "ear (head) of rice"
-   ]
-  ]
- ],
- "稲荷": [
-  [
-   "いなり",
-   [
-    "gikun",
-    "(n) (1) Inari (god of harvests, Uka-no-Mitama)"
-   ],
-   [
-    "n",
-    "Inari shrine; Fushimi Inari shrine (in Kyoto)"
-   ],
-   [
-    "n",
-    "fox (said to be messengers of Inari)"
-   ],
-   [
-    "n",
-    "fried tofu (said to be a favourite food of foxes)"
-   ],
-   [
-    "n",
-    "(abbr) (uk) inarizushi"
    ]
   ]
  ],
@@ -113729,15 +113036,6 @@
    ]
   ]
  ],
- "竹刀": [
-  [
-   "しない",
-   [
-    "gikun",
-    "(n) (MA) bamboo sword (for kendo); bamboo fencing stick"
-   ]
-  ]
- ],
  "竹林": [
   [
    "ちくりん",
@@ -113975,15 +113273,6 @@
    [
     "n,adj-no",
     "body proportions"
-   ]
-  ]
- ],
- "等閑": [
-  [
-   "なおざり",
-   [
-    "gikun",
-    "(n,adj-na) (uk) neglect; negligence; disregard; making light of"
    ]
   ]
  ],
@@ -115342,23 +114631,6 @@
    ]
   ]
  ],
- "素人": [
-  [
-   "しろうと",
-   [
-    "gikun",
-    "(n) (1) amateur; layman; ordinary person; novice"
-   ],
-   [
-    "n",
-    "respectable woman (i.e. not a prostitute, hostess, geisha)"
-   ],
-   [
-    "n",
-    "(arch) (kyb:) unlicensed prostitute"
-   ]
-  ]
- ],
  "素子": [
   [
    "そし",
@@ -115382,15 +114654,6 @@
    [
     "n,vs,vt",
     "outline; summary; synopsis"
-   ]
-  ]
- ],
- "素敵": [
-  [
-   "すてき",
-   [
-    "ateji",
-    "(adj-na) lovely; wonderful; charming; enchanting; nice; great; splendid; marvellous (marvelous); fantastic; superb"
    ]
   ]
  ],
@@ -119104,15 +118367,6 @@
    ]
   ]
  ],
- "老舗": [
-  [
-   "しにせ",
-   [
-    "gikun",
-    "(n) long-established shop; shop of long standing; old shop"
-   ]
-  ]
- ],
  "老若": [
   [
    "ろうじゃく",
@@ -119982,15 +119236,6 @@
    ]
   ]
  ],
- "背広": [
-  [
-   "せびろ",
-   [
-    "ateji",
-    "(n) business suit"
-   ]
-  ]
- ],
  "背後": [
   [
    "はいご",
@@ -120084,15 +119329,6 @@
    [
     "n,adj-no",
     "spore"
-   ]
-  ]
- ],
- "胡坐": [
-  [
-   "あぐら",
-   [
-    "gikun",
-    "(n) (uk) sitting cross-legged"
    ]
   ]
  ],
@@ -120678,15 +119914,6 @@
    [
     "n",
     "force; violence"
-   ]
-  ]
- ],
- "腕白": [
-  [
-   "わんぱく",
-   [
-    "ateji",
-    "(adj-na,n) (uk) naughty; mischievous; unruly"
    ]
   ]
  ],
@@ -122631,15 +121858,6 @@
    ]
   ]
  ],
- "苦味": [
-  [
-   "にがみ",
-   [
-    "ateji",
-    "(n,adj-no) bitterness; bitter taste"
-   ]
-  ]
- ],
  "苦境": [
   [
    "くきょう",
@@ -123649,23 +122867,6 @@
    ]
   ]
  ],
- "蕎麦": [
-  [
-   "そば",
-   [
-    "gikun",
-    "(n) (1) (uk) buckwheat (Fagopyrum esculentum)"
-   ],
-   [
-    "n",
-    "(food) (uk) (abbr) soba; Japanese buckwheat noodles"
-   ],
-   [
-    "n",
-    "(food) (uk) Chinese-style wheat noodles"
-   ]
-  ]
- ],
  "薄い": [
   [
    "うすい",
@@ -123710,15 +122911,6 @@
    [
     "n,vs,adj-no",
     "being lightly dressed"
-   ]
-  ]
- ],
- "薔薇": [
-  [
-   "ばら",
-   [
-    "gikun",
-    "(n) (uk) rose"
    ]
   ]
  ],
@@ -124017,15 +123209,6 @@
    ]
   ]
  ],
- "蜘蛛": [
-  [
-   "くも",
-   [
-    "gikun",
-    "(n) (uk) spider"
-   ]
-  ]
- ],
  "蜜柑": [
   [
    "みかん",
@@ -124036,15 +123219,6 @@
    [
     "n",
     "(uk) citrus (Citrus spp.)"
-   ]
-  ]
- ],
- "蜻蛉": [
-  [
-   "とんぼ",
-   [
-    "gikun",
-    "(n) (uk) dragonfly"
    ]
   ]
  ],
@@ -126235,19 +125409,6 @@
    ]
   ]
  ],
- "見栄": [
-  [
-   "みえ",
-   [
-    "ateji",
-    "(n) (1) show; display; pretensions; appearances; ostentation; vanity"
-   ],
-   [
-    "n",
-    "(kabuki) pose; posture"
-   ]
-  ]
- ],
  "見物": [
   [
    "けんぶつ",
@@ -126734,31 +125895,6 @@
    [
     "n",
     "handwritten letter; autograph letter"
-   ]
-  ]
- ],
- "親父": [
-  [
-   "おやじ",
-   [
-    "gikun",
-    "(n) (1) (uk) (fam) one's father; one's old man; dad; pops"
-   ],
-   [
-    "n",
-    "(uk) (fam) middle-aged (or older) man; old man; geezer"
-   ],
-   [
-    "n",
-    "(uk) (fam) one's boss"
-   ],
-   [
-    "n",
-    "(uk) proprietor (of a restaurant, store, etc.); landlord"
-   ],
-   [
-    "n",
-    "(uk) (hob:) grizzly bear"
    ]
   ]
  ],
@@ -128252,15 +127388,6 @@
    [
     "n,vs,vt",
     "preview; private showing"
-   ]
-  ]
- ],
- "試合": [
-  [
-   "しあい",
-   [
-    "ateji",
-    "(n,vs,vi) match; game; bout; contest"
    ]
   ]
  ],
@@ -130933,17 +130060,6 @@
   ]
  ],
  "貴方": [
-  [
-   "あなた",
-   [
-    "gikun",
-    "(pn) (1) (uk) you"
-   ],
-   [
-    "pn",
-    "(fam) (uk) dear; honey"
-   ]
-  ],
   [
    "あんた",
    [
@@ -140334,15 +139450,6 @@
    ]
   ]
  ],
- "野暮": [
-  [
-   "やぼ",
-   [
-    "ateji",
-    "(adj-na,n) boorish; unsophisticated; unrefined; uncouth; tasteless; insensitive; thoughtless; dumb"
-   ]
-  ]
- ],
  "野望": [
   [
    "やぼう",
@@ -141799,19 +140906,6 @@
    ]
   ]
  ],
- "長閑": [
-  [
-   "のどか",
-   [
-    "gikun",
-    "(adj-na) (1) (uk) tranquil; calm; quiet; peaceful; serene"
-   ],
-   [
-    "adj-na",
-    "(uk) mild (weather); balmy"
-   ]
-  ]
- ],
  "長雨": [
   [
    "ながあめ",
@@ -142947,15 +142041,6 @@
    [
     "n,vs,vt",
     "obstruction; prevention; hindrance; check; blocking; stopping"
-   ]
-  ]
- ],
- "阿呆": [
-  [
-   "あほ",
-   [
-    "ateji",
-    "(n,adj-na) (col) (uk) (ksb:) fool; idiot; simpleton"
    ]
   ]
  ],
@@ -145568,23 +144653,6 @@
    ]
   ]
  ],
- "面倒": [
-  [
-   "めんどう",
-   [
-    "ateji",
-    "(n,adj-na) (1) trouble; bother"
-   ],
-   [
-    "n,adj-na",
-    "trouble; difficulty"
-   ],
-   [
-    "n",
-    "care; attention"
-   ]
-  ]
- ],
  "面子": [
   [
    "メンツ",
@@ -146891,15 +145959,6 @@
    ]
   ]
  ],
- "風邪": [
-  [
-   "かぜ",
-   [
-    "gikun",
-    "(n) (common) cold; influenza; flu; ague; inflammatory respiratory system illness (in general)"
-   ]
-  ]
- ],
  "風鈴": [
   [
    "ふうりん",
@@ -147850,39 +146909,6 @@
    [
     "n",
     "coach (horse-drawn); carriage; wagon; cart"
-   ]
-  ]
- ],
- "馬鹿": [
-  [
-   "ばか",
-   [
-    "ateji",
-    "(n) (1) (uk) idiot; moron; fool"
-   ],
-   [
-    "adj-na",
-    "(uk) stupid; foolish; dull; absurd; ridiculous"
-   ],
-   [
-    "n,adj-na",
-    "(uk) trivial; insignificant; disappointing"
-   ],
-   [
-    "n,adj-na",
-    "(uk) malfunctioning; defective; losing sensation"
-   ],
-   [
-    "n,n-pref",
-    "(uk) (sl) incredibly; unusually; exceptionally"
-   ],
-   [
-    "n,n-suf,adj-na",
-    "(uk) (sl) fervent enthusiast; nut; person singularly obsessed with something"
-   ],
-   [
-    "n",
-    "(abbr) (uk) Mactra chinensis (species of trough shell)"
    ]
   ]
  ],
@@ -149199,23 +148225,6 @@
    [
     "n",
     "mahjong (chi:); mah-jongg"
-   ]
-  ]
- ],
- "黄昏": [
-  [
-   "たそがれ",
-   [
-    "gikun",
-    "(n) (1) dusk; twilight"
-   ],
-   [
-    "n",
-    "twilight years"
-   ],
-   [
-    "n",
-    "(col) melancholia; melancholic nostalgia"
    ]
   ]
  ],
@@ -150606,19 +149615,6 @@
    ]
   ]
  ],
- "ご存知": [
-  [
-   "ごぞんじ",
-   [
-    "ateji",
-    "(n) (1) (hon) knowing; being aware (of)"
-   ],
-   [
-    "n",
-    "(an) acquaintance"
-   ]
-  ]
- ],
  "ご褒美": [
   [
    "ごほうび",
@@ -151369,15 +150365,6 @@
    [
     "n,adv",
     "year before last"
-   ]
-  ]
- ],
- "一昨日": [
-  [
-   "おととい",
-   [
-    "gikun",
-    "(n,adv) day before yesterday"
    ]
   ]
  ],
@@ -152555,27 +151542,6 @@
    [
     "adj-na,n",
     "irrational; illogical; unreasonable; absurd; inconsistent"
-   ]
-  ]
- ],
- "不味い": [
-  [
-   "まずい",
-   [
-    "gikun",
-    "(adj-i) (1) (uk) bad(-tasting); unpalatable; unsavoury; unsavory; awful; terrible; unpleasant"
-   ],
-   [
-    "adj-i",
-    "(uk) poor; unskillful; unskilful; bungling; clumsy"
-   ],
-   [
-    "adj-i",
-    "(uk) ugly; unattractive; homely; plain"
-   ],
-   [
-    "adj-i",
-    "(uk) awkward; problematic; troublesome; unfavorable; unfavourable; unwise"
    ]
   ]
  ],
@@ -156134,15 +155100,6 @@
    ]
   ]
  ],
- "倶楽部": [
-  [
-   "クラブ",
-   [
-    "ateji",
-    "(n) (uk) club; fraternity; sorority; clubhouse"
-   ]
-  ]
- ],
  "偏差値": [
   [
    "へんさち",
@@ -157680,19 +156637,6 @@
    [
     "n",
     "meeting; reception"
-   ]
-  ]
- ],
- "出鱈目": [
-  [
-   "でたらめ",
-   [
-    "ateji",
-    "(n,adj-na) (1) (uk) nonsense; irresponsible remark; codswallop; hogwash; rubbish"
-   ],
-   [
-    "adj-na,n",
-    "(uk) random; haphazard; unsystematic"
    ]
   ]
  ],
@@ -160547,45 +159491,6 @@
    ]
   ]
  ],
- "可哀想": [
-  [
-   "かわいそう",
-   [
-    "ateji",
-    "(adj-na,n) (uk) poor; pitiable; pathetic; pitiful"
-   ]
-  ]
- ],
- "可哀相": [
-  [
-   "かわいそう",
-   [
-    "ateji",
-    "(adj-na,n) (uk) poor; pitiable; pathetic; pitiful"
-   ]
-  ]
- ],
- "可愛い": [
-  [
-   "かわいい",
-   [
-    "ateji",
-    "(adj-i) (1) (uk) cute; adorable; charming; lovely; pretty"
-   ],
-   [
-    "adj-i",
-    "(uk) dear; precious; darling; pet"
-   ],
-   [
-    "adj-i",
-    "(uk) innocent; childlike; childish; lovable"
-   ],
-   [
-    "adj-i",
-    "(uk) dainty; little; tiny"
-   ]
-  ]
- ],
  "可燃性": [
   [
    "かねんせい",
@@ -163376,15 +162281,6 @@
    [
     "n",
     "(astron) Milky Way; luminous band corresponding to the plane of the galaxy"
-   ]
-  ]
- ],
- "天ぷら": [
-  [
-   "てんぷら",
-   [
-    "ateji",
-    "(n) (food) tempura (por: tempero); deep-fried fish and vegetables in a light batter"
    ]
   ]
  ],
@@ -166391,15 +165287,6 @@
    ]
   ]
  ],
- "強請る": [
-  [
-   "ねだる",
-   [
-    "gikun",
-    "(v5r,vt) (uk) to beg; to pester; to plead; to coax; to hound; to importune"
-   ]
-  ]
- ],
  "当たり": [
   [
    "あたり",
@@ -166779,24 +165666,6 @@
    [
     "conj",
     "(uk) therefore; consequently; accordingly"
-   ]
-  ]
- ],
- "従兄弟": [
-  [
-   "いとこ",
-   [
-    "gikun",
-    "(n) (uk) cousin (male)"
-   ]
-  ]
- ],
- "従姉妹": [
-  [
-   "いとこ",
-   [
-    "gikun",
-    "(n) (uk) cousin (female)"
    ]
   ]
  ],
@@ -167450,15 +166319,6 @@
    ]
   ]
  ],
- "恵比寿": [
-  [
-   "えびす",
-   [
-    "ateji",
-    "(n) Ebisu; god of fishing and commerce"
-   ]
-  ]
- ],
  "悔いる": [
   [
    "くいる",
@@ -167738,15 +166598,6 @@
    [
     "adj-na",
     "conscious; deliberate; intentional"
-   ]
-  ]
- ],
- "愚連隊": [
-  [
-   "ぐれんたい",
-   [
-    "ateji",
-    "(n) gang of young toughs; hooligans; hoodlums; hoods; yobbos"
    ]
   ]
  ],
@@ -170162,15 +169013,6 @@
    ]
   ]
  ],
- "支払う": [
-  [
-   "しはらう",
-   [
-    "ateji",
-    "(v5u,vt) to pay"
-   ]
-  ]
- ],
  "支配人": [
   [
    "しはいにん",
@@ -171427,17 +170269,6 @@
   ]
  ],
  "明後日": [
-  [
-   "あさって",
-   [
-    "gikun",
-    "(n,adv) (1) day after tomorrow"
-   ],
-   [
-    "adj-no",
-    "wrong (e.g. direction)"
-   ]
-  ],
   [
    "みょうごにち",
    [
@@ -173628,15 +172459,6 @@
    ]
   ]
  ],
- "歌留多": [
-  [
-   "カルタ",
-   [
-    "ateji",
-    "(n) (uk) karuta (por: carta); traditional Japanese playing cards, esp. hyakunin isshu karuta or iroha karuta"
-   ]
-  ]
- ],
  "歌舞伎": [
   [
    "かぶき",
@@ -174948,19 +173770,6 @@
    ]
   ]
  ],
- "洒落る": [
-  [
-   "しゃれる",
-   [
-    "ateji",
-    "(v1,vi) (1) to dress stylishly"
-   ],
-   [
-    "v1,vi",
-    "to joke; to play on words"
-   ]
-  ]
- ],
  "洗い物": [
   [
    "あらいもの",
@@ -175935,15 +174744,6 @@
    ]
   ]
  ],
- "滅多に": [
-  [
-   "めったに",
-   [
-    "ateji",
-    "(adv) rarely; seldom"
-   ]
-  ]
- ],
  "滑らか": [
   [
    "なめらか",
@@ -176727,19 +175527,6 @@
    [
     "adj-na,n",
     "apathetic; indifferent; nonchalant; callous"
-   ]
-  ]
- ],
- "無闇に": [
-  [
-   "むやみに",
-   [
-    "ateji",
-    "(adv) (1) (uk) thoughtlessly; recklessly; rashly; indiscriminately; indiscreetly; at random"
-   ],
-   [
-    "adv",
-    "(uk) excessively; unreasonably; immoderately; absurdly"
    ]
   ]
  ],
@@ -178851,15 +177638,6 @@
    ]
   ]
  ],
- "真っ当": [
-  [
-   "まっとう",
-   [
-    "ateji",
-    "(adj-na) (uk) proper; respectable; decent; honest"
-   ]
-  ]
- ],
  "真っ暗": [
   [
    "まっくら",
@@ -178976,19 +177754,6 @@
    [
     "n",
     "directly opposite; right in front"
-   ]
-  ]
- ],
- "真面目": [
-  [
-   "まじめ",
-   [
-    "ateji",
-    "(adj-na,n) (1) serious; earnest; sober; grave"
-   ],
-   [
-    "adj-na,n",
-    "honest; sincere"
    ]
   ]
  ],
@@ -180529,15 +179294,6 @@
    [
     "n",
     "(physics) ultraviolet rays; ultraviolet radiation; UV radiation"
-   ]
-  ]
- ],
- "紫陽花": [
-  [
-   "あじさい",
-   [
-    "gikun",
-    "(n) (uk) bigleaf hydrangea (Hydrangea macrophylla); French hydrangea"
    ]
   ]
  ],
@@ -189571,23 +188327,6 @@
    ]
   ]
  ],
- "頑張る": [
-  [
-   "がんばる",
-   [
-    "ateji",
-    "(v5r,vi) (1) to persevere; to persist; to keep at it; to hang on; to hold out; to do one's best"
-   ],
-   [
-    "v5r,vi",
-    "to insist that; to stick to (one's opinion)"
-   ],
-   [
-    "v5r,vi",
-    "to remain in a place; to stick to one's post; to refuse to budge"
-   ]
-  ]
- ],
  "領事館": [
   [
    "りょうじかん",
@@ -195539,15 +194278,6 @@
    ]
   ]
  ],
- "味気ない": [
-  [
-   "あじけない",
-   [
-    "ateji",
-    "(adj-i) wearisome; insipid; dull; irksome; wretched; vain"
-   ]
-  ]
- ],
  "呼びかけ": [
   [
    "よびかけ",
@@ -195897,15 +194627,6 @@
    [
     "n",
     "United Nations; UN"
-   ]
-  ]
- ],
- "土砂降り": [
-  [
-   "どしゃぶり",
-   [
-    "ateji",
-    "(n) downpour; pouring rain; heavy rain; pelting rain; cloudburst"
    ]
   ]
  ],
@@ -201103,27 +199824,6 @@
    ]
   ]
  ],
- "滅茶苦茶": [
-  [
-   "めちゃくちゃ",
-   [
-    "ateji",
-    "(adj-na,n) (1) (uk) absurd; unreasonable; nonsensical; preposterous; incoherent"
-   ],
-   [
-    "adj-na,n",
-    "(uk) extreme; senseless; reckless; wanton"
-   ],
-   [
-    "adj-na,n",
-    "(uk) disorderly; chaotic; confused; messy"
-   ],
-   [
-    "adv",
-    "(uk) incredibly; really; so; super"
-   ]
-  ]
- ],
  "澄み切る": [
   [
    "すみきる",
@@ -201219,36 +199919,6 @@
    [
     "adv",
     "forcibly; by force; against one's will"
-   ]
-  ]
- ],
- "無理矢理": [
-  [
-   "むりやり",
-   [
-    "ateji",
-    "(adv) forcibly; by force; against one's will"
-   ]
-  ]
- ],
- "無茶苦茶": [
-  [
-   "むちゃくちゃ",
-   [
-    "ateji",
-    "(adj-na) (1) (uk) (yoji) nonsensical; unreasonable; absurd; unrealistic"
-   ],
-   [
-    "adj-na",
-    "(uk) awfully; extremely; to excess; senseless; reckless"
-   ],
-   [
-    "n,adj-na",
-    "(uk) disorder; confusion; being jumbled; being mixed up"
-   ],
-   [
-    "adv",
-    "(col) (uk) very; extremely; excessively"
    ]
   ]
  ],
@@ -201920,23 +200590,6 @@
    ]
   ]
  ],
- "目茶目茶": [
-  [
-   "めちゃめちゃ",
-   [
-    "ateji",
-    "(adj-na,n) (1) (uk) (yoji) disorderly; messy; ruined"
-   ],
-   [
-    "adj-na,n",
-    "(uk) (yoji) absurd; unreasonable; excessive; rash"
-   ],
-   [
-    "adv",
-    "(uk) (yoji) very; extremely"
-   ]
-  ]
- ],
  "目覚まし": [
   [
    "めざまし",
@@ -202013,15 +200666,6 @@
    [
     "n",
     "mutual savings bank"
-   ]
-  ]
- ],
- "相応しい": [
-  [
-   "ふさわしい",
-   [
-    "gikun",
-    "(adj-i) (uk) appropriate; adequate; suitable; fitting; worthy"
    ]
   ]
  ],
@@ -203126,19 +201770,6 @@
    [
     "n",
     "leaving behind; desertion; abandonment"
-   ]
-  ]
- ],
- "美味しい": [
-  [
-   "おいしい",
-   [
-    "gikun",
-    "(adj-i) (1) (uk) good(-tasting); nice; delicious; tasty"
-   ],
-   [
-    "adj-i",
-    "(uk) attractive (offer, opportunity, etc.); appealing; convenient; favorable; desirable; profitable"
    ]
   ]
  ],
@@ -204404,27 +203035,6 @@
    ]
   ]
  ],
- "誤魔化す": [
-  [
-   "ごまかす",
-   [
-    "ateji",
-    "(v5s,vt) (1) (uk) to deceive; to cheat; to swindle"
-   ],
-   [
-    "v5s,vt",
-    "(uk) to falsify; to misrepresent; to lie about; to tamper with; to fiddle; to doctor; to cook"
-   ],
-   [
-    "v5s,vt",
-    "(uk) to evade (a question, taxes, etc.); to dodge; to gloss over (a mistake, fault, etc.); to smooth over; to get one's way out of (a difficult situation); to explain away"
-   ],
-   [
-    "v5s,vt",
-    "(uk) to embezzle; to pocket"
-   ]
-  ]
- ],
  "読み取り": [
   [
    "よみとり",
@@ -205195,27 +203805,6 @@
    [
     "v5r,vi",
     "to hold on (and win); to win narrowly"
-   ]
-  ]
- ],
- "逆上せる": [
-  [
-   "のぼせる",
-   [
-    "gikun",
-    "(v1,vi) (1) (uk) to feel dizzy; to have blood rush to one's head"
-   ],
-   [
-    "v1,vi",
-    "(uk) to lose one's cool"
-   ],
-   [
-    "v1,vi",
-    "(uk) to be obsessed; to be infatuated"
-   ],
-   [
-    "v1,vi",
-    "(uk) to become conceited"
    ]
   ]
  ],
@@ -206459,15 +205048,6 @@
    [
     "n",
     "T-back; bikini thong"
-   ]
-  ]
- ],
- "Ｙシャツ": [
-  [
-   "ワイシャツ",
-   [
-    "ateji",
-    "(n) (uk) (formal) shirt (eng: white shirt); dress shirt; business shirt; button-up shirt"
    ]
   ]
  ],

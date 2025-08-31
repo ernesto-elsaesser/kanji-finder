@@ -16,16 +16,19 @@ with urllib.request.urlopen(EDICT_URL) as response:
 # %%
 
 for i in range(1, len(lines)):
-    if "(sK)" in lines[i]:
+    if "test" in lines[i]:
         print(lines[i])
 
 # %%
 
-multi_entry_regex = re.compile("\(([a-z0-9,-]+)\) \([0-9]\) (.+)")
-single_entry_regex = re.compile("\(([a-z0-9,-]+)\) (.+)")
+multi_entry_regex = re.compile(r"\(([a-z0-9,-]+)\) \([0-9]\) (.+)")
+single_entry_regex = re.compile(r"\(([a-z0-9,-]+)\) (.+)")
 
 edict = {}
 for line in lines[1:]:
+    if "(gikun)" in line or "(ateji)" in line:
+        continue
+
     if line.endswith("/(P)/\n"):
         line = line[:-6]
     else:
@@ -67,7 +70,7 @@ edict = {k: edict[k] for k in sorted_keys}
 
 # %%
 
-with open("edict.json", "w") as f:
+with open("edict.json", "w", encoding="utf-8") as f:
     json.dump(edict, f, indent=1, ensure_ascii=False)
 
 # %%
