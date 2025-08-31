@@ -23,8 +23,9 @@ for word, entry in edict.items():
     meaning = entry[0][1][1]
     if "(uk)" in meaning or "(abbr)" in meaning:
         continue
+    reading = entry[0][0]
     min_jlpt = min(info0["jlpt"], info1["jlpt"])
-    pairs[min_jlpt][word] = meaning.split("; ")[0]
+    pairs[min_jlpt][word] = [reading] + meaning.split("; ")
 
 # %%
 

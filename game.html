@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <title>Kanji Combos</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="game.css?2">
 </head>
 
 <body>
 <div class="container">
     <h1>Kanji Combos</h1>
-    <div class="config">
+    <div id="config">
         <label for="level">JLPT Level: </label>
         <select id="level">
             <option value="N5" selected>N5</option>
@@ -24,10 +24,11 @@
     <div class="game-flex">
         <div class="options-col" id="left-options"></div>
         <div class="translation-center">
-            <div class="feedback" id="feedback"></div>
-            <div class="jukugo-word" id="jukugo-word"></div>
-            <div class="translation" id="translation"></div>
-            <button class="next-btn" id="next-btn" hidden>NEXT</button>
+            <div id="feedback"></div>
+            <div id="reading"></div>
+            <div id="word"></div>
+            <div id="translation"></div>
+            <button id="next" hidden>NEXT</button>
         </div>
         <div class="options-col" id="right-options"></div>
     </div>
@@ -35,26 +36,26 @@
 <script>
 
 const levelSelect = document.getElementById('level')
-const wordDiv = document.getElementById('jukugo-word')
+const readingDiv = document.getElementById('reading')
+const wordDiv = document.getElementById('word')
 const translationDiv = document.getElementById('translation')
 const leftOptionsDiv = document.getElementById('left-options')
 const rightOptionsDiv = document.getElementById('right-options')
 const feedbackDiv = document.getElementById('feedback')
-const nextBtn = document.getElementById('next-btn')
+const nextBtn = document.getElementById('next')
 
-var jouyou = {}
 var pairs = {}
-var subset = {}
+var subset = null
+var allWords = null
+var allKanji = null
 
 var current = null
 var leftPick = null
 var rightPick = null
 
 async function load() {
-    const res1 = await fetch("jouyou.json?1")
-    jouyou = await res1.json()
-    const res2 = await fetch("pairs.json?1")
-    pairs = await res2.json()
+    const res = await fetch("pairs.json?2")
+    pairs = await res.json()
     select()
     levelSelect.onchange = select
 }
@@ -62,53 +63,45 @@ async function load() {
 function select() {
     const levels = levelSelect.value.split(",")
     subset = {}
-    levels.forEach((l) => Object.assign(subset, pairs[l]))
-    start()
+    const wordSet = new Set()
+    const kanjiSet = new Set()
+    for (let level of levels) {
+        const levelPairs = pairs[level]
+        for (let pair in levelPairs) {
+            subset[pair] = levelPairs[pair]
+            wordSet.add(pair)
+            Array.from(pair).forEach(k => kanjiSet.add(k))
+        }
+    }
+    allWords = Array.from(wordSet)
+    allKanji = Array.from(kanjiSet)
+    nextRound()
 }
 
-function start() {
-    // Pick a random jukugo from subset
-    const keys = Object.keys(subset)
-    const idx = Math.floor(Math.random() * keys.length)
-    const jukugo = keys[idx]
-    const meaning = subset[jukugo]
-    current = { jukugo, meaning }
+function nextRound() {
+    const idx = Math.floor(Math.random() * allWords.length)
+    current = allWords[idx]
     leftPick = null
     rightPick = null
-    renderRound()
-}
 
-function renderRound() {
-    document.getElementById('jukugo-word').textContent = ''
-    translationDiv.textContent = current.meaning
     feedbackDiv.textContent = ''
+    wordDiv.textContent = ''
+    translationDiv.textContent = subset[current][1]
     nextBtn.hidden = true
-    // Get left and right kanji
-    const left = current.jukugo[0]
-    const right = current.jukugo[1]
-    // Get 3 random distractors for each side
-    const kanjiList = Object.keys(jouyou)
-    function getDistractors(correct, count) {
-        const arr = kanjiList.filter(k => k !== correct)
-        for (let i = arr.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1))
-            ;[arr[i], arr[j]] = [arr[j], arr[i]]
-        }
-        return arr.slice(0, count)
+
+    let options = Array.from(current)
+    while (options.length < 8) {
+        const didx = Math.floor(Math.random() * allWords.length)
+        const decoy = allWords[didx]
+        const valid = Array.from(decoy).filter(k => !options.includes(k))
+        valid.forEach(k => options.push(k))
     }
-    const leftOptions = getDistractors(left, 3).concat(left)
-    const rightOptions = getDistractors(right, 3).concat(right)
-    // Shuffle options
-    function shuffle(a) {
-        for (let i = a.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1))
-            ;[a[i], a[j]] = [a[j], a[i]]
-        }
-        return a
-    }
+
+    const leftOptions = options.slice(5, 8).concat(current[0])
+    const rightOptions = options.slice(1, 5)
     shuffle(leftOptions)
     shuffle(rightOptions)
-    // Render options
+
     leftOptionsDiv.innerHTML = ''
     rightOptionsDiv.innerHTML = ''
     leftOptions.forEach(kanji => {
@@ -127,61 +120,57 @@ function renderRound() {
     })
 }
 
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[a[i], a[j]] = [a[j], a[i]]
+    }
+    return a
+}
+
 function selectKanji(side, kanji, btn) {
     if (side === 'left') {
         leftPick = kanji
-        Array.from(leftOptionsDiv.children).forEach(el => el.classList.remove('selected'))
-        btn.classList.add('selected')
     } else {
         rightPick = kanji
-        Array.from(rightOptionsDiv.children).forEach(el => el.classList.remove('selected'))
-        btn.classList.add('selected')
     }
+    btn.classList.add('selected')
     if (leftPick && rightPick) {
         checkAnswer()
     }
 }
 
 function checkAnswer() {
-    const left = current.jukugo[0]
-    const right = current.jukugo[1]
-    let leftCorrect = false, rightCorrect = false
+    const left = current[0]
+    const right = current[1]
     Array.from(leftOptionsDiv.children).forEach(el => {
         if (el.textContent === left) {
-            if (leftPick === left) {
-                el.classList.add('correct')
-                leftCorrect = true
-            } else {
-                el.classList.add('correct')
-            }
+            el.classList.add('correct')
         } else if (el.textContent === leftPick) {
             el.classList.add('incorrect')
         }
     })
     Array.from(rightOptionsDiv.children).forEach(el => {
         if (el.textContent === right) {
-            if (rightPick === right) {
-                el.classList.add('correct')
-                rightCorrect = true
-            } else {
-                el.classList.add('correct')
-            }
+            el.classList.add('correct')
         } else if (el.textContent === rightPick) {
             el.classList.add('incorrect')
         }
     })
-
-    wordDiv.textContent = `${left}${right}`
 
     if (leftPick === left && rightPick === right) {
         feedbackDiv.textContent = 'Correct!'
     } else {
         feedbackDiv.textContent = 'Wrong.'
     }
+
+    readingDiv.textContent = subset[current][0]
+    wordDiv.textContent = current
+
     nextBtn.hidden = false
 }
 
-nextBtn.onclick = start
+nextBtn.onclick = nextRound
 
 load()
 
