@@ -66,6 +66,13 @@ let lookupResults = document.getElementById("lookup-results")
 let filterInput = document.getElementById("filter-input")
 let filterResults = document.getElementById("filter-results")
 
+async function load() {
+    const res1 = await fetch("edict.json?1")
+    edict = await res1.json()
+    const res2 = await fetch("jouyou.json?1")
+    jouyou = await res2.json()
+}
+
 function buildButtons(id, subsets) {
     let html = ""
     for (let subset in subsets) {
@@ -140,14 +147,7 @@ function lookup() {
 
 buildButtons("common-radicals", COMMON)
 buildButtons("rare-radicals", RARE)
-
-fetch("edict.json?v=3").then((res) => res.json()).then((data) => {
-    edict = data
-})
-
-fetch("jouyou.json?v=1").then((res) => res.json()).then((data) => {
-    jouyou = data
-})
+load()
 
 </script>
 
