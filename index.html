@@ -127,8 +127,11 @@ function clearLookup() {
 function lookup() {
     const query = lookupInput.value
     let html = ""
-    Object.entries(edict).forEach((entry) => {
-        if (entry[0].includes(query)) html += "<li><b>" + entry[0] + "</b> " + entry[1] + "</li>" 
+    Object.entries(edict).forEach(([key, value]) => {
+        if (key.includes(query)) {
+            const entry = "[" + value[0][0] + "] - " + value[0][1][1]
+            html += "<li><b>" + key + "</b> " + entry + "</li>"
+        }
     })
 
     if (html == "") lookupResults.innerHTML = "<li>no matches</li>"

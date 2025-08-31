@@ -5,7 +5,7 @@ import json
 import gzip
 import urllib.request
 
-KRAD_URL = "https://github.com/neocl/jamdict/raw/refs/heads/main/jamdict/data/kradfile-u.gz"
+KRAD_URL = "http://ftp.edrdg.org/pub/Nihongo/kradfile-u.gz"
 JOUYOU_URL = "https://raw.githubusercontent.com/NHV33/joyo-kanji-compilation/refs/heads/master/joyo.csv"
 
 # %%
