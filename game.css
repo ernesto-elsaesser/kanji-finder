@@ -17,6 +17,10 @@ h1 {
     font-size: 2rem;
     margin-bottom: 0.5em;
 }
+.config {
+    text-align:center;
+    margin-bottom:1.2em;
+}
 .jukugo-word {
     min-height:100px;
     font-size:3rem;
