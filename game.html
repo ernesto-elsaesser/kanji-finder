@@ -26,7 +26,7 @@
         <div class="translation-center">
             <div id="feedback"></div>
             <div id="reading"></div>
-            <div id="word"></div>
+            <a target="_blank" id="word"></a>
             <div id="translation"></div>
             <button id="next" hidden>NEXT</button>
         </div>
@@ -45,7 +45,7 @@ const SUBSETS = {
 
 const levelSelect = document.getElementById('level')
 const readingDiv = document.getElementById('reading')
-const wordDiv = document.getElementById('word')
+const wordLink = document.getElementById('word')
 const translationDiv = document.getElementById('translation')
 const leftOptionsDiv = document.getElementById('left-options')
 const rightOptionsDiv = document.getElementById('right-options')
@@ -95,7 +95,7 @@ function nextRound() {
 
     feedbackDiv.textContent = ''
     readingDiv.textContent = ''
-    wordDiv.textContent = ''
+    wordLink.textContent = ''
     translationDiv.innerHTML = subset[current][1].replace(" (", "<br/>(")
     nextBtn.hidden = true
 
@@ -175,7 +175,8 @@ function checkAnswer() {
     }
 
     readingDiv.textContent = subset[current][0]
-    wordDiv.textContent = current
+    wordLink.textContent = current
+    wordLink.href = "https://jisho.org/search/" + current
 
     nextBtn.hidden = false
 }
