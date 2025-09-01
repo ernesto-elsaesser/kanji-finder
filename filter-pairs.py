@@ -3,6 +3,9 @@ import json
 
 # %%
 
+with open("jlpt.json", encoding="utf-8") as f:
+    jlpt_kanjis = json.load(f)
+
 with open("jouyou.json", encoding="utf-8") as f:
     jouyou = json.load(f)
 
@@ -11,7 +14,13 @@ with open("edict.json", encoding="utf-8") as f:
 
 # %%
 
-pairs = {i: {} for i in reversed(range(1, 6))}
+for level, kanjis in jlpt_kanjis.items():
+    for kanji in kanjis:
+        jouyou[kanji]["jlpt"] = level
+
+# %%
+
+pairs = {f"N{i}": {} for i in reversed(range(1, 6))}
 
 for word, entry in edict.items():
     if len(word) != 2:
@@ -26,10 +35,6 @@ for word, entry in edict.items():
     reading = entry[0][0]
     min_jlpt = min(info0["jlpt"], info1["jlpt"])
     pairs[min_jlpt][word] = [reading] + meaning.split("; ")
-
-# %%
-
-pairs = {f"N{i}": l for i, l in pairs.items()}
 
 # %%
 
