@@ -9,11 +9,8 @@
         * {
             font-size: 20px;
         }
-        #radical-list {
+        span {
             font-size: 22px;
-        }
-        #radical-list {
-            font-size: 20px;
         }
         .rare {
             color: grey;
@@ -109,8 +106,8 @@ function buildButtons() {
 
 function filter() {
 
-    kanjiList.innerHTML = "Select radicals"
-    moreKanjiList.innerHTML = "Select more radicals"
+    kanjiList.innerHTML = "(select radicals)"
+    moreKanjiList.innerHTML = "(select more radicals)"
 
     if (components.length == 0) return
 
