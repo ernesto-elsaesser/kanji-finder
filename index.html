@@ -83,7 +83,7 @@ function buildButtons() {
             if (rare) btn.classList = ["rare"]
             btn.onclick = () => {
                 if (btn.classList.contains("selected")) {
-                    components.pop()
+                    components = components.filter(c => c != radical)
                     btn.classList.remove("selected")
                 } else {
                     components.push(radical)
@@ -101,7 +101,7 @@ function filter() {
 
     kanjiList.innerHTML = ""
 
-    if (components.length < 2) return
+    if (components.length == 0) return
 
     let gotMatches = false
     for (let kanji in jouyou) {
