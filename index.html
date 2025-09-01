@@ -12,11 +12,17 @@
         #radical-list {
             font-size: 22px;
         }
+        #radical-list {
+            font-size: 20px;
+        }
         .rare {
             color: grey;
         }
         .selected {
             background-color: coral;
+        }
+        p {
+            margin: 0 0 10px 20px;
         }
         input {
             width: 100px;
@@ -27,10 +33,10 @@
 <body>
 <div id="radical-list"></div>
 <hr/>
-<ul id="kanji-list"></ul>
+<div id="kanji-list"></div>
 <hr/>
-<input id="lookup-input" type="text"/> <button onclick="clearLookup()">X</button> <button onclick="lookup()">LOOKUP</button>
-<ul id="lookup-results"></ul>
+<input id="query" type="text"/> <button onclick="clear()">X</button> <button onclick="lookup()">LOOKUP</button>
+<ul id="entry-list"></ul>
 
 <script>
 
@@ -58,8 +64,8 @@ var components = []
 
 let radicalList = document.getElementById("radical-list")
 let kanjiList = document.getElementById("kanji-list")
-let lookupInput = document.getElementById("lookup-input")
-let lookupResults = document.getElementById("lookup-results")
+let query = document.getElementById("query")
+let entryList = document.getElementById("entry-list")
 
 function init() {
     fetch("edict.json#1").then(r => r.json()).then(d => edict = d)
@@ -116,11 +122,19 @@ function filter() {
         }
         if (!match) continue
         const meanings = info["meanings"].toUpperCase()
-        const readings = info["readings"].slice(0, 3).join("、")
-        const item = document.createElement("li")
-        item.textContent = kanji + ' (' + decomp + ') ・ ' + meanings + ' ・ ' + readings
-        item.onclick = () => lookupInput.value += kanji
-        kanjiList.appendChild(item)
+        const readings = info["readings"].join("、")
+        const details = document.createElement("details")
+        const summary = document.createElement("summary")
+        summary.textContent = kanji + ' (' + decomp + ') ・ ' + meanings
+        details.appendChild(summary)
+        const p = document.createElement("p")
+        p.textContent = readings
+        details.appendChild(p)
+        details.ontoggle = () => {
+            if (details.open) query.value += kanji
+            else query.value = query.value.replace(kanji, "")
+        }
+        kanjiList.appendChild(details)
         gotMatches = true
     }
 
@@ -131,24 +145,28 @@ function filter() {
     kanjiList.appendChild(item)
 }
 
-function clearLookup() {
+function clear() {
 
-    lookupInput.value = ""
-    lookupResults.innerHTML = ""
+    query.value = ""
+    lookup()
 }
 
 function lookup() {
-    const query = lookupInput.value
+
+    entryList.innerHTML = ""
+
+    if (query.value.length == 0) return
+
     let html = ""
     Object.entries(edict).forEach(([key, value]) => {
-        if (key.includes(query)) {
+        if (key.includes(query.value)) {
             const entry = "[" + value[0][0] + "] - " + value[0][1][1]
             html += "<li><b>" + key + "</b> " + entry + "</li>"
         }
     })
 
-    if (html == "") lookupResults.innerHTML = "<li>no matches</li>"
-    else lookupResults.innerHTML = html
+    if (html == "") entryList.innerHTML = "<li>no matches</li>"
+    else entryList.innerHTML = html
 }
 
 init()
