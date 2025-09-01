@@ -15,10 +15,10 @@
         <label for="level">JLPT Level: </label>
         <select id="level">
             <option value="N5" selected>N5</option>
-            <option value="N4,N5">N4</option>
-            <option value="N3,N4,N5">N3</option>
-            <option value="N2,N3,N4,N5">N2</option>
-            <option value="N1,N2,N3,N4,N5">N1</option>
+            <option value="N4">N4</option>
+            <option value="N3">N3</option>
+            <option value="N2">N2</option>
+            <option value="N1">N1</option>
         </select>
     </div>
     <div class="game-flex">
@@ -34,6 +34,14 @@
     </div>
 </div>
 <script>
+
+const SUBSETS = {
+    "N5": ["N5"],
+    "N4": ["N4", "N5"],
+    "N3": ["N3", "N4", "N5"],
+    "N2": ["N2", "N3", "N4"],
+    "N1": ["N1", "N2", "N3"],
+}
 
 const levelSelect = document.getElementById('level')
 const readingDiv = document.getElementById('reading')
@@ -54,13 +62,14 @@ var leftPick = null
 var rightPick = null
 
 async function load() {
-    const res = await fetch("pairs.json?2")
+    const res = await fetch("pairs.json?3")
     pairs = await res.json()
     select()
     levelSelect.onchange = select
 }
 
 function select() {
+    window.location.hash = "#" + levelSelect.value
     const levels = levelSelect.value.split(",")
     subset = {}
     const wordSet = new Set()
@@ -172,6 +181,9 @@ function checkAnswer() {
 }
 
 nextBtn.onclick = nextRound
+
+const level = window.location.hash.slice(1)
+if (level) levelSelect.value = level
 
 load()
 
