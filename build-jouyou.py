@@ -1,20 +1,23 @@
 # %%
 import io
-import csv
+import re
 import json
 import gzip
 import urllib.request
 
-JOUYOU_URL = "https://raw.githubusercontent.com/NHV33/joyo-kanji-compilation/refs/heads/master/joyo.csv"
+JOUYOU_URL = "https://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji"
 KRAD_URL = "http://ftp.edrdg.org/pub/Nihongo/kradfile-u.gz"
 
 # %%
 
-with urllib.request.urlopen(JOUYOU_URL) as response:
-    csv_lines = response.read().decode("utf-8").splitlines()
-    reader = csv.reader(csv_lines)
-    next(reader)
-    rows = list(reader)
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+}
+
+request = urllib.request.Request(JOUYOU_URL, headers=headers)
+
+with urllib.request.urlopen(request) as response:
+    html = response.read().decode("utf-8")
 
 # %%
 
@@ -25,22 +28,44 @@ with urllib.request.urlopen(KRAD_URL) as response:
 
 # %%
 
-jouyou = {}
-for row in rows:
+with open("jlpt.json", encoding="utf-8") as f:
+    jlpt_kanjis = json.load(f)
 
-    kanji = row[1]
-    radical, strokes, grade, year, meanings, on, kun, freq, jlpt = row[3:]
+# %%
+
+kanji_levels = {}
+for level, kanjis in jlpt_kanjis.items():
+    for kanji in kanjis:
+        kanji_levels[kanji] = level
+
+# %%
+
+jouyou = {}
+for tr in re.findall(r"<tr>\n(.+?)</tr>", html, re.DOTALL):
+
+    tds = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.DOTALL)
+
+    kanji = tds[1].split("wikt:")[1][0]
+    radical = tds[3][-5]
+    strokes = int(tds[4])
+    # grade = tds[5]
+    meanings = tds[7]
+    readings = tds[8].split("<br")[0].split("、")
+
+    if kanji == "𠮟":
+        kanji = "叱"
+
+    assert kanji not in jouyou, tr
+
+    jlpt = kanji_levels[kanji]
 
     jouyou[kanji] = {
         "radical": radical,
         "decomp": kanji,
         "meanings": meanings,
-        "on": on.split("|")[0],
-        "kun": kun.split("|")[0],
+        "readings": readings,
         "strokes": int(strokes),
-        "grade": grade,
-        "jlpt": int(jlpt),
-        "freq": int(freq),
+        "jlpt": jlpt,
     }
 
 # %%
@@ -62,7 +87,6 @@ for line in krad_lines:
     info = jouyou.get(kanji)
     if info is not None:
         info["decomp"] = decomp
-
 
 # %%
 
