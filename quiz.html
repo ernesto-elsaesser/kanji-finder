@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kanji Quiz</title>
+</head>
+
+<body>
+<div class="options-col" id="left-options"></div>
+<div class="options-col" id="right-options"></div>
+<div class="translation-center">
+    <div id="feedback"></div>
+    <div id="reading"></div>
+    <div id="word"></div>
+    <div id="translation"></div>
+    <button id="next" onclick="nextRound()" hidden>NEXT</button>
+</div>
+<script>
+
+const readingDiv = document.getElementById('reading')
+const wordLink = document.getElementById('word')
+const translationDiv = document.getElementById('translation')
+const leftOptionsDiv = document.getElementById('left-options')
+const rightOptionsDiv = document.getElementById('right-options')
+const feedbackDiv = document.getElementById('feedback')
+const nextBtn = document.getElementById('next')
+
+var jlpt = {}
+var jouyou = {}
+var pairs = {}
+
+var subset = null
+var decoys = ""
+
+var current = null
+var leftPick = null
+var rightPick = null
+
+async function loadDatasets() {
+    let res = await fetch("jlpt.json#1")
+    jlpt = await res.json()
+    res = await fetch("jouyou.json#1")
+    jouyou = await res.json()
+    res = await fetch("pairs.json#1")
+    pairs = await res.json()
+    select(["N4", "N5"])
+}
+
+function select(levels) {
+    subset = levels.reduce((d, l) => Object.assign(d, pairs[l]), {})
+    decoys = levels.reduce((s, l) => s + jlpt[l], "")
+    nextRound()
+}
+
+function nextRound() {
+    const words = Object.keys(subset)
+    const idx = Math.floor(Math.random() * words.length)
+    current = words[idx]
+    leftPick = null
+    rightPick = null
+
+    feedbackDiv.textContent = ''
+    readingDiv.textContent = ''
+    wordLink.textContent = ''
+    translationDiv.innerHTML = subset[current][1].replace(" (", "<br/>(")
+    nextBtn.hidden = true
+
+    let options = Array.from(current)
+    while (options.length < 8) {
+        const didx = Math.floor(Math.random() * decoys.length)
+        const decoy = decoys[didx]
+        if (!options.includes(decoy)) options.push(decoy)
+    }
+
+    const leftOptions = [options[0], options[2], options[4], options[6]]
+    const rightOptions = [options[1], options[3], options[5], options[7]]
+    shuffle(leftOptions)
+    shuffle(rightOptions)
+
+    leftOptionsDiv.innerHTML = ''
+    rightOptionsDiv.innerHTML = ''
+    leftOptions.forEach(kanji => {
+        leftOptionsDiv.appendChild(createButton(kanji, false))
+    })
+    rightOptions.forEach(kanji => {
+        rightOptionsDiv.appendChild(createButton(kanji, true))
+    })
+}
+
+function createButton(kanji, right) {
+    const button = document.createElement('button')
+    button.textContent = kanji
+    const entry = jouyou[kanji]
+    const hint = entry["readings"][0] + " = " + entry["meanings"]
+    button.title = hint
+    button.onclick = function() {
+        button.style.borderColor = "blue"
+        if (right) rightPick = kanji
+        else leftPick = kanji
+        if (leftPick && rightPick) checkAnswer()
+    }
+    return button
+}
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[a[i], a[j]] = [a[j], a[i]]
+    }
+    return a
+}
+
+function checkAnswer() {
+    const left = current[0]
+    const right = current[1]
+    Array.from(leftOptionsDiv.children).forEach(button => {
+        if (button.textContent === left) {
+            button.style.borderColor = "green"
+        } else if (button.textContent === leftPick) {
+            button.style.borderColor = "red"
+        }
+    })
+    Array.from(rightOptionsDiv.children).forEach(button => {
+        if (button.textContent === right) {
+            button.style.borderColor = "green"
+        } else if (button.textContent === rightPick) {
+            button.style.borderColor = "red"
+        }
+    })
+
+    if (leftPick === left && rightPick === right) {
+        feedbackDiv.textContent = 'Correct!'
+    } else {
+        feedbackDiv.textContent = 'Wrong!'
+    }
+
+    readingDiv.textContent = subset[current][0]
+    wordLink.textContent = current
+    nextBtn.hidden = false
+}
+
+loadDatasets()
+
+</script>
+
+</body>
+</html>
