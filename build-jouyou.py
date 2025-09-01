@@ -28,19 +28,8 @@ with urllib.request.urlopen(KRAD_URL) as response:
 
 # %%
 
-with open("jlpt.json", encoding="utf-8") as f:
-    jlpt_kanjis = json.load(f)
-
-# %%
-
-kanji_levels = {}
-for level, kanjis in jlpt_kanjis.items():
-    for kanji in kanjis:
-        kanji_levels[kanji] = level
-
-# %%
-
 jouyou = {}
+grades = []
 for tr in re.findall(r"<tr>\n(.+?)</tr>", html, re.DOTALL):
 
     tds = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.DOTALL)
@@ -48,7 +37,7 @@ for tr in re.findall(r"<tr>\n(.+?)</tr>", html, re.DOTALL):
     kanji = tds[1].split("wikt:")[1][0]
     radical = tds[3][-5]
     strokes = int(tds[4])
-    # grade = tds[5]
+    grade = int(tds[5].replace("S", "7"))
     meanings = tds[7]
     readings = tds[8].split("<br")[0].split("、")
 
@@ -57,21 +46,19 @@ for tr in re.findall(r"<tr>\n(.+?)</tr>", html, re.DOTALL):
 
     assert kanji not in jouyou, tr
 
-    jlpt = kanji_levels[kanji]
-
     jouyou[kanji] = {
         "radical": radical,
         "decomp": kanji,
         "meanings": meanings,
         "readings": readings,
         "strokes": int(strokes),
-        "jlpt": jlpt,
     }
+
+    grades.append((grade, kanji))
 
 # %%
 
-jlpts = [(v["jlpt"], k) for k, v in jouyou.items()]
-jouyou = {k: jouyou[k] for _, k in sorted(jlpts, reverse=True)}
+jouyou = {k: jouyou[k] for _, k in sorted(grades)}
 
 # %%
 
