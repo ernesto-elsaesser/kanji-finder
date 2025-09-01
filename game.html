@@ -52,19 +52,24 @@ const rightOptionsDiv = document.getElementById('right-options')
 const feedbackDiv = document.getElementById('feedback')
 const nextBtn = document.getElementById('next')
 
+var jlpt = {}
 var jouyou = {}
 var pairs = {}
+
 var subset = null
+var decoys = ""
 
 var current = null
 var leftPick = null
 var rightPick = null
 
 async function load() {
-    const res1 = await fetch("pairs.json?3")
-    pairs = await res1.json()
-    const res2 = await fetch("jouyou.json?1")
-    jouyou = await res2.json()
+    let res = await fetch("jlpt.json#1")
+    jlpt = await res.json()
+    res = await fetch("jouyou.json#1")
+    jouyou = await res.json()
+    res = await fetch("pairs.json#1")
+    pairs = await res.json()
     select()
     levelSelect.onchange = select
 }
@@ -73,6 +78,7 @@ function select() {
     window.location.hash = "#" + levelSelect.value
     const levels = SUBSETS[levelSelect.value]
     subset = levels.reduce((d, l) => Object.assign(d, pairs[l]), {})
+    decoys = levels.reduce((s, l) => s + jlpt[l], "")
     nextRound()
 }
 
@@ -89,16 +95,11 @@ function nextRound() {
     translationDiv.innerHTML = subset[current][1].replace(" (", "<br/>(")
     nextBtn.hidden = true
 
-    const kanjis = Object.keys(jouyou)
-    const levels = SUBSETS[levelSelect.value]
     let options = Array.from(current)
     while (options.length < 8) {
-        const didx = Math.floor(Math.random() * kanjis.length)
-        const decoy = kanjis[didx]
-        if (options.includes(decoy)) continue
-        const level = "N" + jouyou[decoy]["jlpt"].toString()
-        if (!levels.includes(level)) continue
-        options.push(decoy)
+        const didx = Math.floor(Math.random() * decoys.length)
+        const decoy = decoys[didx]
+        if (!options.includes(decoy)) options.push(decoy)
     }
 
     const leftOptions = options.slice(5, 8).concat(current[0])
@@ -120,7 +121,9 @@ function createButton(kanji, right) {
     const button = document.createElement('div')
     button.className = 'kanji-option'
     button.textContent = kanji
-    button.title = jouyou[kanji]["meanings"]
+    const entry = jouyou[kanji]
+    const hint = entry["readings"][0] + " = " + entry["meanings"]
+    button.title = hint
     button.onclick = function() {
         button.classList.add('selected')
         if (right) rightPick = kanji
