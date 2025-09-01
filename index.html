@@ -21,9 +21,6 @@
         .selected {
             background-color: coral;
         }
-        p {
-            margin: 0 0 10px 20px;
-        }
         input {
             width: 100px;
         }
@@ -33,7 +30,11 @@
 <body>
 <div id="radical-list"></div>
 <hr/>
-<div id="kanji-list"></div>
+<ul id="kanji-list"></ul>
+<details id="uncommon-details">
+    <summary>Less frequent</summary>
+    <ul id="more-kanji-list"></ul>
+</details>
 <hr/>
 <input id="query" type="text"/> <button onclick="clear()">X</button> <button onclick="lookup()">LOOKUP</button>
 <ul id="entry-list"></ul>
@@ -57,20 +58,23 @@ const RADICALS = {
     "*️⃣": "鳥:亀黒麻黄鹿鹵歯無黍黹黽鼠鼓鼎鼻齊滴龠",
 }
 
+var krad = {}
 var edict = {}
-var jouyou = {}
 
 var components = []
 
 let radicalList = document.getElementById("radical-list")
 let kanjiList = document.getElementById("kanji-list")
+let uncommonDetails = document.getElementById("uncommon-details")
+let moreKanjiList = document.getElementById("more-kanji-list")
 let query = document.getElementById("query")
 let entryList = document.getElementById("entry-list")
 
 function init() {
+    fetch("krad.json#1").then(r => r.json()).then(d => krad = d)
     fetch("edict.json#1").then(r => r.json()).then(d => edict = d)
-    fetch("jouyou.json#1").then(r => r.json()).then(d => jouyou = d)
     buildButtons()
+    filter()
 }
 
 function buildButtons() {
@@ -105,14 +109,15 @@ function buildButtons() {
 
 function filter() {
 
-    kanjiList.innerHTML = ""
+    kanjiList.innerHTML = "Select radicals"
+    moreKanjiList.innerHTML = "Select more radicals"
 
     if (components.length == 0) return
 
-    let gotMatches = false
-    for (let kanji in jouyou) {
-        const info = jouyou[kanji]
-        const decomp = info["decomp"]
+    let html = ""
+    let moreHtml = ""
+    for (let entry of krad) {
+        const decomp = entry[1]
         let match = true
         for (let radical of components) {
             if (!decomp.includes(radical)) {
@@ -121,28 +126,23 @@ function filter() {
             }
         }
         if (!match) continue
-        const meanings = info["meanings"].toUpperCase()
-        const readings = info["readings"].join("、")
-        const details = document.createElement("details")
-        const summary = document.createElement("summary")
-        summary.textContent = kanji + ' (' + decomp + ') ・ ' + meanings
-        details.appendChild(summary)
-        const p = document.createElement("p")
-        p.textContent = readings
-        details.appendChild(p)
-        details.ontoggle = () => {
-            if (details.open) query.value += kanji
-            else query.value = query.value.replace(kanji, "")
-        }
-        kanjiList.appendChild(details)
-        gotMatches = true
+        let kanji = entry[0]
+        let meanings = entry[2] || ""
+        let item = "<li onclick=\"pick('" + kanji + "')\">" + kanji
+        item += '（' + decomp + '）' + meanings.toUpperCase() + "</li>"
+        if (meanings == "") moreHtml += item
+        else html += item
     }
 
-    if (gotMatches) return
+    kanjiList.innerHTML = html
+    uncommonDetails.open = false
+    if (components.length > 1) moreKanjiList.innerHTML = moreHtml
+}
 
-    const item = document.createElement("li")
-    item.textContent = "no matches"
-    kanjiList.appendChild(item)
+function pick(kanji) {
+
+    if (query.value.includes(kanji)) query.value = query.value.replace(kanji, "")
+    else query.value += kanji
 }
 
 function clear() {

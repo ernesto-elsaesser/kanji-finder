@@ -15,12 +15,6 @@ with urllib.request.urlopen(EDICT_URL) as response:
 
 # %%
 
-for i in range(1, len(lines)):
-    if "test" in lines[i]:
-        print(lines[i])
-
-# %%
-
 multi_entry_regex = re.compile(r"\(([a-z0-9,-]+)\) \([0-9]\) (.+)")
 single_entry_regex = re.compile(r"\(([a-z0-9,-]+)\) (.+)")
 

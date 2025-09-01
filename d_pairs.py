@@ -1,12 +1,9 @@
 # %%
-import io
 import re
 import json
-import gzip
 import urllib.request
 
 JOUYOU_URL = "https://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji"
-KRAD_URL = "http://ftp.edrdg.org/pub/Nihongo/kradfile-u.gz"
 
 # %%
 
@@ -18,13 +15,6 @@ request = urllib.request.Request(JOUYOU_URL, headers=headers)
 
 with urllib.request.urlopen(request) as response:
     html = response.read().decode("utf-8")
-
-# %%
-
-with urllib.request.urlopen(KRAD_URL) as response:
-    gzipped_file = io.BytesIO(response.read())
-    with gzip.open(gzipped_file, "rt") as f:
-        krad_lines = f.readlines()
 
 # %%
 
@@ -62,22 +52,44 @@ jouyou = {k: jouyou[k] for _, k in sorted(grades)}
 
 # %%
 
-for line in krad_lines:
-    kanji = line[0]
-    if kanji == "#": # comment line
-        continue
-
-    decomp = line[4:-1].replace(" ", "")
-    if decomp == kanji:
-        continue
-
-    info = jouyou.get(kanji)
-    if info is not None:
-        info["decomp"] = decomp
+with open("jouyou.json", "w", encoding="utf-8") as f:
+    json.dump(jouyou, f, indent=4, ensure_ascii=False)
 
 # %%
 
-with open("jouyou.json", "w", encoding="utf-8") as f:
-    json.dump(jouyou, f, indent=4, ensure_ascii=False)
+with open("jlpt.json", encoding="utf-8") as f:
+    jlpt_kanjis = json.load(f)
+
+with open("edict.json", encoding="utf-8") as f:
+    edict = json.load(f)
+
+# %%
+
+for level, kanjis in jlpt_kanjis.items():
+    for kanji in kanjis:
+        jouyou[kanji]["jlpt"] = level
+
+# %%
+
+pairs = {f"N{i}": {} for i in reversed(range(1, 6))}
+
+for word, entry in edict.items():
+    if len(word) != 2:
+        continue
+    info0 = jouyou.get(word[0])
+    info1 = jouyou.get(word[1])
+    if info0 is None or info1 is None:
+        continue
+    meaning = entry[0][1][1]
+    if "(uk)" in meaning or "(abbr)" in meaning or "(dated)" in meaning:
+        continue
+    reading = entry[0][0]
+    min_jlpt = min(info0["jlpt"], info1["jlpt"])
+    pairs[min_jlpt][word] = [reading] + meaning.split("; ")
+
+# %%
+
+with open("pairs.json", "w", encoding="utf-8") as f:
+    json.dump(pairs, f, indent=4, ensure_ascii=False)
 
 # %%
