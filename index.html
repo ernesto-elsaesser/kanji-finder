@@ -9,97 +9,101 @@
         * {
             font-size: 20px;
         }
+        #radical-list {
+            font-size: 22px;
+        }
+        .rare {
+            color: grey;
+        }
+        .selected {
+            background-color: coral;
+        }
         input {
-            width: 150px;
+            width: 100px;
         }
     </style>
 </head>
 
 <body>
-<p id="common-radicals"></p>
-<details>
-    <summary>More</summary>
-        <p id="rare-radicals"></p>
-</details>
+<div id="radical-list"></div>
 <hr/>
-<input id="filter-input" type="text"/> <button onclick="clearFilter()">X</button> <button onclick="filter()">MULTI-RADICAL</button>
-<ul id="filter-results"></ul>
-<input id="lookup-input" type="text"/> <button onclick="clearLookup()">X</button> <button onclick="lookup()">DICTIONARY</button>
+<ul id="kanji-list"></ul>
+<hr/>
+<input id="lookup-input" type="text"/> <button onclick="clearLookup()">X</button> <button onclick="lookup()">LOOKUP</button>
 <ul id="lookup-results"></ul>
 
 <script>
 
-const COMMON = {
+const RADICALS = {
     "🔄": "冂凵匚囗厂广疒尸戸弋戈辶門虍",
     "⬆️": "亠冖宀𠆢癶⺾罒⺌竹雨",
     "⬅️": "冫氵⺅彳忄扌犭礻衤⻖木禾石糸言舟虫足食車金酉魚弓爿",
     "1️⃣": "一｜丶ノ乙亅",
-    "2️⃣": "二人儿ハ几刀刂力勹匕十卜卩厶又マ九",
-    "3️⃣": "口土士夂夕大女子寸小山巛工已巾干幺廾ヨ彡⻏",
-    "4️⃣": "⺹心手攵斤方日月欠止歹殳比氏水火灬爪牛犬王勿",
-    "5️⃣": "甘用田疋白皿目矢示禸穴立礻冊",
-    "6️⃣": "米缶羊羽耳聿自至臼艮衣臣西",
-    "7️⃣": "見豆豕貝辛釆",
-    "8️⃣": "里長隹革",
-    "9️⃣": "音頁品",
-    "🔟": "馬",
-    "*️⃣": "鳥",
-}
-const RARE = {
-    "2️⃣": "入ユ乃",
-    "3️⃣": "尢屮川彑也亡及久廴",
-    "4️⃣": "支元井并文父爻无尤毛屯五曰片巴毋斗气",
-    "5️⃣": "生世巨玄母矛牙皮瓦",
-    "6️⃣": "色舌血行瓜肉耒而舛",
-    "7️⃣": "谷豸角走身赤辰邑麦",
-    "8️⃣": "青免斉非奄岡隶",
-    "9️⃣": "面風首韭香飛",
-    "🔟": "鬥鬼骨韋鬲竜髟鬯高",
-    "*️⃣": "亀黒麻黄鹿鹵歯無黍黹黽鼠鼓鼎鼻齊滴龠",
+    "2️⃣": "二人儿ハ几刀刂力勹匕十卜卩厶又マ九:入ユ乃",
+    "3️⃣": "口土士夂夕大女子寸小山巛工已巾干幺廾ヨ彡⻏:尢屮川彑也亡及久廴",
+    "4️⃣": "⺹心手攵斤方日月欠止歹殳比氏水火灬爪牛犬王勿:支元井并文父爻无尤毛屯五曰片巴毋斗气",
+    "5️⃣": "甘用田疋白皿目矢示禸穴立冊:生世巨玄母矛牙皮瓦",
+    "6️⃣": "米缶羊羽耳聿自至臼艮衣臣西:色舌血行瓜肉耒而舛",
+    "7️⃣": "見豆豕貝辛釆:谷豸角走身赤辰邑麦",
+    "8️⃣": "里長隹革:青免斉非奄岡隶",
+    "9️⃣": "音頁品:面風首韭香飛",
+    "🔟": "馬:鬥鬼骨韋鬲竜髟鬯高",
+    "*️⃣": "鳥:亀黒麻黄鹿鹵歯無黍黹黽鼠鼓鼎鼻齊滴龠",
 }
 
 var edict = {}
 var jouyou = {}
 
+var components = []
+
+let radicalList = document.getElementById("radical-list")
+let kanjiList = document.getElementById("kanji-list")
 let lookupInput = document.getElementById("lookup-input")
 let lookupResults = document.getElementById("lookup-results")
-let filterInput = document.getElementById("filter-input")
-let filterResults = document.getElementById("filter-results")
 
-async function load() {
-    const res1 = await fetch("edict.json?1")
-    edict = await res1.json()
-    const res2 = await fetch("jouyou.json?1")
-    jouyou = await res2.json()
+function init() {
+    fetch("edict.json#1").then(r => r.json()).then(d => edict = d)
+    fetch("jouyou.json#1").then(r => r.json()).then(d => jouyou = d)
+    buildButtons()
 }
 
-function buildButtons(id, subsets) {
-    let html = ""
-    for (let subset in subsets) {
-        html += subset + " "
-        for (let radical of subsets[subset]) {
-            html += '<span onclick="add(\'' + radical + '\')">' + radical + '</span>'
+function buildButtons() {
+    radicalList.innerHTML = ""
+    for (let subset in RADICALS) {
+        const group = document.createElement("div")
+        group.textContent = subset + " "
+        let rare = false
+        for (let radical of RADICALS[subset]) {
+            if (radical == ":") {
+                rare = true
+                continue
+            }
+            const btn = document.createElement("span")
+            btn.textContent = radical
+            if (rare) btn.classList = ["rare"]
+            btn.onclick = () => {
+                if (btn.classList.contains("selected")) {
+                    components.pop()
+                    btn.classList.remove("selected")
+                } else {
+                    components.push(radical)
+                    btn.classList.add("selected")
+                }
+                filter()
+            }
+            group.appendChild(btn)
         }
-        html += "<br/>"
+        radicalList.appendChild(group)
     }
-    document.getElementById(id).innerHTML = html
-}
-
-function add(radical) {
-
-    filterInput.value += radical
-}
-
-function clearFilter() {
-
-    filterInput.value = ""
-    filterResults.innerHTML = ""
 }
 
 function filter() {
-    const components = Array.from(filterInput.value)
 
-    let html = ""
+    kanjiList.innerHTML = ""
+
+    if (components.length < 2) return
+
+    let gotMatches = false
     for (let kanji in jouyou) {
         const info = jouyou[kanji]
         const decomp = info["decomp"]
@@ -113,17 +117,18 @@ function filter() {
         if (!match) continue
         const meanings = info["meanings"].toUpperCase()
         const readings = info["readings"].slice(0, 3).join("、")
-        const item = kanji + ' (' + decomp + ') ・ ' + meanings + ' ・ ' + readings
-        html += '<li onclick="select(\'' + kanji + '\')">' + item + '</li>'
+        const item = document.createElement("li")
+        item.textContent = kanji + ' (' + decomp + ') ・ ' + meanings + ' ・ ' + readings
+        item.onclick = () => lookupInput.value += kanji
+        kanjiList.appendChild(item)
+        gotMatches = true
     }
 
-    if (html == "") filterResults.innerHTML = "<li>no matches</li>"
-    else filterResults.innerHTML = html
-}
+    if (gotMatches) return
 
-function select(kanji) {
-
-    lookupInput.value += kanji
+    const item = document.createElement("li")
+    item.textContent = "no matches"
+    kanjiList.appendChild(item)
 }
 
 function clearLookup() {
@@ -146,9 +151,7 @@ function lookup() {
     else lookupResults.innerHTML = html
 }
 
-buildButtons("common-radicals", COMMON)
-buildButtons("rare-radicals", RARE)
-load()
+init()
 
 </script>
 
