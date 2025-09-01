@@ -127,11 +127,13 @@ function filter() {
         }
         if (!match) continue
         let kanji = entry[0]
-        let meanings = entry[2] || ""
-        let item = "<li onclick=\"pick('" + kanji + "')\">" + kanji
-        item += '（' + decomp + '）' + meanings.toUpperCase() + "</li>"
-        if (meanings == "") moreHtml += item
-        else html += item
+        let pre = "<li onclick=\"pick('" + kanji + "')\">" + kanji + '（' + decomp + '）'
+        if (entry.length == 3) {
+            const meanings = entry[2].toUpperCase()
+            html += pre + meanings + "</li>"
+        } else {
+            moreHtml += pre + "</li>"
+        }
     }
 
     kanjiList.innerHTML = html

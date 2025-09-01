@@ -30,18 +30,18 @@ for line in krad_lines:
     if decomp == kanji:
         continue
 
-    meanings = None
-    grade = 8
+    row = [8, len(decomp), kanji, decomp]
+
     info = jouyou.get(kanji)
     if info is not None:
-        meanings = info["meanings"]
-        grade = info["grade"]
+        row[0] = info["grade"]
+        row.append(info["meanings"])
 
-    rows.append((grade, len(decomp), kanji, decomp, meanings))
+    rows.append(row)
 
 # %%
 
-krad = [t for _, _, *t in sorted(rows)]
+krad = [r for _, _, *r in sorted(rows)]
 # %%
 
 with open("krad.json", "w", encoding="utf-8") as f:
