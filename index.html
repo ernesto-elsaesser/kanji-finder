@@ -36,7 +36,7 @@
     <ul id="more-kanji-list"></ul>
 </details>
 <hr/>
-<input id="query" type="text"/> <button onclick="clear()">X</button> <button onclick="lookup()">LOOKUP</button>
+<input id="query" type="text"/> <button onclick="delOne()">&lt;</button> <button onclick="delAll()">X</button> <button onclick="lookup()">LOOKUP</button>
 <ul id="entry-list"></ul>
 
 <script>
@@ -127,7 +127,7 @@ function filter() {
         }
         if (!match) continue
         let kanji = entry[0]
-        let pre = "<li onclick=\"pick('" + kanji + "')\">" + kanji + '（' + decomp + '）'
+        let pre = "<li onclick=\"query.value += '" + kanji + "'\">" + kanji + '（' + decomp + '）'
         if (entry.length == 3) {
             const meanings = entry[2].toUpperCase()
             html += pre + meanings + "</li>"
@@ -141,13 +141,12 @@ function filter() {
     if (components.length > 1) moreKanjiList.innerHTML = moreHtml
 }
 
-function pick(kanji) {
+function delOne() {
 
-    if (query.value.includes(kanji)) query.value = query.value.replace(kanji, "")
-    else query.value += kanji
+    query.value = query.value.substr(0, query.value.length - 1)
 }
 
-function clear() {
+function delAll() {
 
     query.value = ""
     lookup()
