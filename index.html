@@ -112,7 +112,8 @@ function filter() {
         }
         if (!match) continue
         const meanings = info["meanings"].toUpperCase()
-        const item = kanji + ' (' + decomp + ') ・ ' + meanings + ' ・ ' + info["on"] + " ・ " + info["kun"] + " ・ N" + info["jlpt"].toString()
+        const readings = info["readings"].slice(0, 3).join("、")
+        const item = kanji + ' (' + decomp + ') ・ ' + meanings + ' ・ ' + readings
         html += '<li onclick="select(\'' + kanji + '\')">' + item + '</li>'
     }
 
