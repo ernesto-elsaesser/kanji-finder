@@ -33,7 +33,7 @@
     <ul id="more-kanji-list"></ul>
 </details>
 <hr/>
-<input id="query" type="text"/> <button onclick="delOne()">&lt;</button> <button onclick="delAll()">X</button> <button onclick="lookup()">LOOKUP</button>
+<input id="query" type="text"/> <button onclick="delOne()">&lt;</button> <button onclick="delAll()">X</button> <button onclick="lookup()">LOOKUP</button> <button onclick="jisho()">JISHO</button>
 <ul id="entry-list"></ul>
 
 <script>
@@ -165,6 +165,11 @@ function lookup() {
 
     if (html == "") entryList.innerHTML = "<li>no matches</li>"
     else entryList.innerHTML = html
+}
+
+function jisho() {
+
+    open("https://jisho.org/search/" + query.value, "_blank")
 }
 
 init()
