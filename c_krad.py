@@ -27,8 +27,6 @@ for line in krad_lines:
         continue
 
     decomp = line[4:-1].replace(" ", "")
-    if decomp == kanji:
-        continue
 
     row = [8, len(decomp), kanji, decomp]
 

@@ -28,10 +28,7 @@
 <div id="radical-list"></div>
 <hr/>
 <ul id="kanji-list"></ul>
-<details id="uncommon-details">
-    <summary>Less frequent</summary>
-    <ul id="more-kanji-list"></ul>
-</details>
+<button id="more" onclick="filter(false)" hidden>More</button>
 <hr/>
 <input id="query" type="text"/> <button onclick="delOne()">&lt;</button> <button onclick="delAll()">X</button> <button onclick="lookup()">LOOKUP</button> <button onclick="jisho()">JISHO</button>
 <ul id="entry-list"></ul>
@@ -62,16 +59,14 @@ var components = []
 
 let radicalList = document.getElementById("radical-list")
 let kanjiList = document.getElementById("kanji-list")
-let uncommonDetails = document.getElementById("uncommon-details")
-let moreKanjiList = document.getElementById("more-kanji-list")
+let moreButton = document.getElementById("more")
 let query = document.getElementById("query")
 let entryList = document.getElementById("entry-list")
 
 function init() {
-    fetch("krad.json#1").then(r => r.json()).then(d => krad = d)
+    fetch("krad.json#2").then(r => r.json()).then(d => krad = d)
     fetch("edict.json#1").then(r => r.json()).then(d => edict = d)
     buildButtons()
-    filter()
 }
 
 function buildButtons() {
@@ -96,7 +91,7 @@ function buildButtons() {
                     components.push(radical)
                     btn.classList.add("selected")
                 }
-                filter()
+                filter(true)
             }
             group.appendChild(btn)
         }
@@ -104,16 +99,15 @@ function buildButtons() {
     }
 }
 
-function filter() {
+function filter(jouyouOnly) {
 
-    kanjiList.innerHTML = "(select radicals)"
-    moreKanjiList.innerHTML = "(select more radicals)"
+    kanjiList.innerHTML = ""
 
     if (components.length == 0) return
 
     let html = ""
-    let moreHtml = ""
     for (let entry of krad) {
+        if ((entry.length == 2) && jouyouOnly) continue
         const decomp = entry[1]
         let match = true
         for (let radical of components) {
@@ -124,18 +118,12 @@ function filter() {
         }
         if (!match) continue
         let kanji = entry[0]
-        let pre = "<li onclick=\"query.value += '" + kanji + "'\">" + kanji + '（' + decomp + '）'
-        if (entry.length == 3) {
-            const meanings = entry[2].toUpperCase()
-            html += pre + meanings + "</li>"
-        } else {
-            moreHtml += pre + "</li>"
-        }
+        let meanings = entry[2] || ""
+        html += "<li onclick=\"query.value += '" + kanji + "'\">" + kanji + '（' + decomp + '）' + meanings.toUpperCase() + "</li>"
     }
 
     kanjiList.innerHTML = html
-    uncommonDetails.open = false
-    if (components.length > 1) moreKanjiList.innerHTML = moreHtml
+    moreButton.hidden = !jouyouOnly
 }
 
 function delOne() {
