@@ -20,6 +20,8 @@ for level, kanjis in jlpt_kanjis.items():
 
 # %%
 
+exclude_tags = ["(uk)", "(abbr)", "(dated)", "(hist)"]
+
 pairs = {f"N{i}": {} for i in reversed(range(1, 6))}
 
 for word, entry in edict.items():
@@ -30,7 +32,7 @@ for word, entry in edict.items():
     if info0 is None or info1 is None:
         continue
     meaning = entry[0][1][1]
-    if "(uk)" in meaning or "(abbr)" in meaning or "(dated)" in meaning:
+    if any(t in meaning for t in exclude_tags):
         continue
     reading = entry[0][0]
     min_jlpt = min(info0["jlpt"], info1["jlpt"])

@@ -901,10 +901,6 @@
             "more than half",
             "most (of)"
         ],
-        "大名": [
-            "だいみょう",
-            "(hist) daimyo (Japanese feudal lord)"
-        ],
         "大国": [
             "たいこく",
             "large country",
@@ -2027,12 +2023,6 @@
             "society",
             "people",
             "the public"
-        ],
-        "中世": [
-            "ちゅうせい",
-            "(hist) Middle Ages (in Japan esp. the Kamakura and Muromachi periods)",
-            "medieval times",
-            "mediaeval times"
         ],
         "中京": [
             "ちゅうきょう",
@@ -3920,11 +3910,6 @@
             "greater part",
             "majority"
         ],
-        "大正": [
-            "たいしょう",
-            "(hist) Taisho era (1912.7.30-1926.12.25)",
-            "Taisho era"
-        ],
         "大洋": [
             "たいよう",
             "ocean"
@@ -4124,10 +4109,6 @@
             "やすもの",
             "cheap article",
             "poor-quality article"
-        ],
-        "室町": [
-            "むろまち",
-            "(hist) Muromachi period (1336-1573)"
         ],
         "室長": [
             "しつちょう",
@@ -6025,13 +6006,6 @@
         "町中": [
             "まちなか",
             "downtown"
-        ],
-        "町人": [
-            "ちょうにん",
-            "(hist) chonin (Edo-period social class of town-dwelling commoners, esp. landowning merchants)",
-            "townspeople",
-            "townsfolk",
-            "tradespeople"
         ],
         "町長": [
             "ちょうちょう",
@@ -9171,12 +9145,6 @@
             "environs",
             "surrounding area",
             "district"
-        ],
-        "代官": [
-            "だいかん",
-            "(hist) local governor (Edo period)",
-            "local magistrate",
-            "bailiff"
         ],
         "代役": [
             "だいやく",
@@ -13054,12 +13022,6 @@
             "overwhelming victory",
             "landslide victory"
         ],
-        "大和": [
-            "やまと",
-            "(hist) (ancient) Japan",
-            "Yamato kingdom",
-            "state of Yamato"
-        ],
         "大声": [
             "おおごえ",
             "loud voice"
@@ -16743,10 +16705,6 @@
             "めいあん",
             "light and darkness",
             "light and shade"
-        ],
-        "明治": [
-            "めいじ",
-            "(hist) Meiji era (1868.9.8-1912.7.30)"
         ],
         "明確": [
             "めいかく",
@@ -22148,10 +22106,6 @@
             "passing the winter",
             "hibernation"
         ],
-        "越後": [
-            "えちご",
-            "(hist) Echigo (former province located in present-day Niigata Prefecture)"
-        ],
         "越権": [
             "えっけん",
             "going beyond authority",
@@ -27176,10 +27130,6 @@
             "しゅせい",
             "(being on the) defensive"
         ],
-        "安芸": [
-            "あき",
-            "(hist) Aki (former province located in the west of present-day Hiroshima Prefecture)"
-        ],
         "完了": [
             "かんりょう",
             "completion",
@@ -29584,10 +29534,6 @@
             "military prowess",
             "valour",
             "valor"
-        ],
-        "武将": [
-            "ぶしょう",
-            "(hist) military commander"
         ],
         "武者": [
             "むしゃ",
@@ -33209,11 +33155,6 @@
         "贈答": [
             "ぞうとう",
             "exchange of presents"
-        ],
-        "赤軍": [
-            "せきぐん",
-            "(hist) Red Army (Soviet Union, 1918-1946)",
-            "Workers' and Peasants' Red Army"
         ],
         "起床": [
             "きしょう",
@@ -37653,10 +37594,6 @@
             "なんい",
             "southern latitude"
         ],
-        "南蛮": [
-            "なんばん",
-            "(hist) (derog) southern barbarians (name used in ancient China for non-Chinese ethnic groups to the south)"
-        ],
         "単価": [
             "たんか",
             "unit price",
@@ -38043,12 +37980,6 @@
             "こてん",
             "classic (work, esp. book)",
             "the classics"
-        ],
-        "古墳": [
-            "こふん",
-            "(hist) ancient burial mound",
-            "barrow",
-            "tumulus"
         ],
         "古巣": [
             "ふるす",
@@ -39415,11 +39346,6 @@
             "offering",
             "presentation",
             "oblation"
-        ],
-        "奉行": [
-            "ぶぎょう",
-            "(hist) magistrate",
-            "shogunate administrator"
         ],
         "奏功": [
             "そうこう",
@@ -40871,17 +40797,6 @@
             "(sumo) makuuchi",
             "top division (of professional sumo)"
         ],
-        "幕府": [
-            "ばくふ",
-            "(hist) shogunate",
-            "bakufu"
-        ],
-        "幕末": [
-            "ばくまつ",
-            "(hist) Bakumatsu period",
-            "closing days of the Tokugawa shogunate",
-            "end of the Edo period"
-        ],
         "干拓": [
             "かんたく",
             "land reclamation (from sea)"
@@ -41641,11 +41556,6 @@
             "evasion",
             "avoidance",
             "shirking"
-        ],
-        "忍者": [
-            "にんじゃ",
-            "(hist) ninja",
-            "person trained in ninjutsu and employed for covert purposes in feudal Japan"
         ],
         "忍耐": [
             "にんたい",
@@ -44273,10 +44183,6 @@
             "spring labor offensive",
             "annual spring wage bargaining round"
         ],
-        "昭和": [
-            "しょうわ",
-            "(hist) Showa era (1926.12.25-1989.1.7)"
-        ],
         "是正": [
             "ぜせい",
             "correction",
@@ -45622,12 +45528,6 @@
             "corruption",
             "graft"
         ],
-        "江戸": [
-            "えど",
-            "(hist) Edo (shogunate capital",
-            "former name of Tokyo)",
-            "Yedo"
-        ],
         "決裁": [
             "けっさい",
             "sanction",
@@ -45955,11 +45855,6 @@
             "はまべ",
             "beach",
             "foreshore"
-        ],
-        "浪人": [
-            "ろうにん",
-            "(hist) ronin",
-            "masterless samurai"
         ],
         "浪費": [
             "ろうひ",
@@ -50784,11 +50679,6 @@
             "drug",
             "chemical"
         ],
-        "藩主": [
-            "はんしゅ",
-            "(hist) feudal lord",
-            "daimyo"
-        ],
         "藻類": [
             "そうるい",
             "seaweeds",
@@ -52065,12 +51955,6 @@
             "source of funds",
             "resources",
             "finances"
-        ],
-        "財閥": [
-            "ざいばつ",
-            "(hist) zaibatsu",
-            "financial conglomerate",
-            "industrial group"
         ],
         "貢献": [
             "こうけん",
@@ -54781,10 +54665,6 @@
             "cavalryman",
             "trooper"
         ],
-        "騎士": [
-            "きし",
-            "(hist) (medieval) knight"
-        ],
         "騎手": [
             "きしゅ",
             "horseman",
@@ -54920,12 +54800,6 @@
             "steep rise",
             "substantial increase",
             "soaring"
-        ],
-        "高麗": [
-            "こうらい",
-            "(hist) Goryeo (dynasty of Korea",
-            "918-1392 CE)",
-            "Koryo"
         ],
         "鬼才": [
             "きさい",
