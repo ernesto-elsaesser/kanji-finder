@@ -142,24 +142,20 @@ function nextRound() {
 
     ROWS.forEach(i => {
         const leftBtn = leftButtons[i]
-        leftBtn.textContent = leftOptions[i]
+        const leftKanji = leftOptions[i]
         leftBtn.className = "kanji-btn"
-        leftBtn.dataset.meaning = kanjis[leftOptions[i]]
-        leftBtn.dataset.expanded = "false"
         leftBtn.style.width = "2em"
-        leftBtn.innerHTML = `<span class="kanji-char">${leftOptions[i]}</span>`
+        leftBtn.innerHTML = `<span class="kanji-char">${leftKanji}</span> <span class='kanji-meaning'>${kanjis[leftKanji]}</span>`
         const leftRevealBtn = leftRevealButtons[i]
-        leftRevealBtn.className = "reveal-btn left-reveal chevron-right"
+        leftRevealBtn.innerHTML = "&raquo;"
 
         const rightBtn = rightButtons[i]
-        rightBtn.textContent = rightOptions[i]
+        const rightKanji = rightOptions[i]
         rightBtn.className = "kanji-btn"
-        rightBtn.dataset.meaning = kanjis[rightOptions[i]]
-        rightBtn.dataset.expanded = "false"
         rightBtn.style.width = "2em"
-        rightBtn.innerHTML = `<span class="kanji-char">${rightOptions[i]}</span>`
+        rightBtn.innerHTML = `<span class="kanji-char">${rightKanji}</span> <span class='kanji-meaning'>${kanjis[rightKanji]}</span>`
         const rightRevealBtn = rightRevealButtons[i]
-        rightRevealBtn.className = "reveal-btn right-reveal chevron-left"
+        rightRevealBtn.innerHTML = "&laquo;"
     })
 }
 
@@ -170,19 +166,13 @@ function toggleExpand(e, index, side) {
     if (!expanded) {
         kanjiBtn.dataset.expanded = "true"
         kanjiBtn.classList.add("expanded")
-        btn.classList.remove(side === "left" ? "chevron-right" : "chevron-left")
-        btn.classList.add(side === "left" ? "chevron-left" : "chevron-right")
-        kanjiBtn.innerHTML = `<span class='kanji-char'>${kanjiBtn.textContent}</span> <span class='kanji-meaning'>${kanjiBtn.dataset.meaning}</span>`
+        btn.innerHTML = side === "left" ? '&laquo;' : '&raquo;'
         kanjiBtn.style.width = "12em"
-        kanjiBtn.style.textAlign = side === "left" ? "left" : "right"
     } else {
         kanjiBtn.dataset.expanded = "false"
         kanjiBtn.classList.remove("expanded")
-        btn.classList.remove(side === "left" ? "chevron-left" : "chevron-right")
-        btn.classList.add(side === "left" ? "chevron-right" : "chevron-left")
-        kanjiBtn.innerHTML = `<span class='kanji-char'>${kanjiBtn.textContent}</span>`
+        btn.innerHTML = side === "left" ? '&raquo;' : '&laquo;'
         kanjiBtn.style.width = "2em"
-        kanjiBtn.style.textAlign = "center"
     }
 }
 
