@@ -41,7 +41,7 @@ h1 {
 }
 .options-col button {
     margin: 0;
-    padding: 0.7em 0;
+    padding: 0.3em 0;
     font-size: 2.2rem;
     background: #f0f0f7;
     border: 2px solid #e0e0ef;
@@ -63,23 +63,20 @@ h1 {
     background: #fecaca;
     border-color: #ef4444;
 }
+.options-col div {
+    margin: 0 10px;
+}
 .translation-center {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#feedback {
-    height: 1.2rem;
-    text-align: center;
-    font-size: 1.1rem;
-    padding-top: 1.5em;
-}
 #reading {
     height: 1.4em;
     text-align: center;
     font-size: 1.2rem;
-    margin-top: 5rem;
+    margin-top: 3.5rem;
     color:#222;
 }
 #word {
@@ -99,7 +96,7 @@ h1 {
     color: #3a3a7a;
 }
 #next {
-    margin: 3rem auto 0 auto;
+    margin: 1rem auto 0 auto;
     padding: 1em 2em;
     font-size: 1.2rem;
     background: #2563eb;

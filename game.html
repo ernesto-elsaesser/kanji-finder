@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Kanji Combos</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link rel="stylesheet" href="game.css?4">
+    <link rel="stylesheet" href="game.css#1">
 </head>
 
 <body>
@@ -23,28 +23,28 @@
     </div>
     <div class="game-flex">
         <div class="options-col">
-            <button id="left0" onclick="kanjiSelected(event)"></button>
-            <button id="left1" onclick="kanjiSelected(event)"></button>
-            <button id="left2" onclick="kanjiSelected(event)"></button>
-            <button id="left3" onclick="kanjiSelected(event)"></button>
+            <button id="left0" onclick="choose(event)"></button>
+            <button id="left1" onclick="choose(event)"></button>
+            <button id="left2" onclick="choose(event)"></button>
+            <button id="left3" onclick="choose(event)"></button>
         </div>
         <div class="translation-center">
-            <div id="feedback"></div>
             <div id="reading"></div>
             <a target="_blank" id="word"></a>
             <div id="translation"></div>
             <button id="next" hidden>NEXT</button>
         </div>
         <div class="options-col">
-            <button id="right0" onclick="kanjiSelected(event)"></button>
-            <button id="right1" onclick="kanjiSelected(event)"></button>
-            <button id="right2" onclick="kanjiSelected(event)"></button>
-            <button id="right3" onclick="kanjiSelected(event)"></button>
+            <button id="right0" onclick="choose(event)"></button>
+            <button id="right1" onclick="choose(event)"></button>
+            <button id="right2" onclick="choose(event)"></button>
+            <button id="right3" onclick="choose(event)"></button>
         </div>
     </div>
 </div>
 <script>
 
+const ROWS = [0, 1, 2, 3]
 const SUBSETS = {
     "N5": ["N5"],
     "N4": ["N4", "N5"],
@@ -53,16 +53,15 @@ const SUBSETS = {
     "N1": ["N1", "N2", "N3"],
 }
 
-const levelSelect = document.getElementById('level')
-const leftButtons = [0, 1, 2, 3].map(i => document.getElementById('left' + i))
-const rightButtons = [0, 1, 2, 3].map(i => document.getElementById('right' + i))
-const readingDiv = document.getElementById('reading')
-const wordLink = document.getElementById('word')
-const translationDiv = document.getElementById('translation')
-const leftOptionsDiv = document.getElementById('left-options')
-const rightOptionsDiv = document.getElementById('right-options')
-const feedbackDiv = document.getElementById('feedback')
-const nextBtn = document.getElementById('next')
+const levelSelect = document.getElementById("level")
+const leftButtons = ROWS.map(i => document.getElementById("left" + i))
+const rightButtons = ROWS.map(i => document.getElementById("right" + i))
+const buttons = leftButtons.concat(rightButtons)
+const readingDiv = document.getElementById("reading")
+const wordLink = document.getElementById("word")
+const translationDiv = document.getElementById("translation")
+const hintsDiv = document.getElementById("hints")
+const nextButton = document.getElementById("next")
 
 var jlptKanjis = {}
 var jlptWords = {}
@@ -74,16 +73,16 @@ var current = null
 var leftPick = null
 var rightPick = null
 
-async function load() {
+async function loadData() {
     let res = await fetch("jlpt.json#2")
     jlptKanjis = await res.json()
     res = await fetch("pairs.json#1")
     jlptWords = await res.json()
-    select()
-    levelSelect.onchange = select
+    selectLevel()
+    levelSelect.onchange = selectLevel
 }
 
-function select() {
+function selectLevel() {
     window.location.hash = "#" + levelSelect.value
     const levels = SUBSETS[levelSelect.value]
     vocab = levels.reduce((o, l) => Object.assign(o, jlptWords[l]), {})
@@ -98,11 +97,10 @@ function nextRound() {
     leftPick = null
     rightPick = null
 
-    feedbackDiv.textContent = ''
-    readingDiv.textContent = ''
-    wordLink.textContent = ''
+    readingDiv.textContent = ""
+    wordLink.textContent = ""
     translationDiv.innerHTML = vocab[current][1].replace(" (", "<br/>(")
-    nextBtn.hidden = true
+    nextButton.hidden = true
 
     const decoys = Object.keys(kanjis)
     let options = Array.from(current)
@@ -119,24 +117,23 @@ function nextRound() {
 
     leftButtons.entries().forEach(([i, b]) => b.textContent = leftOptions[i])
     rightButtons.entries().forEach(([i, b]) => b.textContent = rightOptions[i])
-    deselectAll(leftButtons)
-    deselectAll(rightButtons)
+    deselectAll(buttons)
 }
 
 function deselectAll(buttons) {
     buttons.forEach(b => b.className = "")
 }
 
-function kanjiSelected(event) {
+function choose(event) {
     const btn = event.target
-    if (btn.id.startsWith('left')) {
+    if (btn.id.startsWith("left")) {
         deselectAll(leftButtons)
         leftPick = btn.textContent
     } else {
         deselectAll(rightButtons)
         rightPick = btn.textContent
     }
-    btn.className = 'selected'
+    btn.className = "selected"
     if (leftPick && rightPick) checkAnswer()
 }
 
@@ -147,14 +144,11 @@ function checkAnswer() {
     leftButtons.forEach(b => b.className = b.textContent == left ? "correct" : (b.textContent == leftPick ? "incorrect" : ""))
     rightButtons.forEach(b => b.className = b.textContent == right ? "correct" : (b.textContent == rightPick ? "incorrect" : ""))
 
-    const correct = leftPick === left && rightPick === right
-    feedbackDiv.textContent = correct ? 'Correct!' : 'Wrong.'
-
     readingDiv.textContent = vocab[current][0]
     wordLink.textContent = current
     wordLink.href = "https://jisho.org/search/" + current
 
-    nextBtn.hidden = false
+    nextButton.hidden = false
 }
 
 function shuffle(a) {
@@ -165,12 +159,12 @@ function shuffle(a) {
     return a
 }
 
-nextBtn.onclick = nextRound
+nextButton.onclick = nextRound
 
 const level = window.location.hash.slice(1)
 if (level) levelSelect.value = level
 
-load()
+loadData()
 
 </script>
 
