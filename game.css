@@ -83,7 +83,10 @@ h1 {
     cursor: pointer;
     padding: 0.2em 0.5em;
 }
-.reveal-btn .fa-eye {
+.eye-icon {
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
     pointer-events: none;
 }
 .reveal-btn.revealed {

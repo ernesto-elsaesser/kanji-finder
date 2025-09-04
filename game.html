@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <title>Kanji Combos</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link rel="stylesheet" href="game.css#2">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="game.css#3">
 </head>
 
 <body>
@@ -26,19 +25,19 @@
         <div class="options-col" id="left-col">
             <div class="kanji-row">
                 <button id="left0" class="kanji-btn" onclick="choose(event)"></button>
-                <button id="left0-reveal" class="reveal-btn left-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="left0-reveal" class="reveal-btn left-reveal" type="button"><img src="eye.png" alt="Reveal" class="eye-icon"></button>
             </div>
             <div class="kanji-row">
                 <button id="left1" class="kanji-btn" onclick="choose(event)"></button>
-                <button id="left1-reveal" class="reveal-btn left-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="left1-reveal" class="reveal-btn left-reveal" type="button"><img src="eye.png" alt="Reveal" class="eye-icon"></button>
             </div>
             <div class="kanji-row">
                 <button id="left2" class="kanji-btn" onclick="choose(event)"></button>
-                <button id="left2-reveal" class="reveal-btn left-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="left2-reveal" class="reveal-btn left-reveal" type="button"><img src="eye.png" alt="Reveal" class="eye-icon"></button>
             </div>
             <div class="kanji-row">
                 <button id="left3" class="kanji-btn" onclick="choose(event)"></button>
-                <button id="left3-reveal" class="reveal-btn left-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="left3-reveal" class="reveal-btn left-reveal" type="button"><img src="eye.png" alt="Reveal" class="eye-icon"></button>
             </div>
         </div>
         <div class="translation-center">
@@ -49,19 +48,19 @@
         </div>
         <div class="options-col" id="right-col">
             <div class="kanji-row">
-                <button id="right0-reveal" class="reveal-btn right-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="right0-reveal" class="reveal-btn right-reveal" type="button"><img src="eye.png" alt="Reveal" class="eye-icon"></button>
                 <button id="right0" class="kanji-btn" onclick="choose(event)"></button>
             </div>
             <div class="kanji-row">
-                <button id="right1-reveal" class="reveal-btn right-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="right1-reveal" class="reveal-btn right-reveal" type="button"><img src="eye.png" alt="Reveal" class="eye-icon"></button>
                 <button id="right1" class="kanji-btn" onclick="choose(event)"></button>
             </div>
             <div class="kanji-row">
-                <button id="right2-reveal" class="reveal-btn right-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="right2-reveal" class="reveal-btn right-reveal" type="button"><img src="eye.png" alt="Reveal" class="eye-icon"></button>
                 <button id="right2" class="kanji-btn" onclick="choose(event)"></button>
             </div>
             <div class="kanji-row">
-                <button id="right3-reveal" class="reveal-btn right-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="right3-reveal" class="reveal-btn right-reveal" type="button"><img src="eye.png" alt="Reveal" class="eye-icon"></button>
                 <button id="right3" class="kanji-btn" onclick="choose(event)"></button>
             </div>
         </div>
@@ -147,7 +146,7 @@ function nextRound() {
         const revealBtn = leftRevealBtns[i]
         revealBtn.dataset.kanji = leftOptions[i]
         revealBtn.dataset.meaning = kanjis[leftOptions[i]]
-        revealBtn.innerHTML = '<i class="fa fa-eye"></i>'
+        revealBtn.innerHTML = '<img src="eye.png" alt="Reveal" class="eye-icon">'
         revealBtn.className = "reveal-btn left-reveal"
     })
     rightButtons.forEach((b, i) => {
@@ -156,7 +155,7 @@ function nextRound() {
         const revealBtn = rightRevealBtns[i]
         revealBtn.dataset.kanji = rightOptions[i]
         revealBtn.dataset.meaning = kanjis[rightOptions[i]]
-        revealBtn.innerHTML = '<i class="fa fa-eye"></i>'
+        revealBtn.innerHTML = '<img src="eye.png" alt="Reveal" class="eye-icon">'
         revealBtn.className = "reveal-btn right-reveal"
     })
 }
@@ -170,7 +169,7 @@ function showMeaning(e) {
 
 function hideMeaning(e) {
     const btn = e.currentTarget
-    btn.innerHTML = '<i class="fa fa-eye"></i>'
+    btn.innerHTML = '<img src="eye.png" alt="Reveal" class="eye-icon">'
     btn.classList.remove('revealed')
 }
 
