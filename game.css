@@ -78,12 +78,12 @@ h1 {
     transition: min-width 0.2s, max-width 0.2s, background 0.2s;
     padding: 0.2em 0.5em;
     z-index: 2;
-}
-.eye-icon {
-    width: 1.2em;
-    height: 1.2em;
-    vertical-align: middle;
-    pointer-events: none;
+    height: 2em;
+    min-width: 2em;
+    background-image: url('info.svg');
+    background-size: 1.2em 1.2em;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .left-reveal {
     text-align: left;
