@@ -149,7 +149,7 @@ function updateColumn(side, reveal) {
 
         const toggle = document.createElement("button")
         toggle.className = "reveal-btn"
-        toggle.innerHTML = "&" + side + "aquo;"
+        toggle.innerHTML = side == "r" ? "&laquo;" : "&raquo;"
 
         toggle.addEventListener('click', () => {
             if (button.classList.contains("collapsed")) {
