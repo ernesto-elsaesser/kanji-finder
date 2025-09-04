@@ -22,7 +22,12 @@
         </select>
     </div>
     <div class="game-flex">
-        <div class="options-col" id="left-options"></div>
+        <div class="options-col">
+            <button id="left0" onclick="kanjiSelected(event)"></button>
+            <button id="left1" onclick="kanjiSelected(event)"></button>
+            <button id="left2" onclick="kanjiSelected(event)"></button>
+            <button id="left3" onclick="kanjiSelected(event)"></button>
+        </div>
         <div class="translation-center">
             <div id="feedback"></div>
             <div id="reading"></div>
@@ -30,7 +35,12 @@
             <div id="translation"></div>
             <button id="next" hidden>NEXT</button>
         </div>
-        <div class="options-col" id="right-options"></div>
+        <div class="options-col">
+            <button id="right0" onclick="kanjiSelected(event)"></button>
+            <button id="right1" onclick="kanjiSelected(event)"></button>
+            <button id="right2" onclick="kanjiSelected(event)"></button>
+            <button id="right3" onclick="kanjiSelected(event)"></button>
+        </div>
     </div>
 </div>
 <script>
@@ -44,6 +54,8 @@ const SUBSETS = {
 }
 
 const levelSelect = document.getElementById('level')
+const leftButtons = [0, 1, 2, 3].map(i => document.getElementById('left' + i))
+const rightButtons = [0, 1, 2, 3].map(i => document.getElementById('right' + i))
 const readingDiv = document.getElementById('reading')
 const wordLink = document.getElementById('word')
 const translationDiv = document.getElementById('translation')
@@ -105,29 +117,44 @@ function nextRound() {
     shuffle(leftOptions)
     shuffle(rightOptions)
 
-    leftOptionsDiv.innerHTML = ''
-    rightOptionsDiv.innerHTML = ''
-    leftOptions.forEach(kanji => {
-        leftOptionsDiv.appendChild(createButton(kanji, false))
-    })
-    rightOptions.forEach(kanji => {
-        rightOptionsDiv.appendChild(createButton(kanji, true))
-    })
+    leftButtons.entries().forEach(([i, b]) => b.textContent = leftOptions[i])
+    rightButtons.entries().forEach(([i, b]) => b.textContent = rightOptions[i])
+    deselectAll(leftButtons)
+    deselectAll(rightButtons)
 }
 
-function createButton(kanji, right) {
-    const button = document.createElement('div')
-    button.className = 'kanji-option'
-    button.textContent = kanji
-    const meanings = kanjis[kanji]
-    button.title = meanings
-    button.onclick = function() {
-        button.classList.add('selected')
-        if (right) rightPick = kanji
-        else leftPick = kanji
-        if (leftPick && rightPick) checkAnswer()
+function deselectAll(buttons) {
+    buttons.forEach(b => b.className = "")
+}
+
+function kanjiSelected(event) {
+    const btn = event.target
+    if (btn.id.startsWith('left')) {
+        deselectAll(leftButtons)
+        leftPick = btn.textContent
+    } else {
+        deselectAll(rightButtons)
+        rightPick = btn.textContent
     }
-    return button
+    btn.className = 'selected'
+    if (leftPick && rightPick) checkAnswer()
+}
+
+function checkAnswer() {
+    const left = current[0]
+    const right = current[1]
+
+    leftButtons.forEach(b => b.className = b.textContent == left ? "correct" : (b.textContent == leftPick ? "incorrect" : ""))
+    rightButtons.forEach(b => b.className = b.textContent == right ? "correct" : (b.textContent == rightPick ? "incorrect" : ""))
+
+    const correct = leftPick === left && rightPick === right
+    feedbackDiv.textContent = correct ? 'Correct!' : 'Wrong.'
+
+    readingDiv.textContent = vocab[current][0]
+    wordLink.textContent = current
+    wordLink.href = "https://jisho.org/search/" + current
+
+    nextBtn.hidden = false
 }
 
 function shuffle(a) {
@@ -136,37 +163,6 @@ function shuffle(a) {
         ;[a[i], a[j]] = [a[j], a[i]]
     }
     return a
-}
-
-function checkAnswer() {
-    const left = current[0]
-    const right = current[1]
-    Array.from(leftOptionsDiv.children).forEach(el => {
-        if (el.textContent === left) {
-            el.classList.add('correct')
-        } else if (el.textContent === leftPick) {
-            el.classList.add('incorrect')
-        }
-    })
-    Array.from(rightOptionsDiv.children).forEach(el => {
-        if (el.textContent === right) {
-            el.classList.add('correct')
-        } else if (el.textContent === rightPick) {
-            el.classList.add('incorrect')
-        }
-    })
-
-    if (leftPick === left && rightPick === right) {
-        feedbackDiv.textContent = 'Correct!'
-    } else {
-        feedbackDiv.textContent = 'Wrong!'
-    }
-
-    readingDiv.textContent = vocab[current][0]
-    wordLink.textContent = current
-    wordLink.href = "https://jisho.org/search/" + current
-
-    nextBtn.hidden = false
 }
 
 nextBtn.onclick = nextRound

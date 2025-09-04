@@ -39,7 +39,7 @@ h1 {
     gap: 1em;
     min-width: 70px;
 }
-.kanji-option {
+.options-col button {
     margin: 0;
     padding: 0.7em 0;
     font-size: 2.2rem;
@@ -51,15 +51,15 @@ h1 {
     text-align: center;
     user-select: none;
 }
-.kanji-option.selected {
+.options-col button.selected {
     background: #dbeafe;
     border-color: #2563eb;
 }
-.kanji-option.correct {
+.options-col button.correct {
     background: #bbf7d0;
     border-color: #22c55e;
 }
-.kanji-option.incorrect {
+.options-col button.incorrect {
     background: #fecaca;
     border-color: #ef4444;
 }
