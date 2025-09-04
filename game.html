@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <title>Kanji Combos</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link rel="stylesheet" href="game.css#1">
+    <link rel="stylesheet" href="game.css#2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
@@ -22,11 +23,23 @@
         </select>
     </div>
     <div class="game-flex">
-        <div class="options-col">
-            <button id="left0" onclick="choose(event)"></button>
-            <button id="left1" onclick="choose(event)"></button>
-            <button id="left2" onclick="choose(event)"></button>
-            <button id="left3" onclick="choose(event)"></button>
+        <div class="options-col" id="left-col">
+            <div class="kanji-row">
+                <button id="left0" class="kanji-btn" onclick="choose(event)"></button>
+                <button id="left0-reveal" class="reveal-btn left-reveal" type="button"><i class="fa fa-eye"></i></button>
+            </div>
+            <div class="kanji-row">
+                <button id="left1" class="kanji-btn" onclick="choose(event)"></button>
+                <button id="left1-reveal" class="reveal-btn left-reveal" type="button"><i class="fa fa-eye"></i></button>
+            </div>
+            <div class="kanji-row">
+                <button id="left2" class="kanji-btn" onclick="choose(event)"></button>
+                <button id="left2-reveal" class="reveal-btn left-reveal" type="button"><i class="fa fa-eye"></i></button>
+            </div>
+            <div class="kanji-row">
+                <button id="left3" class="kanji-btn" onclick="choose(event)"></button>
+                <button id="left3-reveal" class="reveal-btn left-reveal" type="button"><i class="fa fa-eye"></i></button>
+            </div>
         </div>
         <div class="translation-center">
             <div id="reading"></div>
@@ -34,11 +47,23 @@
             <div id="translation"></div>
             <button id="next" hidden>NEXT</button>
         </div>
-        <div class="options-col">
-            <button id="right0" onclick="choose(event)"></button>
-            <button id="right1" onclick="choose(event)"></button>
-            <button id="right2" onclick="choose(event)"></button>
-            <button id="right3" onclick="choose(event)"></button>
+        <div class="options-col" id="right-col">
+            <div class="kanji-row">
+                <button id="right0-reveal" class="reveal-btn right-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="right0" class="kanji-btn" onclick="choose(event)"></button>
+            </div>
+            <div class="kanji-row">
+                <button id="right1-reveal" class="reveal-btn right-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="right1" class="kanji-btn" onclick="choose(event)"></button>
+            </div>
+            <div class="kanji-row">
+                <button id="right2-reveal" class="reveal-btn right-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="right2" class="kanji-btn" onclick="choose(event)"></button>
+            </div>
+            <div class="kanji-row">
+                <button id="right3-reveal" class="reveal-btn right-reveal" type="button"><i class="fa fa-eye"></i></button>
+                <button id="right3" class="kanji-btn" onclick="choose(event)"></button>
+            </div>
         </div>
     </div>
 </div>
@@ -56,7 +81,8 @@ const SUBSETS = {
 const levelSelect = document.getElementById("level")
 const leftButtons = ROWS.map(i => document.getElementById("left" + i))
 const rightButtons = ROWS.map(i => document.getElementById("right" + i))
-const buttons = leftButtons.concat(rightButtons)
+const leftRevealBtns = ROWS.map(i => document.getElementById("left" + i + "-reveal"))
+const rightRevealBtns = ROWS.map(i => document.getElementById("right" + i + "-reveal"))
 const readingDiv = document.getElementById("reading")
 const wordLink = document.getElementById("word")
 const translationDiv = document.getElementById("translation")
@@ -115,25 +141,49 @@ function nextRound() {
     shuffle(leftOptions)
     shuffle(rightOptions)
 
-    leftButtons.entries().forEach(([i, b]) => b.textContent = leftOptions[i])
-    rightButtons.entries().forEach(([i, b]) => b.textContent = rightOptions[i])
-    deselectAll(buttons)
+    leftButtons.forEach((b, i) => {
+        b.textContent = leftOptions[i]
+        b.className = "kanji-btn"
+        const revealBtn = leftRevealBtns[i]
+        revealBtn.dataset.kanji = leftOptions[i]
+        revealBtn.dataset.meaning = kanjis[leftOptions[i]]
+        revealBtn.innerHTML = '<i class="fa fa-eye"></i>'
+        revealBtn.className = "reveal-btn left-reveal"
+    })
+    rightButtons.forEach((b, i) => {
+        b.textContent = rightOptions[i]
+        b.className = "kanji-btn"
+        const revealBtn = rightRevealBtns[i]
+        revealBtn.dataset.kanji = rightOptions[i]
+        revealBtn.dataset.meaning = kanjis[rightOptions[i]]
+        revealBtn.innerHTML = '<i class="fa fa-eye"></i>'
+        revealBtn.className = "reveal-btn right-reveal"
+    })
 }
 
-function deselectAll(buttons) {
-    buttons.forEach(b => b.className = "")
+function showMeaning(e) {
+    const btn = e.currentTarget
+    btn.dataset.prevWidth = btn.offsetWidth
+    btn.innerText = btn.dataset.meaning
+    btn.classList.add('revealed')
 }
 
-function choose(event) {
-    const btn = event.target
+function hideMeaning(e) {
+    const btn = e.currentTarget
+    btn.innerHTML = '<i class="fa fa-eye"></i>'
+    btn.classList.remove('revealed')
+}
+
+function choose(e) {
+    const btn = e.target
     if (btn.id.startsWith("left")) {
-        deselectAll(leftButtons)
+        leftButtons.forEach(b => b.className = "kanji-btn")
         leftPick = btn.textContent
     } else {
-        deselectAll(rightButtons)
+        rightButtons.forEach(b => b.className = "kanji-btn")
         rightPick = btn.textContent
     }
-    btn.className = "selected"
+    btn.classList.add("selected")
     if (leftPick && rightPick) checkAnswer()
 }
 
@@ -159,7 +209,12 @@ function shuffle(a) {
     return a
 }
 
-nextButton.onclick = nextRound
+nextButton.addEventListener('click', nextRound)
+
+leftRevealBtns.concat(rightRevealBtns).forEach(btn => {
+    btn.addEventListener('pointerenter', showMeaning)
+    btn.addEventListener('pointerleave', hideMeaning)
+})
 
 const level = window.location.hash.slice(1)
 if (level) levelSelect.value = level

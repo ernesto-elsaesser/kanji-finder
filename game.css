@@ -39,9 +39,15 @@ h1 {
     gap: 1em;
     min-width: 70px;
 }
-.options-col button {
+.kanji-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+.kanji-btn {
     margin: 0;
-    padding: 0.3em 0;
+    width: 2em;
+    height: 2em;
     font-size: 2.2rem;
     background: #f0f0f7;
     border: 2px solid #e0e0ef;
@@ -51,20 +57,56 @@ h1 {
     text-align: center;
     user-select: none;
 }
-.options-col button.selected {
+.kanji-btn.selected {
     background: #dbeafe;
     border-color: #2563eb;
 }
-.options-col button.correct {
+.kanji-btn.correct {
     background: #bbf7d0;
     border-color: #22c55e;
 }
-.options-col button.incorrect {
+.kanji-btn.incorrect {
     background: #fecaca;
     border-color: #ef4444;
 }
-.options-col div {
-    margin: 0 10px;
+.reveal-btn {
+    font-size: 1em;
+    min-width: 2em;
+    max-width: 16em;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: min-width 0.2s, max-width 0.2s, background 0.2s;
+    background: #eee;
+    border: 1px solid #bbb;
+    border-radius: 0.5em;
+    margin: 0 0.2em;
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+}
+.reveal-btn .fa-eye {
+    pointer-events: none;
+}
+.reveal-btn.revealed {
+    min-width: 6em;
+    max-width: 16em;
+    background: #fffbe6;
+    color: #333;
+    font-weight: bold;
+    z-index: 2;
+}
+.left-reveal {
+    order: 2;
+    margin-left: 0.2em;
+}
+.right-reveal {
+    order: 1;
+    margin-right: 0.2em;
+}
+.kanji-row .kanji-btn {
+    order: 1;
+}
+.kanji-row .right-reveal + .kanji-btn {
+    order: 2;
 }
 .translation-center {
     flex: 1;
