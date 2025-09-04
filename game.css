@@ -7,6 +7,12 @@ body {
 select {
     font-size: 1.1rem;
 }
+button {
+    background: #f0f0f7;
+    border: 2px solid #e0e0ef;
+    border-radius: 8px;
+    transition: background 0.15s, border 0.15s;
+}
 .container {
     max-width: 480px;
     margin: 40px auto;
@@ -40,22 +46,16 @@ h1 {
     min-width: 70px;
 }
 .kanji-row {
+    position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 0.5em;
 }
 .kanji-btn {
     margin: 0;
     width: 2em;
     height: 2em;
     font-size: 2.2rem;
-    background: #f0f0f7;
-    border: 2px solid #e0e0ef;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.15s, border 0.15s;
     text-align: center;
-    user-select: none;
 }
 .kanji-btn.selected {
     background: #dbeafe;
@@ -70,18 +70,14 @@ h1 {
     border-color: #ef4444;
 }
 .reveal-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 1em;
-    min-width: 2em;
-    max-width: 16em;
-    overflow: hidden;
-    white-space: nowrap;
+    font-weight: bold;
     transition: min-width 0.2s, max-width 0.2s, background 0.2s;
-    background: #eee;
-    border: 1px solid #bbb;
-    border-radius: 0.5em;
-    margin: 0 0.2em;
-    cursor: pointer;
     padding: 0.2em 0.5em;
+    z-index: 2;
 }
 .eye-icon {
     width: 1.2em;
@@ -89,21 +85,13 @@ h1 {
     vertical-align: middle;
     pointer-events: none;
 }
-.reveal-btn.revealed {
-    min-width: 6em;
-    max-width: 16em;
-    background: #fffbe6;
-    color: #333;
-    font-weight: bold;
-    z-index: 2;
-}
 .left-reveal {
-    order: 2;
-    margin-left: 0.2em;
+    text-align: left;
+    left: calc(100% + 0.5em);
 }
 .right-reveal {
-    order: 1;
-    margin-right: 0.2em;
+    text-align: right;
+    right: calc(100% + 0.5em);
 }
 .kanji-row .kanji-btn {
     order: 1;
