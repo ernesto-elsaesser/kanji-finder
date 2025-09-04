@@ -7,12 +7,6 @@ body {
 select {
     font-size: 1.1rem;
 }
-button {
-    background: #f0f0f7;
-    border: 2px solid #e0e0ef;
-    border-radius: 8px;
-    transition: background 0.15s, border 0.15s;
-}
 .container {
     max-width: 480px;
     margin: 40px auto;
@@ -41,33 +35,25 @@ h1 {
 .options-col {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 1em;
-    min-width: 70px;
 }
 .kanji-row {
     position: relative;
-    display: flex;
-    align-items: center;
 }
 .kanji-btn {
-    margin: 0;
-    width: 2em;
     height: 2em;
     font-size: 2.2rem;
-    text-align: center;
     transition: width 0.2s;
     overflow: hidden;
     white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 0.5em;
+    padding-left: 0.25em;
+    background: #f0f0f7;
+    border: 2px solid #e0e0ef;
+    border-radius: 8px;
+    transition: background 0.15s, border 0.15s;
 }
-.kanji-btn.expanded {
-    font-size: 1.6rem;
-    background: #f7f7fa;
-    border-color: #e0e0ef;
+.kanji-btn.collapsed {
+    width: 1.6em;
 }
 .kanji-char {
     font-size: 2em;
@@ -94,31 +80,10 @@ h1 {
     border-color: #ef4444;
 }
 .reveal-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    margin: 0 10px;
     font-size: 1.5em;
-    font-weight: bold;
-    transition: background 0.2s;
-    padding: 0.2em 0.5em;
-    z-index: 2;
-    height: 2em;
-    min-width: 2em;
     background: none;
     border: none;
-    cursor: pointer;
-}
-.left-reveal {
-    left: calc(100% + 0.5em);
-}
-.right-reveal {
-    right: calc(100% + 0.5em);
-}
-.kanji-row .kanji-btn {
-    order: 1;
-}
-.kanji-row .right-reveal + .kanji-btn {
-    order: 2;
 }
 .translation-center {
     flex: 1;

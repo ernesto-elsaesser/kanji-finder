@@ -22,48 +22,14 @@
         </select>
     </div>
     <div class="game-flex">
-        <div class="options-col" id="left-col">
-            <div class="kanji-row">
-                <button id="left0" class="kanji-btn"></button>
-                <button id="left0-reveal" class="reveal-btn left-reveal" type="button"></button>
+        <div class="options-col" id="left-col"></div>
+            <div class="translation-center">
+                <div id="reading"></div>
+                <a target="_blank" id="word"></a>
+                <div id="translation"></div>
+                <button id="next" hidden>NEXT</button>
             </div>
-            <div class="kanji-row">
-                <button id="left1" class="kanji-btn"></button>
-                <button id="left1-reveal" class="reveal-btn left-reveal" type="button"></button>
-            </div>
-            <div class="kanji-row">
-                <button id="left2" class="kanji-btn"></button>
-                <button id="left2-reveal" class="reveal-btn left-reveal" type="button"></button>
-            </div>
-            <div class="kanji-row">
-                <button id="left3" class="kanji-btn"></button>
-                <button id="left3-reveal" class="reveal-btn left-reveal" type="button"></button>
-            </div>
-        </div>
-        <div class="translation-center">
-            <div id="reading"></div>
-            <a target="_blank" id="word"></a>
-            <div id="translation"></div>
-            <button id="next" hidden>NEXT</button>
-        </div>
-        <div class="options-col" id="right-col">
-            <div class="kanji-row">
-                <button id="right0-reveal" class="reveal-btn right-reveal" type="button"></button>
-                <button id="right0" class="kanji-btn"></button>
-            </div>
-            <div class="kanji-row">
-                <button id="right1-reveal" class="reveal-btn right-reveal" type="button"></button>
-                <button id="right1" class="kanji-btn"></button>
-            </div>
-            <div class="kanji-row">
-                <button id="right2-reveal" class="reveal-btn right-reveal" type="button"></button>
-                <button id="right2" class="kanji-btn"></button>
-            </div>
-            <div class="kanji-row">
-                <button id="right3-reveal" class="reveal-btn right-reveal" type="button"></button>
-                <button id="right3" class="kanji-btn"></button>
-            </div>
-        </div>
+        <div class="options-col" id="right-col"></div>
     </div>
 </div>
 <script>
@@ -78,10 +44,9 @@ const SUBSETS = {
 }
 
 const levelSelect = document.getElementById("level")
-const leftButtons = ROWS.map(i => document.getElementById("left" + i))
-const rightButtons = ROWS.map(i => document.getElementById("right" + i))
-const leftRevealButtons = ROWS.map(i => document.getElementById("left" + i + "-reveal"))
-const rightRevealButtons = ROWS.map(i => document.getElementById("right" + i + "-reveal"))
+const leftCol = document.getElementById("left-col")
+const rightCol = document.getElementById("right-col")
+const columns = {"l": leftCol, "r": rightCol}
 const readingDiv = document.getElementById("reading")
 const wordLink = document.getElementById("word")
 const translationDiv = document.getElementById("translation")
@@ -94,9 +59,9 @@ var jlptWords = {}
 var vocab = null
 var kanjis = null
 
-var current = null
-var leftPick = null
-var rightPick = null
+var targets = {}
+var options = {}
+var picks = {}
 
 async function loadData() {
     let res = await fetch("jlpt.json#2")
@@ -118,89 +83,88 @@ function selectLevel() {
 function nextRound() {
     const words = Object.keys(vocab)
     const idx = Math.floor(Math.random() * words.length)
-    current = words[idx]
-    leftPick = null
-    rightPick = null
+    const word = words[idx]
 
-    readingDiv.textContent = ""
-    wordLink.textContent = ""
-    translationDiv.innerHTML = vocab[current][1].replace(" (", "<br/>(")
-    nextButton.hidden = true
+    targets = {"l": word[0], "r": word[1]}
+    picks = {"l": null, "r": null}
 
     const decoys = Object.keys(kanjis)
-    let options = Array.from(current)
-    while (options.length < 8) {
+    let pool = Array.from(word)
+    while (pool.length < 8) {
         const didx = Math.floor(Math.random() * decoys.length)
         const decoy = decoys[didx]
-        if (!options.includes(decoy)) options.push(decoy)
+        if (!pool.includes(decoy)) pool.push(decoy)
     }
 
-    const leftOptions = options.slice(5, 8).concat(current[0])
-    const rightOptions = options.slice(1, 5)
-    shuffle(leftOptions)
-    shuffle(rightOptions)
+    options["l"] = pool.slice(5, 8).concat(word[0])
+    options["r"] = pool.slice(1, 5)
+    shuffle(options["l"])
+    shuffle(options["r"])
 
-    ROWS.forEach(i => {
-        const leftBtn = leftButtons[i]
-        const leftKanji = leftOptions[i]
-        leftBtn.className = "kanji-btn"
-        leftBtn.style.width = "2em"
-        leftBtn.innerHTML = `<span class="kanji-char">${leftKanji}</span> <span class='kanji-meaning'>${kanjis[leftKanji]}</span>`
-        const leftRevealBtn = leftRevealButtons[i]
-        leftRevealBtn.innerHTML = "&raquo;"
+    update()
+}
 
-        const rightBtn = rightButtons[i]
-        const rightKanji = rightOptions[i]
-        rightBtn.className = "kanji-btn"
-        rightBtn.style.width = "2em"
-        rightBtn.innerHTML = `<span class="kanji-char">${rightKanji}</span> <span class='kanji-meaning'>${kanjis[rightKanji]}</span>`
-        const rightRevealBtn = rightRevealButtons[i]
-        rightRevealBtn.innerHTML = "&laquo;"
+function update() {
+    const reveal = picks["l"] && picks["r"]
+
+    updateColumn("l", reveal)
+    updateColumn("r", reveal)
+
+    const word = targets["l"] + targets["r"]
+
+    readingDiv.textContent = reveal ? vocab[word][0] : ""
+    wordLink.textContent = reveal ? word : ""
+    wordLink.href = reveal ? "https://jisho.org/search/" + word : ""
+
+    translationDiv.innerHTML = vocab[word][1].replace(" (", "<br/>(")
+
+    nextButton.hidden = !reveal
+}
+
+function updateColumn(side, reveal) {
+
+    columns[side].innerHTML = ""
+
+    options[side].forEach(kanji => {
+
+        const row = document.createElement("div")
+        row.className = "kanji-row"
+
+        const button = document.createElement("button")
+
+        const meaning = kanjis[kanji]
+        button.innerHTML = kanji + " <span>" + meaning + "</span>"
+
+        button.className = "kanji-btn collapsed"
+        if (reveal) {
+            if (kanji == targets[side]) button.classList.add("correct")
+            else if (kanji == picks[side]) button.classList.add("incorrect")
+        }
+        else if (kanji == picks[side]) button.classList.add("selected")
+        
+        button.addEventListener('click', () => {
+            picks[side] = kanji
+            update()
+        })
+
+        const toggle = document.createElement("button")
+        toggle.className = "reveal-btn"
+        toggle.innerHTML = "&" + side + "aquo;"
+
+        toggle.addEventListener('click', () => {
+            if (button.classList.contains("collapsed")) {
+                button.classList.remove("collapsed")
+            } else {
+                button.classList.add("collapsed")
+            }
+        })
+
+        if (side == "r") row.appendChild(toggle)
+        row.appendChild(button)
+        if (side == "l") row.appendChild(toggle)
+
+        columns[side].appendChild(row)
     })
-}
-
-function toggleExpand(e, index, side) {
-    const btn = e.currentTarget
-    const kanjiBtn = side === "left" ? leftButtons[index] : rightButtons[index]
-    const expanded = kanjiBtn.dataset.expanded === "true"
-    if (!expanded) {
-        kanjiBtn.dataset.expanded = "true"
-        kanjiBtn.classList.add("expanded")
-        btn.innerHTML = side === "left" ? '&laquo;' : '&raquo;'
-        kanjiBtn.style.width = "12em"
-    } else {
-        kanjiBtn.dataset.expanded = "false"
-        kanjiBtn.classList.remove("expanded")
-        btn.innerHTML = side === "left" ? '&raquo;' : '&laquo;'
-        kanjiBtn.style.width = "2em"
-    }
-}
-
-function selectKanji(e) {
-    const btn = e.target
-    if (btn.id.startsWith("left")) {
-        leftButtons.forEach(b => b.className = "kanji-btn")
-        leftPick = btn.textContent
-    } else {
-        rightButtons.forEach(b => b.className = "kanji-btn")
-        rightPick = btn.textContent
-    }
-    btn.classList.add("selected")
-    if (leftPick && rightPick) checkAnswer()
-}
-
-function checkAnswer() {
-    const left = current[0]
-    const right = current[1]
-
-    leftButtons.forEach(b => b.className = b.textContent == left ? "correct" : (b.textContent == leftPick ? "incorrect" : ""))
-    rightButtons.forEach(b => b.className = b.textContent == right ? "correct" : (b.textContent == rightPick ? "incorrect" : ""))
-
-    readingDiv.textContent = vocab[current][0]
-    wordLink.textContent = current
-    wordLink.href = "https://jisho.org/search/" + current
-
-    nextButton.hidden = false
 }
 
 function shuffle(a) {
@@ -212,13 +176,6 @@ function shuffle(a) {
 }
 
 nextButton.addEventListener('click', nextRound)
-
-ROWS.forEach(i => {
-    leftButtons[i].addEventListener('click', selectKanji)
-    rightButtons[i].addEventListener('click', selectKanji)
-    leftRevealButtons[i].addEventListener('click', (e) => toggleExpand(e, i, "left"))
-    rightRevealButtons[i].addEventListener('click', (e) => toggleExpand(e, i, "right"))
-})
 
 const level = window.location.hash.slice(1)
 if (level) levelSelect.value = level
