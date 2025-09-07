@@ -5,53 +5,37 @@ body {
     color: #222;
 }
 select {
-    font-size: 1.1rem;
-}
-.container {
-    max-width: 480px;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 16px #0001;
-    padding: 32px 24px 24px 24px;
+    font-size: 16px;
 }
 h1 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 0.5em;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
-#config {
-    text-align:center;
-    margin-bottom:1.2em;
+.container {
+    max-width: 480px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px #0001;
+    padding: 24px;
 }
 .game-flex {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 1.5em;
-    margin-bottom: 1.2em;
 }
 .options-col {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-}
-.kanji-row {
-    position: relative;
+    gap: 16px;
 }
 .kanji-btn {
+    width: 60px;
     height: 70px;
     font-size: 36px;
-    transition: width 0.2s;
-    overflow: hidden;
-    white-space: nowrap;
     padding-left: 0.25em;
     background: #f0f0f7;
     border: 2px solid #e0e0ef;
     border-radius: 8px;
-    transition: background 0.15s, border 0.15s;
-    width: 1.6em;
 }
 .kanji-btn.selected {
     background: #dbeafe;
@@ -66,12 +50,12 @@ h1 {
     border-color: #ef4444;
 }
 .hint-btn {
-    padding: 0;
-    width: 32px;
-    height: 32px;
+    font-size: 16px;
+    padding: 10px;
     background: none;
     border: none;
-    background-image: url("info.svg");
+    vertical-align: top;
+    margin-top: 14px;
 }
 .translation-center {
     flex: 1;
@@ -79,40 +63,38 @@ h1 {
     flex-direction: column;
     align-items: center;
 }
-#hint {
-    height: 1em;
+#config {
     text-align: center;
-    font-size: 1rem;
-    margin-top: 10px;
-    color:#222;
+    margin-bottom: 20px;
 }
 #reading {
-    height: 1.4em;
+    height: 25px;
     text-align: center;
-    font-size: 1.2rem;
-    margin-top: 3rem;
+    font-size: 20px;
+    margin-top: 20px;
     color:#222;
 }
 #word {
     display: block;
-    height:4rem;
-    font-size:3.5rem;
-    color:#222;
+    height: 65px;
+    font-size: 55px;
+    color: #222;
     text-decoration: none;
-    font-weight:bold;
+    font-weight: bold;
 }
 #translation {
     height: 5rem;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 20px;
     max-width: 200px;
-    margin-top: 2rem;
-    color: #3a3a7a;
+    margin-top: 25px;
+    color: #444;
 }
 #next {
     margin: 1rem auto 0 auto;
-    padding: 1em 2em;
-    font-size: 1.2rem;
+    padding: 20px 40px;
+    font-size: 20px;
+    height: 60px;
     background: #2563eb;
     color: #fff;
     border: none;
@@ -120,6 +102,10 @@ h1 {
     cursor: pointer;
     transition: background 0.15s;
 }
-#next:active {
-    background: #1d4ed8;
+#hint {
+    height: 1em;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 16px;
+    color:#666;
 }

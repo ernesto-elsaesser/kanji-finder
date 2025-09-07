@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Kanji Combos</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link rel="stylesheet" href="style.css#1">
+    <link rel="stylesheet" href="style.css#2">
 </head>
 
 <body>
@@ -24,11 +24,11 @@
     <div class="game-flex">
         <div class="options-col" id="left-col"></div>
             <div class="translation-center">
-                <div id="hint"></div>
                 <div id="reading"></div>
                 <a target="_blank" id="word"></a>
                 <div id="translation"></div>
                 <button id="next" hidden>NEXT</button>
+                <div id="hint"></div>
             </div>
         <div class="options-col" id="right-col"></div>
     </div>
@@ -121,7 +121,7 @@ function update() {
 
     const word = targets["l"] + targets["r"]
 
-    hintDiv.textContent = hint || ""
+    hintDiv.textContent = (hint || "").toUpperCase()
 
     readingDiv.textContent = reveal ? vocab[word][0] : ""
     wordLink.textContent = reveal ? word : ""
@@ -139,7 +139,6 @@ function updateColumn(side, reveal) {
     options[side].forEach(kanji => {
 
         const row = document.createElement("div")
-        row.className = "kanji-row"
 
         const button = document.createElement("button")
         button.innerText = kanji
@@ -157,6 +156,7 @@ function updateColumn(side, reveal) {
 
         const toggle = document.createElement("button")
         toggle.className = "hint-btn"
+        toggle.innerHTML = "&#9432;"
 
         toggle.addEventListener('click', () => showHint(kanji))
 
