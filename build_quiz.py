@@ -1,4 +1,5 @@
 # %%
+import sys
 import json
 
 # %%
@@ -10,21 +11,61 @@ KANJIS = {
     "N2": "圧衣囲依委胃移域印宇羽雲永栄営鋭液延塩汚央欧奥億温河荷菓貨課介灰快改械階貝各角革額干刊甘汗缶巻乾患換管簡丸含岸岩机希祈季技喫詰逆久旧巨漁叫協況挟胸境橋競極玉均禁区隅掘訓軍群型敬軽傾芸劇血券肩県軒賢減戸固枯個庫湖雇効肯厚紅荒郊香耕航黄硬鉱講谷骨根混査砂再採祭細菜材咲冊札刷皿算史糸伺刺枝脂詞誌寺児湿捨弱州舟周拾柔祝述純順準署諸召床承昇将章紹焼象照賞城畳蒸植触伸臣辛針森震姓星省清勢税隻跡績籍接設占専泉浅線双捜掃装層総燥造像憎蔵贈臓則測卒村孫尊損帯袋替濯担炭短団池竹畜築仲虫柱駐著貯庁兆超沈珍低底停泥滴鉄殿塗灯凍島党塔湯筒童銅導毒届鈍曇軟乳燃悩脳農濃波拝倍泊薄麦爆肌坂板版般販比皮被鼻匹筆氷秒瓶布府符普膚武封副幅復複沸仏粉兵並片辺編補募包宝豊防帽棒貿暴磨枚埋綿毛門油輸勇郵預幼溶腰踊浴翌絡乱卵里裏陸律略粒了涼量領療緑林輪涙令零齢歴恋練録湾腕",
     "N1": "亜哀挨曖握扱宛嵐案威為畏尉異萎椅彙維慰遺緯壱逸茨芋咽姻淫陰隠韻唄鬱畝浦詠影衛疫益悦謁閲沿炎怨宴媛援猿鉛縁艶凹応往旺殴桜翁憶臆虞乙卸恩穏仮佳価苛架華渦嫁暇禍寡箇稼蚊牙瓦我芽賀雅餓戒怪拐悔塊楷潰壊懐諧劾崖涯街慨蓋該概骸垣柿拡核殻郭較隔閣獲嚇穫岳顎潟括喝渇葛滑褐轄且株釜鎌刈肝冠看陥勘貫喚堪敢棺款閑勧寛幹歓監緩憾還環韓艦鑑玩眼頑企伎岐忌汽奇紀軌既飢鬼基亀揮棋貴棄毀旗器畿輝騎宜偽欺義儀戯擬犠菊吉却脚虐及弓丘朽臼泣級糾宮救嗅窮拒拠挙虚距凶狂享峡狭恭脅郷矯鏡響驚仰暁凝巾斤菌琴筋僅緊錦謹襟吟句駆惧愚遇串屈窟熊繰勲薫郡刑系径茎契恵啓掲渓蛍携継詣慶憬稽憩鶏鯨隙撃激桁穴結傑潔倹兼剣拳健圏堅検嫌献絹遣憲謙鍵繭顕懸幻玄弦舷源厳己股虎孤弧故誇鼓錮顧呉娯悟碁護勾孔功巧甲后江坑孝抗攻拘侯恒洪皇貢康控梗喉慌絞項溝綱酵稿興衡鋼購乞拷剛傲豪克穀酷獄駒頃昆恨痕紺魂墾懇佐沙唆詐鎖挫災采砕宰栽彩斎裁債催塞載埼剤崎削柵索策酢搾錯刹拶撮擦桟蚕惨傘酸斬暫士氏司矢旨至志祉肢姿施恣視紫嗣詩飼雌摯賜諮侍滋慈磁餌璽鹿軸叱疾執嫉漆芝舎射赦斜煮遮謝邪蛇尺酌釈爵寂朱狩殊珠腫趣寿呪授需儒樹囚秀宗臭修袖羞就衆愁酬醜蹴襲汁充従渋銃獣縦叔淑粛縮塾熟俊瞬旬巡盾准殉循潤遵庶暑如序叙徐升匠抄肖尚松沼昭宵症祥称唱渉訟掌晶焦硝粧詔証傷奨詳彰障憧衝償礁鐘丈冗条浄剰縄壌嬢錠譲醸拭殖飾嘱織辱尻芯侵津唇娠振浸紳診慎審薪刃仁尽迅甚陣尋腎須垂炊帥粋衰推酔遂睡穂随髄枢崇据杉裾寸瀬是井征斉牲凄逝盛婿聖誠製誓請整醒斥析脊惜戚拙窃摂節舌仙宣染扇栓旋煎羨腺詮践箋銭潜遷薦繊鮮善禅漸膳繕狙阻租素措粗疎訴塑遡礎壮奏荘倉挿桑巣曹曽爽創喪痩葬僧遭槽踪操霜騒藻即促捉俗属賊率遜汰妥唾堕惰駄耐怠胎泰堆逮隊滞態戴第滝択沢卓拓託諾濁但脱奪棚誰丹旦胆淡嘆端綻誕鍛弾暖壇致痴稚緻逐蓄秩窒嫡沖宙忠抽衷酎鋳丁弔挑帳張彫眺釣貼腸跳徴嘲潮澄聴懲勅捗朕陳賃鎮椎墜塚漬坪爪鶴呈廷抵邸亭貞帝訂逓偵堤提艇締諦笛摘敵溺迭哲徹撤典展添塡斗吐妬賭奴刀豆唐桃討透悼陶搭棟痘統稲踏糖謄藤闘騰洞胴瞳峠匿督徳篤独栃凸屯豚頓貪丼那奈梨謎鍋尼弐匂虹尿妊忍寧捻粘納把派覇婆罵肺俳排廃輩梅培陪媒賠伯拍迫剝舶博漠縛箸畑鉢伐罰閥氾帆汎伴阪班畔斑搬煩頒範繁藩蛮盤妃批披肥卑秘扉碑罷避尾眉微膝肘泌姫俵票評漂標苗描浜賓頻敏扶阜附訃赴腐敷賦譜侮伏覆紛雰噴墳憤奮丙併柄陛塀幣弊蔽餅壁璧癖蔑偏遍弁保哺舗墓慕簿芳邦奉泡胞俸倣峰砲崩蜂飽褒縫乏坊妨房肪某冒剖紡傍貌膨謀頰朴牧睦僕墨撲没勃堀奔翻凡盆麻摩魔昧幕膜枕又抹慢漫魅岬密蜜脈妙矛霧冥盟銘滅免麺茂模妄盲耗猛網黙紋冶弥厄訳躍闇喩愉諭癒唯幽悠湧猶裕雄誘憂融誉羊妖庸揚揺瘍窯養擁謡抑沃翼拉裸羅雷酪辣覧濫藍欄吏痢履璃離慄柳竜隆硫侶虜慮猟陵僚寮瞭糧厘倫隣臨瑠累塁励鈴霊隷麗暦劣烈裂廉錬呂炉賂露弄郎朗浪廊楼漏籠麓賄脇惑枠"
 }
+JOUYOU_PATH = sys.argv[1]
+EDICT_PATH = sys.argv[2]
+JLPT_PATH = sys.argv[3]
+PAIRS_PATH = sys.argv[4]
 
 # %%
 
-with open("jouyou.json", encoding="utf-8") as f:
+with open(JOUYOU_PATH, encoding="utf-8") as f:
     jouyou = json.load(f)
 
 # %%
 
-jlpt = {}
+jlpt_kanjis = {}
 for level, kanjis in KANJIS.items():
-    jlpt[level] = {k: jouyou[k]["meanings"] for k in kanjis}
+    jlpt_kanjis[level] = {k: jouyou[k]["meanings"] for k in kanjis}
 
 # %%
 
-with open("jlpt.json", "w", encoding="utf-8") as f:
-    json.dump(jlpt, f, indent=4, ensure_ascii=False)
+with open(JLPT_PATH, "w", encoding="utf-8") as f:
+    json.dump(jlpt_kanjis, f, indent=4, ensure_ascii=False)
+
+# %%
+
+with open(EDICT_PATH, encoding="utf-8") as f:
+    edict = json.load(f)
+
+# %%
+
+for level, kanjis in jlpt_kanjis.items():
+    for kanji in kanjis:
+        jouyou[kanji]["jlpt"] = level
+
+# %%
+
+exclude_tags = ["(uk)", "(abbr)", "(dated)", "(hist)"]
+
+pairs = {f"N{i}": {} for i in reversed(range(1, 6))}
+
+for word, entry in edict.items():
+    if len(word) != 2:
+        continue
+    info0 = jouyou.get(word[0])
+    info1 = jouyou.get(word[1])
+    if info0 is None or info1 is None:
+        continue
+    meaning = entry[0][1][1]
+    if any(t in meaning for t in exclude_tags):
+        continue
+    reading = entry[0][0]
+    min_jlpt = min(info0["jlpt"], info1["jlpt"])
+    pairs[min_jlpt][word] = [reading] + meaning.split("; ")
+
+# %%
+
+with open(PAIRS_PATH, "w", encoding="utf-8") as f:
+    json.dump(pairs, f, indent=4, ensure_ascii=False)
 
 # %%

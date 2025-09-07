@@ -1,10 +1,13 @@
 # %%
 import io
+import sys
 import json
 import gzip
 import urllib.request
 
 KRAD_URL = "http://ftp.edrdg.org/pub/Nihongo/kradfile-u.gz"
+JOUYOU_PATH = sys.argv[1]
+OUTPUT_PATH = sys.argv[2]
 
 # %%
 
@@ -15,7 +18,7 @@ with urllib.request.urlopen(KRAD_URL) as response:
 
 # %%
 
-with open("jouyou.json", encoding="utf-8") as f:
+with open(JOUYOU_PATH, encoding="utf-8") as f:
     jouyou = json.load(f)
 
 # %%
@@ -42,7 +45,7 @@ for line in krad_lines:
 krad = [r for _, _, *r in sorted(rows)]
 # %%
 
-with open("krad.json", "w", encoding="utf-8") as f:
+with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     json.dump(krad, f, indent=4, ensure_ascii=False)
 
 # %%

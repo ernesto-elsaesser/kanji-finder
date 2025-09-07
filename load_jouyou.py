@@ -1,9 +1,11 @@
 # %%
 import re
+import sys
 import json
 import urllib.request
 
 JOUYOU_URL = "https://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji"
+OUTPUT_PATH = sys.argv[1]
 
 # %%
 
@@ -46,7 +48,7 @@ for tr in re.findall(r"<tr>\n(.+?)</tr>", html, re.DOTALL):
 
 # %%
 
-with open("jouyou.json", "w", encoding="utf-8") as f:
+with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     json.dump(jouyou, f, indent=4, ensure_ascii=False)
 
 # %%

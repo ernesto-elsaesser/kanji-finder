@@ -1,11 +1,13 @@
 # %%
 import io
 import re
+import sys
 import json
 import gzip
 import urllib.request
 
 EDICT_URL = "http://ftp.edrdg.org/pub/Nihongo/edict_sub.gz"
+OUTPUT_PATH = sys.argv[1]
 
 # %%
 with urllib.request.urlopen(EDICT_URL) as response:
@@ -64,7 +66,7 @@ edict = {k: edict[k] for k in sorted_keys}
 
 # %%
 
-with open("edict.json", "w", encoding="utf-8") as f:
+with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     json.dump(edict, f, indent=1, ensure_ascii=False)
 
 # %%
