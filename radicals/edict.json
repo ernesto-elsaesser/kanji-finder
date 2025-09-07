@@ -20360,7 +20360,7 @@
    "ついたち",
    [
     "n",
-    "first day of the month"
+    "first day of the month; the first of the month"
    ]
   ]
  ],
@@ -58597,7 +58597,19 @@
    "きらう",
    [
     "v5u,vt",
-    "to hate; to dislike; to loathe"
+    "to hate; to dislike; to loathe; to abhor"
+   ],
+   [
+    "v5u,vt",
+    "to avoid"
+   ],
+   [
+    "v5u,vt",
+    "to disregard; to act without regard (for)"
+   ],
+   [
+    "v5u,vt",
+    "to be bad for (e.g. dust in machinery)"
    ]
   ]
  ],
@@ -71764,6 +71776,10 @@
    [
     "n",
     "(col) male crotch (as a target in fighting)"
+   ],
+   [
+    "n",
+    "(go) vital point; critical place to make a move"
    ]
   ]
  ],
@@ -77799,6 +77815,10 @@
    [
     "v5m,vt",
     "to harbour (feelings); to cast (e.g. doubt)"
+   ],
+   [
+    "v5m,vt",
+    "(go) (uk) to pincer"
    ]
   ]
  ],
@@ -97885,7 +97905,7 @@
    "しつど",
    [
     "n",
-    "level of humidity"
+    "humidity"
    ]
   ]
  ],
@@ -112564,7 +112584,7 @@
    ],
    [
     "n",
-    "(abbr) leading male role in kabuki"
+    "(kabuki) (abbr) leading male role"
    ],
    [
     "n",
@@ -127805,8 +127825,16 @@
   [
    "たんじょう",
    [
-    "n,vs",
-    "birth; creation; formation"
+    "n,vs,vi",
+    "birth (of a person); nativity"
+   ],
+   [
+    "n,vs,vi",
+    "creation; formation; birth; origin; making"
+   ],
+   [
+    "n",
+    "one's first birthday"
    ]
   ]
  ],
@@ -141057,6 +141085,10 @@
    [
     "suf",
     "dried and opened fish"
+   ],
+   [
+    "n",
+    "(go) (uk) extension"
    ]
   ]
  ],
@@ -141161,6 +141193,10 @@
    [
     "v5k,vi",
     "(15) (sports) to slacken (into a poor posture)"
+   ],
+   [
+    "v5k,vi",
+    "(16) (go) (uk) to extend"
    ]
   ]
  ],
@@ -148593,7 +148629,7 @@
    "ついたち",
    [
     "n",
-    "first day of the month"
+    "first day of the month; the first of the month"
    ]
   ]
  ],
@@ -156203,7 +156239,7 @@
    "ひえる",
    [
     "v1,vi",
-    "to grow cold (from room temperature, e.g. in refrigerator); to get chilly; to cool down"
+    "to grow cold; to get chilly; to cool down"
    ]
   ]
  ],
@@ -161108,11 +161144,11 @@
   [
    "むくいる",
    [
-    "v1",
+    "v1,vt,vi",
     "to reward; to recompense; to repay"
    ],
    [
-    "v1",
+    "v1,vt,vi",
     "to retaliate; to get revenge"
    ]
   ]
@@ -186840,7 +186876,11 @@
    "かなしばり",
    [
     "n",
-    "binding hand and foot; temporary feeling of paralysis; sleep paralysis"
+    "binding hand and foot"
+   ],
+   [
+    "n",
+    "sleep paralysis; temporary feeling of paralysis"
    ],
    [
     "n",

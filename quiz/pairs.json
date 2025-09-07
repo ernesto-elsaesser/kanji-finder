@@ -30339,7 +30339,7 @@
         ],
         "湿度": [
             "しつど",
-            "level of humidity"
+            "humidity"
         ],
         "湿気": [
             "しっけ",
@@ -51589,9 +51589,8 @@
         ],
         "誕生": [
             "たんじょう",
-            "birth",
-            "creation",
-            "formation"
+            "birth (of a person)",
+            "nativity"
         ],
         "誘因": [
             "ゆういん",
