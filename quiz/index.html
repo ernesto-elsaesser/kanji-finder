@@ -24,6 +24,7 @@
     <div class="game-flex">
         <div class="options-col" id="left-col"></div>
             <div class="translation-center">
+                <div id="hint"></div>
                 <div id="reading"></div>
                 <a target="_blank" id="word"></a>
                 <div id="translation"></div>
@@ -47,6 +48,7 @@ const levelSelect = document.getElementById("level")
 const leftCol = document.getElementById("left-col")
 const rightCol = document.getElementById("right-col")
 const columns = {"l": leftCol, "r": rightCol}
+const hintDiv = document.getElementById("hint")
 const readingDiv = document.getElementById("reading")
 const wordLink = document.getElementById("word")
 const translationDiv = document.getElementById("translation")
@@ -62,6 +64,7 @@ var kanjis = null
 var targets = {}
 var options = {}
 var picks = {}
+var hint = null
 
 async function loadData() {
     let res = await fetch("jlpt.json#2")
@@ -87,6 +90,7 @@ function nextRound() {
 
     targets = {"l": word[0], "r": word[1]}
     picks = {"l": null, "r": null}
+    hint = null
 
     const decoys = Object.keys(kanjis)
     let pool = Array.from(word)
@@ -104,6 +108,11 @@ function nextRound() {
     update()
 }
 
+function showHint(kanji) {
+    hint = kanjis[kanji]
+    update()
+}
+
 function update() {
     const reveal = picks["l"] && picks["r"]
 
@@ -111,6 +120,8 @@ function update() {
     updateColumn("r", reveal)
 
     const word = targets["l"] + targets["r"]
+
+    hintDiv.textContent = hint || ""
 
     readingDiv.textContent = reveal ? vocab[word][0] : ""
     wordLink.textContent = reveal ? word : ""
@@ -131,11 +142,8 @@ function updateColumn(side, reveal) {
         row.className = "kanji-row"
 
         const button = document.createElement("button")
-
-        const meaning = kanjis[kanji]
-        button.innerHTML = kanji + " <span>" + meaning + "</span>"
-
-        button.className = "kanji-btn collapsed"
+        button.innerText = kanji
+        button.className = "kanji-btn"
         if (reveal) {
             if (kanji == targets[side]) button.classList.add("correct")
             else if (kanji == picks[side]) button.classList.add("incorrect")
@@ -148,16 +156,9 @@ function updateColumn(side, reveal) {
         })
 
         const toggle = document.createElement("button")
-        toggle.className = "reveal-btn"
-        toggle.innerHTML = side == "r" ? "&laquo;" : "&raquo;"
+        toggle.className = "hint-btn"
 
-        toggle.addEventListener('click', () => {
-            if (button.classList.contains("collapsed")) {
-                button.classList.remove("collapsed")
-            } else {
-                button.classList.add("collapsed")
-            }
-        })
+        toggle.addEventListener('click', () => showHint(kanji))
 
         if (side == "r") row.appendChild(toggle)
         row.appendChild(button)

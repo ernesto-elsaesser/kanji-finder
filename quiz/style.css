@@ -41,8 +41,8 @@ h1 {
     position: relative;
 }
 .kanji-btn {
-    height: 2em;
-    font-size: 2.2rem;
+    height: 70px;
+    font-size: 36px;
     transition: width 0.2s;
     overflow: hidden;
     white-space: nowrap;
@@ -51,21 +51,7 @@ h1 {
     border: 2px solid #e0e0ef;
     border-radius: 8px;
     transition: background 0.15s, border 0.15s;
-}
-.kanji-btn.collapsed {
     width: 1.6em;
-}
-.kanji-char {
-    font-size: 2em;
-    font-weight: bold;
-    margin-right: 0.5em;
-}
-.kanji-meaning {
-    font-size: 1em;
-    color: #444;
-    opacity: 0.85;
-    margin-left: 0.5em;
-    font-weight: normal;
 }
 .kanji-btn.selected {
     background: #dbeafe;
@@ -79,17 +65,26 @@ h1 {
     background: #fecaca;
     border-color: #ef4444;
 }
-.reveal-btn {
-    margin: 0 10px;
-    font-size: 1.5em;
+.hint-btn {
+    padding: 0;
+    width: 32px;
+    height: 32px;
     background: none;
     border: none;
+    background-image: url("info.svg");
 }
 .translation-center {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#hint {
+    height: 1em;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+    color:#222;
 }
 #reading {
     height: 1.4em;
