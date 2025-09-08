@@ -51,11 +51,11 @@ h1 {
 }
 .hint-btn {
     font-size: 16px;
-    padding: 10px;
+    padding: 14px 16px;
     background: none;
     border: none;
     vertical-align: top;
-    margin-top: 14px;
+    margin-top: 15px;
 }
 .translation-center {
     flex: 1;
