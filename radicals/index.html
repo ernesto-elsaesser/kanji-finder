@@ -14,7 +14,10 @@
             font-size: 22px;
         }
         input {
-            width: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            font-size: 14px;
         }
         .selected {
             background-color: coral;
@@ -28,7 +31,8 @@
 <ul id="kanji-list"></ul>
 <button id="more" onclick="filter(false)" hidden>More</button>
 <hr/>
-<input id="query" type="text"/> <button onclick="delOne()">&lt;</button> <button onclick="delAll()">X</button> <button onclick="lookup()">LOOKUP</button> <button onclick="jisho()">JISHO</button>
+<input id="query" type="text"/><br>
+<button onclick="delAll()">CLEAR</button> <button onclick="copy()">COPY</button> <button onclick="lookup()">LOOKUP</button> <button onclick="jisho()">JISHO</button>
 <ul id="entry-list"></ul>
 
 <script>
@@ -124,9 +128,9 @@ function filter(jouyouOnly) {
     moreButton.hidden = !jouyouOnly
 }
 
-function delOne() {
+function copy() {
 
-    query.value = query.value.substr(0, query.value.length - 1)
+    navigator.clipboard.writeText(query.value);
 }
 
 function delAll() {
