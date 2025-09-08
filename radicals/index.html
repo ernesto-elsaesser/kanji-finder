@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Kanji Finder</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         * {
             font-size: 20px;
@@ -12,14 +13,11 @@
         span {
             font-size: 22px;
         }
-        .rare {
-            color: grey;
+        input {
+            width: 100px;
         }
         .selected {
             background-color: coral;
-        }
-        input {
-            width: 100px;
         }
     </style>
 </head>
@@ -82,7 +80,7 @@ function buildButtons() {
             }
             const btn = document.createElement("span")
             btn.textContent = radical
-            if (rare) btn.classList = ["rare"]
+            if (rare) btn.style.color = "grey"
             btn.onclick = () => {
                 if (btn.classList.contains("selected")) {
                     components = components.filter(c => c != radical)
