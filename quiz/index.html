@@ -68,7 +68,7 @@ var picks = {}
 var hint = ""
 
 async function loadData() {
-    let res = await fetch("jlpt.json#3")
+    let res = await fetch("jlpt.json#5")
     jlptKanjis = await res.json()
     res = await fetch("pairs.json#1")
     jlptWords = await res.json()
@@ -110,7 +110,10 @@ function nextRound() {
 }
 
 function showHint(kanji) {
-    hint = kanjis[kanji].join("<br/>")
+    const info = kanjis[kanji]
+    hint = info[0].toUpperCase() + "<br/>"
+    hint += info[1].join("・") + "<br/>"
+    hint += info[2].join("・")
     update()
 }
 
@@ -128,9 +131,10 @@ function update() {
 
     translationDiv.innerHTML = vocab[word][1].replace(" (", "<br/>(")
 
-    nextButton.hidden = !reveal
-
     hintDiv.innerHTML = hint
+
+    nextButton.hidden = !reveal
+    hintDiv.hidden = reveal
 }
 
 function updateColumn(side, reveal) {

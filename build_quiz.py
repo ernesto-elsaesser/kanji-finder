@@ -23,11 +23,17 @@ with open(JOUYOU_PATH, encoding="utf-8") as f:
 
 # %%
 
-def is_on(reading):
-    return '\u30A0' <= reading[0] <= '\u30FF'
+def split_on_kun(readings):
+    ons = []
+    kuns = []
+    for reading in readings:
+        if reading[0] < '\u30A0': # start of katakana block
+            kuns.append(reading)
+        else:
+            ons.append(reading)
+    return ons, kuns
 
-jlpt_entries = {k: d["meanings"].upper().split(", ") + ["・".join(r for r in d["readings"] if is_on(r))]
-                for k, d in jouyou.items()}
+jlpt_entries = {k: [d["meanings"], *split_on_kun(d["readings"])] for k, d in jouyou.items()}
 
 jlpt_kanjis = {}
 for level, kanjis in KANJIS.items():
