@@ -65,10 +65,10 @@ var kanjis = null
 var targets = {}
 var options = {}
 var picks = {}
-var hint = null
+var hint = ""
 
 async function loadData() {
-    let res = await fetch("jlpt.json#2")
+    let res = await fetch("jlpt.json#3")
     jlptKanjis = await res.json()
     res = await fetch("pairs.json#1")
     jlptWords = await res.json()
@@ -91,7 +91,7 @@ function nextRound() {
 
     targets = {"l": word[0], "r": word[1]}
     picks = {"l": null, "r": null}
-    hint = null
+    hint = ""
 
     const decoys = Object.keys(kanjis)
     let pool = Array.from(word)
@@ -110,7 +110,7 @@ function nextRound() {
 }
 
 function showHint(kanji) {
-    hint = kanjis[kanji]
+    hint = kanjis[kanji].join("<br/>")
     update()
 }
 
@@ -122,8 +122,6 @@ function update() {
 
     const word = targets["l"] + targets["r"]
 
-    hintDiv.textContent = (hint || "").toUpperCase()
-
     readingDiv.textContent = reveal ? vocab[word][0] : ""
     wordLink.textContent = reveal ? word : ""
     wordLink.href = reveal ? "https://jisho.org/search/" + word : ""
@@ -131,6 +129,8 @@ function update() {
     translationDiv.innerHTML = vocab[word][1].replace(" (", "<br/>(")
 
     nextButton.hidden = !reveal
+
+    hintDiv.innerHTML = hint
 }
 
 function updateColumn(side, reveal) {

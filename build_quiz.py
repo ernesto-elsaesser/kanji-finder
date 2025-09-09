@@ -23,9 +23,15 @@ with open(JOUYOU_PATH, encoding="utf-8") as f:
 
 # %%
 
+def is_on(reading):
+    return '\u30A0' <= reading[0] <= '\u30FF'
+
+jlpt_entries = {k: d["meanings"].upper().split(", ") + ["・".join(r for r in d["readings"] if is_on(r))]
+                for k, d in jouyou.items()}
+
 jlpt_kanjis = {}
 for level, kanjis in KANJIS.items():
-    jlpt_kanjis[level] = {k: jouyou[k]["meanings"] for k in kanjis}
+    jlpt_kanjis[level] = {k: jlpt_entries[k] for k in kanjis}
 
 # %%
 
