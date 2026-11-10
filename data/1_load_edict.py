@@ -1,21 +1,16 @@
-# %%
 import io
 import re
-import sys
 import json
 import gzip
 import urllib.request
 
 EDICT_URL = "http://ftp.edrdg.org/pub/Nihongo/edict_sub.gz"
-OUTPUT_PATH = sys.argv[1]
 
-# %%
+
 with urllib.request.urlopen(EDICT_URL) as response:
     gzipped_file = io.BytesIO(response.read())
     with gzip.open(gzipped_file, "rt", encoding="EUC-JP") as f:
         lines = f.readlines()
-
-# %%
 
 multi_entry_regex = re.compile(r"\(([a-z0-9,-]+)\) \([0-9]\) (.+)")
 single_entry_regex = re.compile(r"\(([a-z0-9,-]+)\) (.+)")
@@ -58,15 +53,10 @@ for line in lines[1:]:
     else:
         edict[word] = [entry]
 
-# %%
-
 sorted_keys = sorted(edict)
 sorted_keys = sorted(sorted_keys, key=lambda k: len(k))
 edict = {k: edict[k] for k in sorted_keys}
 
-# %%
-
-with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+with open("edict.json", "w", encoding="utf-8") as f:
     json.dump(edict, f, indent=1, ensure_ascii=False)
 
-# %%

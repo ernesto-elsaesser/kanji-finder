@@ -3,11 +3,13 @@
         "一万": [
             "いちまん",
             "10,000",
-            "ten thousand"
+            "ten thousand",
+            "10^4"
         ],
         "一二": [
             "いちに",
-            "the first and second",
+            "one or two",
+            "a couple",
             "a few"
         ],
         "一人": [
@@ -80,12 +82,7 @@
             "いっしょう",
             "whole life",
             "a lifetime",
-            "all through life",
-            "one existence",
-            "a generation",
-            "an age",
-            "the whole world",
-            "the era"
+            "all through life"
         ],
         "一男": [
             "いちなん",
@@ -211,9 +208,8 @@
         ],
         "下火": [
             "したび",
-            "burning low",
-            "waning",
-            "declining"
+            "dying down (of a fire)",
+            "waning"
         ],
         "下見": [
             "したみ",
@@ -437,6 +433,11 @@
         "何日": [
             "なんにち",
             "what day"
+        ],
+        "何時": [
+            "なんじ",
+            "what time",
+            "which hour"
         ],
         "何百": [
             "なんびゃく",
@@ -819,10 +820,6 @@
             "outside the country",
             "abroad"
         ],
-        "国大": [
-            "こくだい",
-            "national university"
-        ],
         "国学": [
             "こくがく",
             "study of classical Japanese literature and culture"
@@ -854,7 +851,7 @@
         ],
         "外人": [
             "がいじん",
-            "(sens) foreigner (esp. one of European ancestry)",
+            "(sens) foreigner (esp. a Westerner)",
             "gaijin"
         ],
         "外出": [
@@ -883,7 +880,7 @@
         ],
         "外車": [
             "がいしゃ",
-            "foreign-made car",
+            "foreign car",
             "imported car"
         ],
         "外電": [
@@ -914,7 +911,9 @@
         ],
         "大小": [
             "だいしょう",
-            "size"
+            "size",
+            "dimension",
+            "magnitude"
         ],
         "大山": [
             "たいざん",
@@ -1006,9 +1005,9 @@
         ],
         "小人": [
             "こびと",
-            "dwarf",
-            "midget",
-            "pygmy"
+            "little person (in folklore and fantasy, e.g. fairy, elf, gnome)",
+            "little people",
+            "dwarf"
         ],
         "小国": [
             "しょうこく",
@@ -1240,8 +1239,7 @@
             "ほんき",
             "seriousness",
             "earnestness",
-            "truth",
-            "sanctity"
+            "sincerity"
         ],
         "来年": [
             "らいねん",
@@ -1572,6 +1570,7 @@
         ],
         "一元": [
             "いちげん",
+            "single element",
             "unitary"
         ],
         "一切": [
@@ -1874,8 +1873,8 @@
         ],
         "下界": [
             "げかい",
-            "the world",
-            "the earth"
+            "the earth below",
+            "the ground below"
         ],
         "下着": [
             "したぎ",
@@ -2026,7 +2025,7 @@
         ],
         "中京": [
             "ちゅうきょう",
-            "Nagoya"
+            "Nagoya (city)"
         ],
         "中元": [
             "ちゅうげん",
@@ -2092,8 +2091,7 @@
         "主力": [
             "しゅりょく",
             "main force",
-            "chief object",
-            "mainline"
+            "main strength"
         ],
         "主計": [
             "しゅけい",
@@ -2173,10 +2171,9 @@
         ],
         "人事": [
             "じんじ",
-            "personnel affairs",
             "human affairs",
-            "human resources",
-            "HR"
+            "mundane matters",
+            "things human"
         ],
         "人体": [
             "じんたい",
@@ -2636,7 +2633,7 @@
         ],
         "元本": [
             "がんぽん",
-            "principal (invest.)",
+            "principal",
             "capital"
         ],
         "元来": [
@@ -2659,13 +2656,12 @@
         ],
         "元金": [
             "がんきん",
-            "capital",
-            "principal"
+            "(finc) principal"
         ],
         "兄弟": [
             "きょうだい",
-            "siblings",
-            "brothers and sisters"
+            "brothers and sisters",
+            "siblings"
         ],
         "先代": [
             "せんだい",
@@ -2775,8 +2771,8 @@
         ],
         "八重": [
             "やえ",
-            "multilayered",
-            "doubled"
+            "eightfold",
+            "octuple"
         ],
         "公人": [
             "こうじん",
@@ -3019,7 +3015,8 @@
             "other self",
             "alter ego",
             "part of oneself (in someone or something else)",
-            "representation of oneself"
+            "representation of oneself",
+            "clone"
         ],
         "分野": [
             "ぶんや",
@@ -3167,8 +3164,8 @@
         ],
         "医学": [
             "いがく",
-            "medical science",
-            "medicine"
+            "medicine",
+            "medical science"
         ],
         "医者": [
             "いしゃ",
@@ -3198,7 +3195,10 @@
         ],
         "千代": [
             "ちよ",
-            "thousand years"
+            "(poet) thousand years",
+            "thousand generations",
+            "thousand ages",
+            "eternity"
         ],
         "半身": [
             "はんしん",
@@ -3231,9 +3231,9 @@
         ],
         "口上": [
             "こうじょう",
-            "vocal message",
             "speech",
-            "statement"
+            "address",
+            "verbal message"
         ],
         "口先": [
             "くちさき",
@@ -4429,8 +4429,9 @@
         ],
         "強大": [
             "きょうだい",
-            "mighty",
-            "powerful"
+            "powerful",
+            "strong",
+            "mighty"
         ],
         "強度": [
             "きょうど",
@@ -4611,7 +4612,10 @@
         "意外": [
             "いがい",
             "unexpected",
-            "surprising"
+            "surprising",
+            "unanticipated",
+            "strange",
+            "unforeseen"
         ],
         "意思": [
             "いし",
@@ -4690,7 +4694,8 @@
             "てま",
             "time",
             "labour",
-            "labor"
+            "labor",
+            "effort"
         ],
         "持病": [
             "じびょう",
@@ -5278,12 +5283,14 @@
         ],
         "東海": [
             "とうかい",
-            "Tokai region",
-            "region south of Tokyo on the Pacific Ocean side of Japan"
+            "Tokai region (of Honshu",
+            "incl. Aichi, Shizuoka, Mie and southern Gifu prefectures)"
         ],
         "校歌": [
             "こうか",
-            "school song"
+            "school song",
+            "college song",
+            "school anthem"
         ],
         "校正": [
             "こうせい",
@@ -5423,6 +5430,7 @@
         "毎度": [
             "まいど",
             "each time",
+            "every time",
             "always",
             "often"
         ],
@@ -5641,7 +5649,8 @@
         ],
         "漢方": [
             "かんぽう",
-            "traditional Chinese medicine"
+            "kampo",
+            "traditional (herbal) medicine based on ancient Chinese medicine"
         ],
         "漢語": [
             "かんご",
@@ -5871,10 +5880,7 @@
         ],
         "特色": [
             "とくしょく",
-            "characteristic",
-            "feature",
-            "idiosyncrasy",
-            "personal colour"
+            "characteristic"
         ],
         "特質": [
             "とくしつ",
@@ -5902,12 +5908,12 @@
         ],
         "理学": [
             "りがく",
-            "physical science",
+            "(physical) science",
             "natural science"
         ],
         "理工": [
             "りこう",
-            "science and technology"
+            "science and engineering"
         ],
         "生体": [
             "せいたい",
@@ -6240,7 +6246,8 @@
             "goal",
             "aim",
             "objective",
-            "intention"
+            "intention",
+            "motive"
         ],
         "目黒": [
             "めぐろ",
@@ -6286,7 +6293,7 @@
         ],
         "着地": [
             "ちゃくち",
-            "landing"
+            "landing (on the ground)"
         ],
         "着工": [
             "ちゃっこう",
@@ -6458,9 +6465,9 @@
         ],
         "空中": [
             "くうちゅう",
-            "sky",
-            "air",
-            "mid-air"
+            "(in) the air",
+            "midair",
+            "sky"
         ],
         "空前": [
             "くうぜん",
@@ -7047,7 +7054,7 @@
         "赤色": [
             "あかいろ",
             "red",
-            "red color (colour)"
+            "red color"
         ],
         "赤道": [
             "せきどう",
@@ -7114,7 +7121,7 @@
         ],
         "足音": [
             "あしおと",
-            "sound of footsteps"
+            "(sound of) footsteps"
         ],
         "身上": [
             "しんじょう",
@@ -7172,6 +7179,13 @@
             "てんばい",
             "resale"
         ],
+        "転生": [
+            "てんせい",
+            "reincarnation",
+            "rebirth",
+            "transmigration",
+            "metempsychosis"
+        ],
         "転用": [
             "てんよう",
             "diversion",
@@ -7200,7 +7214,8 @@
         ],
         "近作": [
             "きんさく",
-            "recent work"
+            "recent work",
+            "latest work"
         ],
         "近年": [
             "きんねん",
@@ -7239,7 +7254,8 @@
         "送金": [
             "そうきん",
             "remittance",
-            "sending money"
+            "sending money",
+            "transferring money"
         ],
         "送電": [
             "そうでん",
@@ -7292,8 +7308,8 @@
         ],
         "通院": [
             "つういん",
-            "going to the hospital for regular treatment",
-            "going to the hospital as an outpatient"
+            "going to the hospital regularly for treatment",
+            "attending hospital as an outpatient"
         ],
         "週休": [
             "しゅうきゅう",
@@ -7511,7 +7527,8 @@
         "開発": [
             "かいはつ",
             "development",
-            "exploitation (of resources)"
+            "cultivation",
+            "application"
         ],
         "開花": [
             "かいか",
@@ -7718,6 +7735,7 @@
         "食道": [
             "しょくどう",
             "(anat) esophagus",
+            "oesophagus",
             "gullet"
         ],
         "飲料": [
@@ -8295,12 +8313,14 @@
             "indestructible"
         ],
         "不定": [
-            "ふじょう",
-            "uncertainty",
-            "insecurity",
-            "inconstancy",
+            "ふてい",
+            "unsettled",
+            "uncertain",
             "indefinite",
-            "undecided"
+            "unfixed",
+            "variable",
+            "irregular",
+            "changeable"
         ],
         "不平": [
             "ふへい",
@@ -8428,7 +8448,8 @@
             "りょうりつ",
             "compatibility",
             "coexistence",
-            "standing together"
+            "standing together",
+            "balancing (e.g. work and family)"
         ],
         "両者": [
             "りょうしゃ",
@@ -8448,7 +8469,7 @@
             "both opinions"
         ],
         "両足": [
-            "りょうそく",
+            "りょうあし",
             "both feet"
         ],
         "両院": [
@@ -8504,8 +8525,7 @@
         "中流": [
             "ちゅうりゅう",
             "mid-stream",
-            "middle course",
-            "middle class"
+            "middle course"
         ],
         "中等": [
             "ちゅうとう",
@@ -8521,7 +8541,7 @@
         ],
         "中耳": [
             "ちゅうじ",
-            "middle ear",
+            "(anat) middle ear",
             "tympanum"
         ],
         "中腹": [
@@ -8736,8 +8756,7 @@
             "preliminary contest",
             "qualifying round",
             "trial",
-            "heat",
-            "primary"
+            "heat"
         ],
         "争点": [
             "そうてん",
@@ -8785,7 +8804,8 @@
             "じじつ",
             "fact",
             "truth",
-            "reality"
+            "reality",
+            "actuality"
         ],
         "事情": [
             "じじょう",
@@ -9021,6 +9041,7 @@
         ],
         "人選": [
             "じんせん",
+            "selecting a suitable person",
             "personnel selection"
         ],
         "人類": [
@@ -9359,7 +9380,8 @@
         ],
         "住職": [
             "じゅうしょく",
-            "chief priest (of a Buddhist temple)"
+            "(Buddh) chief priest (of a Buddhist temple)",
+            "abbot"
         ],
         "体内": [
             "たいない",
@@ -9393,7 +9415,8 @@
         "体感": [
             "たいかん",
             "bodily sensation",
-            "sense",
+            "feeling in the body",
+            "physical feeling",
             "experience"
         ],
         "体格": [
@@ -9454,10 +9477,9 @@
         ],
         "余地": [
             "よち",
-            "place",
+            "space",
             "room",
-            "margin",
-            "scope"
+            "unused land"
         ],
         "余念": [
             "よねん",
@@ -9561,7 +9583,8 @@
         "供給": [
             "きょうきゅう",
             "supply",
-            "provision"
+            "provision",
+            "service"
         ],
         "便乗": [
             "びんじょう",
@@ -9981,9 +10004,8 @@
         ],
         "全米": [
             "ぜんべい",
-            "all-America",
-            "pan-American",
-            "all of America"
+            "all of the United States",
+            "the whole of the USA"
         ],
         "全身": [
             "ぜんしん",
@@ -10051,10 +10073,12 @@
         ],
         "公平": [
             "こうへい",
-            "fairness",
-            "impartiality",
-            "justice",
-            "objectivity"
+            "fair",
+            "impartial",
+            "just",
+            "objective",
+            "disinterested",
+            "unprejudiced"
         ],
         "公式": [
             "こうしき",
@@ -10142,7 +10166,8 @@
         ],
         "共学": [
             "きょうがく",
-            "coeducation"
+            "coeducation",
+            "mixed-sex education"
         ],
         "共感": [
             "きょうかん",
@@ -10295,7 +10320,9 @@
         ],
         "内示": [
             "ないじ",
-            "unofficial announcement"
+            "unofficial announcement",
+            "private notice",
+            "informal notification"
         ],
         "内科": [
             "ないか",
@@ -10362,6 +10389,7 @@
             "とうみん",
             "hibernation",
             "winter sleep",
+            "brumation",
             "torpor"
         ],
         "冷夏": [
@@ -10458,7 +10486,9 @@
         ],
         "出欠": [
             "しゅっけつ",
-            "attendance or absence"
+            "attendance",
+            "presence and absence",
+            "attendance and non-attendance"
         ],
         "出港": [
             "しゅっこう",
@@ -10705,7 +10735,9 @@
         ],
         "判例": [
             "はんれい",
-            "(judicial) precedent"
+            "(law) judicial precedent",
+            "leading case",
+            "prior case"
         ],
         "判定": [
             "はんてい",
@@ -10728,11 +10760,11 @@
         ],
         "判明": [
             "はんめい",
-            "establishing",
-            "proving",
-            "ascertaining",
-            "identifying",
-            "confirming"
+            "becoming clear",
+            "coming to light",
+            "being ascertained",
+            "being identified",
+            "being confirmed"
         ],
         "判決": [
             "はんけつ",
@@ -11258,12 +11290,10 @@
         ],
         "半面": [
             "はんめん",
-            "half the face",
-            "one side",
-            "half",
-            "the other side",
-            "the reverse",
-            "the contrary"
+            "while",
+            "although",
+            "though",
+            "but"
         ],
         "南側": [
             "みなみがわ",
@@ -11288,7 +11318,7 @@
         ],
         "単位": [
             "たんい",
-            "unit",
+            "unit (e.g. meters, grams, etc.)",
             "denomination"
         ],
         "単数": [
@@ -11396,9 +11426,7 @@
         ],
         "原本": [
             "げんぽん",
-            "the original",
-            "original copy",
-            "script"
+            "original (document, copy, work, text, etc.)"
         ],
         "原点": [
             "げんてん",
@@ -11590,8 +11618,10 @@
         ],
         "反面": [
             "はんめん",
-            "opposite side",
-            "reverse"
+            "while",
+            "although",
+            "though",
+            "but"
         ],
         "収入": [
             "しゅうにゅう",
@@ -11659,7 +11689,8 @@
         ],
         "受動": [
             "じゅどう",
-            "passivity"
+            "passivity",
+            "passiveness"
         ],
         "受取": [
             "うけとり",
@@ -11668,6 +11699,7 @@
         ],
         "受容": [
             "じゅよう",
+            "acceptance",
             "reception"
         ],
         "受注": [
@@ -12199,10 +12231,8 @@
         ],
         "命題": [
             "めいだい",
-            "proposition",
-            "thesis",
-            "notion",
-            "theory"
+            "(logic) (phil) proposition",
+            "thesis"
         ],
         "和室": [
             "わしつ",
@@ -12280,7 +12310,8 @@
         ],
         "品性": [
             "ひんせい",
-            "character"
+            "character",
+            "personality"
         ],
         "品格": [
             "ひんかく",
@@ -12515,8 +12546,11 @@
         ],
         "国内": [
             "こくない",
-            "internal",
-            "domestic"
+            "within the country",
+            "inside the county",
+            "domestic",
+            "home",
+            "internal"
         ],
         "国務": [
             "こくむ",
@@ -12817,6 +12851,7 @@
             "へんじん",
             "eccentric",
             "crank",
+            "weirdo",
             "oddball"
         ],
         "変動": [
@@ -12831,9 +12866,7 @@
             "alteration",
             "mutation",
             "transition",
-            "transformation",
-            "transfiguration",
-            "metamorphosis"
+            "transformation"
         ],
         "変容": [
             "へんよう",
@@ -12966,7 +12999,7 @@
         "多様": [
             "たよう",
             "diverse",
-            "varied"
+            "various"
         ],
         "多難": [
             "たなん",
@@ -13140,7 +13173,7 @@
             "ふじん",
             "(hon) wife",
             "Mrs",
-            "madam"
+            "Madam"
         ],
         "夫妻": [
             "ふさい",
@@ -13202,9 +13235,9 @@
         ],
         "失神": [
             "しっしん",
-            "faint",
-            "swoon",
-            "losing consciousness"
+            "fainting",
+            "losing consciousness",
+            "passing out"
         ],
         "失速": [
             "しっそく",
@@ -13231,7 +13264,9 @@
         ],
         "女王": [
             "じょおう",
-            "queen"
+            "queen",
+            "female monarch",
+            "female sovereign"
         ],
         "女神": [
             "めがみ",
@@ -13270,8 +13305,10 @@
         ],
         "好物": [
             "こうぶつ",
-            "favourite dish (favorite)",
-            "favourite food"
+            "favourite dish",
+            "favorite dish",
+            "favourite food",
+            "favorite food"
         ],
         "好色": [
             "こうしょく",
@@ -13447,10 +13484,10 @@
         ],
         "学部": [
             "がくぶ",
-            "department (of a university)",
-            "faculty",
+            "faculty (of a university)",
             "school",
-            "college"
+            "college",
+            "department"
         ],
         "学際": [
             "がくさい",
@@ -13561,7 +13598,7 @@
         "官報": [
             "かんぽう",
             "official daily gazette",
-            "official telegram"
+            "government newsletter"
         ],
         "官民": [
             "かんみん",
@@ -13571,7 +13608,8 @@
         ],
         "官界": [
             "かんかい",
-            "bureaucracy"
+            "bureaucratic world",
+            "government circles"
         ],
         "定住": [
             "ていじゅう",
@@ -13924,7 +13962,9 @@
         ],
         "容認": [
             "ようにん",
-            "approval"
+            "approval",
+            "acceptance",
+            "toleration"
         ],
         "宿命": [
             "しゅくめい",
@@ -14064,7 +14104,9 @@
         "対外": [
             "たいがい",
             "external",
-            "foreign"
+            "foreign",
+            "with foreign countries",
+            "towards foreign countries"
         ],
         "対局": [
             "たいきょく",
@@ -14158,8 +14200,8 @@
         ],
         "小数": [
             "しょうすう",
-            "fraction (part of)",
-            "decimal fraction"
+            "small number",
+            "small amount"
         ],
         "小石": [
             "こいし",
@@ -14402,8 +14444,8 @@
         ],
         "帰途": [
             "きと",
-            "on the way back",
-            "returning"
+            "(the) way home",
+            "return trip"
         ],
         "常任": [
             "じょうにん",
@@ -14652,7 +14694,8 @@
         ],
         "座席": [
             "ざせき",
-            "seat"
+            "seat (esp. in public places or places with assigned seating)",
+            "seating"
         ],
         "座長": [
             "ざちょう",
@@ -15088,8 +15131,11 @@
         ],
         "心得": [
             "こころえ",
-            "knowledge",
-            "understanding"
+            "knowledge (of a skill, art, etc.)",
+            "proficiency",
+            "understanding",
+            "command",
+            "experience"
         ],
         "心情": [
             "しんじょう",
@@ -15125,8 +15171,10 @@
         ],
         "必着": [
             "ひっちゃく",
-            "must arrive",
-            "must be received"
+            "must arrive (no later than",
+            "e.g. of an application)",
+            "must be received",
+            "must be delivered"
         ],
         "必要": [
             "ひつよう",
@@ -15192,6 +15240,7 @@
         "急増": [
             "きゅうぞう",
             "rapid increase",
+            "sharp rise",
             "proliferation",
             "surge",
             "explosion"
@@ -15420,9 +15469,11 @@
         "意向": [
             "いこう",
             "intention",
-            "idea",
             "inclination",
-            "wish"
+            "mind",
+            "idea",
+            "wish",
+            "view"
         ],
         "意欲": [
             "いよく",
@@ -15457,7 +15508,9 @@
         "愛好": [
             "あいこう",
             "love",
-            "adoration"
+            "adoration",
+            "being fond of",
+            "having a passion for"
         ],
         "愛情": [
             "あいじょう",
@@ -15734,7 +15787,7 @@
         ],
         "所有": [
             "しょゆう",
-            "one's possessions",
+            "possession",
             "ownership"
         ],
         "所要": [
@@ -15773,7 +15826,7 @@
         ],
         "手形": [
             "てがた",
-            "draft",
+            "(econ) draft",
             "draught",
             "promissory note",
             "bill"
@@ -15787,6 +15840,7 @@
             "しゅだん",
             "means",
             "way",
+            "method",
             "measure"
         ],
         "手法": [
@@ -16026,8 +16080,7 @@
             "しすう",
             "index",
             "index number",
-            "exponent (e.g. in floating-point representation)",
-            "characteristic"
+            "indicator"
         ],
         "指示": [
             "しじ",
@@ -16118,6 +16171,7 @@
         "支部": [
             "しぶ",
             "branch",
+            "branch office",
             "subdivision"
         ],
         "支配": [
@@ -16134,9 +16188,11 @@
         ],
         "放出": [
             "ほうしゅつ",
-            "release",
             "emission",
-            "ejection"
+            "release",
+            "radiation",
+            "discharge",
+            "gush"
         ],
         "放映": [
             "ほうえい",
@@ -16162,7 +16218,7 @@
             "ほうち",
             "leaving as is",
             "leaving alone",
-            "leaving to chance",
+            "leaving unattended",
             "neglecting",
             "abandoning"
         ],
@@ -16268,8 +16324,9 @@
         ],
         "教務": [
             "きょうむ",
-            "school affairs",
-            "religious affairs"
+            "academic affairs",
+            "educational affairs",
+            "school affairs"
         ],
         "教官": [
             "きょうかん",
@@ -16290,7 +16347,9 @@
         "教示": [
             "きょうじ",
             "instruction",
-            "teaching"
+            "teaching",
+            "guidance",
+            "informing"
         ],
         "教祖": [
             "きょうそ",
@@ -16430,9 +16489,8 @@
         ],
         "文科": [
             "ぶんか",
-            "humanities",
-            "liberal arts",
-            "social science"
+            "humanities and social sciences",
+            "liberal arts"
         ],
         "文面": [
             "ぶんめん",
@@ -16511,7 +16569,8 @@
         ],
         "新制": [
             "しんせい",
-            "new system"
+            "new system",
+            "new order"
         ],
         "新婚": [
             "しんこん",
@@ -16736,6 +16795,11 @@
             "nowadays",
             "recently",
             "lately"
+        ],
+        "昨夜": [
+            "さくや",
+            "last night",
+            "yesterday evening"
         ],
         "昨年": [
             "さくねん",
@@ -17270,7 +17334,7 @@
         "未然": [
             "みぜん",
             "before it happens",
-            "previously"
+            "beforehand"
         ],
         "未知": [
             "みち",
@@ -17374,7 +17438,6 @@
         ],
         "本願": [
             "ほんがん",
-            "Amida Buddha's original vow",
             "long-cherished desire"
         ],
         "来客": [
@@ -17693,7 +17756,7 @@
         ],
         "次元": [
             "じげん",
-            "dimension"
+            "(math) dimension"
         ],
         "次回": [
             "じかい",
@@ -18117,7 +18180,7 @@
         ],
         "水産": [
             "すいさん",
-            "aquatic products",
+            "aquatic products (e.g. seafood)",
             "fisheries"
         ],
         "水路": [
@@ -18157,8 +18220,7 @@
         ],
         "決勝": [
             "けっしょう",
-            "decision of a contest",
-            "finals (in sports)"
+            "decision of a contest"
         ],
         "決定": [
             "けってい",
@@ -18332,8 +18394,10 @@
         ],
         "活字": [
             "かつじ",
-            "printing type",
-            "movable type"
+            "(piece of) type",
+            "movable type",
+            "moveable type",
+            "printing type"
         ],
         "活性": [
             "かっせい",
@@ -18394,8 +18458,8 @@
         ],
         "流用": [
             "りゅうよう",
-            "diversion",
-            "appropriation (e.g. of funds)",
+            "diversion (e.g. of funds)",
+            "appropriation",
             "misappropriation"
         ],
         "流行": [
@@ -18497,7 +18561,8 @@
         ],
         "深山": [
             "みやま",
-            "(poet) (hon) mountain"
+            "(poet) mountain recesses",
+            "heart of the mountains"
         ],
         "深度": [
             "しんど",
@@ -18550,7 +18615,8 @@
         ],
         "満杯": [
             "まんぱい",
-            "full"
+            "full (of a container, vessel, etc.)",
+            "filled to the brim"
         ],
         "満点": [
             "まんてん",
@@ -19006,6 +19072,7 @@
             "げんだい",
             "present age",
             "present day",
+            "contemporary",
             "today"
         ],
         "現在": [
@@ -19111,8 +19178,7 @@
         ],
         "理科": [
             "りか",
-            "science (inc. mathematics, medicine, etc.)",
-            "natural science"
+            "science (natural sciences and related fields, incl. mathematics, engineering, medicine, etc.)"
         ],
         "理解": [
             "りかい",
@@ -19338,8 +19404,9 @@
         ],
         "番地": [
             "ばんち",
+            "lot number",
             "house number",
-            "address"
+            "street number"
         ],
         "番手": [
             "ばんて",
@@ -19398,7 +19465,8 @@
         ],
         "病状": [
             "びょうじょう",
-            "patient's condition",
+            "condition of a patient",
+            "state of a disease",
             "pathology"
         ],
         "病苦": [
@@ -19820,7 +19888,7 @@
         ],
         "石英": [
             "せきえい",
-            "quartz"
+            "(min) quartz"
         ],
         "石頭": [
             "いしあたま",
@@ -19974,7 +20042,7 @@
         ],
         "神官": [
             "しんかん",
-            "Shinto priest"
+            "(Shinto) priest"
         ],
         "神業": [
             "かみわざ",
@@ -20192,7 +20260,7 @@
         ],
         "立法": [
             "りっぽう",
-            "legislation",
+            "(enactment of) legislation",
             "lawmaking"
         ],
         "立腹": [
@@ -20224,7 +20292,7 @@
         ],
         "米人": [
             "べいじん",
-            "American person"
+            "American (person)"
         ],
         "米国": [
             "べいこく",
@@ -20245,7 +20313,7 @@
         ],
         "精子": [
             "せいし",
-            "sperm",
+            "(biol) sperm",
             "spermatozoon"
         ],
         "精度": [
@@ -20520,7 +20588,8 @@
         "美化": [
             "びか",
             "beautification",
-            "glorification"
+            "cleaning up",
+            "tidiying"
         ],
         "美女": [
             "びじょ",
@@ -20653,6 +20722,7 @@
             "profession",
             "job",
             "vocation",
+            "career",
             "trade",
             "calling",
             "business"
@@ -20824,12 +20894,17 @@
         ],
         "自給": [
             "じきゅう",
-            "self-support"
+            "self-supply",
+            "self-sufficiency",
+            "producing for oneself",
+            "providing for oneself"
         ],
         "自覚": [
             "じかく",
-            "self-consciousness",
-            "self-awareness"
+            "self-awareness",
+            "awareness (of one's position, abilities, duty, etc.)",
+            "consciousness",
+            "realization"
         ],
         "自負": [
             "じふ",
@@ -21111,7 +21186,7 @@
         "薬品": [
             "やくひん",
             "medicine",
-            "chemicals"
+            "drug"
         ],
         "薬学": [
             "やくがく",
@@ -21136,8 +21211,8 @@
         ],
         "薬物": [
             "やくぶつ",
-            "medicines",
-            "drugs"
+            "drug",
+            "medicine"
         ],
         "行列": [
             "ぎょうれつ",
@@ -21641,7 +21716,7 @@
         ],
         "誤差": [
             "ごさ",
-            "measurement error",
+            "(math) measurement error",
             "calculation error"
         ],
         "誤解": [
@@ -21831,8 +21906,9 @@
         ],
         "警報": [
             "けいほう",
+            "warning",
             "alarm",
-            "warning"
+            "alert"
         ],
         "警官": [
             "けいかん",
@@ -22123,6 +22199,12 @@
             "on the street",
             "in the street"
         ],
+        "路地": [
+            "ろじ",
+            "alley",
+            "alleyway",
+            "lane"
+        ],
         "路面": [
             "ろめん",
             "road surface"
@@ -22134,9 +22216,8 @@
         ],
         "車両": [
             "しゃりょう",
-            "rolling stock",
-            "wheeled vehicle",
-            "railroad car"
+            "(wheeled) vehicle",
+            "car"
         ],
         "車内": [
             "しゃない",
@@ -22681,7 +22762,8 @@
             "れんぞく",
             "continuation",
             "succession",
-            "series"
+            "series",
+            "sequence"
         ],
         "連行": [
             "れんこう",
@@ -22706,8 +22788,8 @@
         "進入": [
             "しんにゅう",
             "entry",
-            "approach",
-            "penetration"
+            "going into",
+            "approach"
         ],
         "進出": [
             "しんしゅつ",
@@ -22828,8 +22910,8 @@
         ],
         "過熱": [
             "かねつ",
-            "superheating",
-            "overheating"
+            "overheating",
+            "excessive heating"
         ],
         "過程": [
             "かてい",
@@ -23018,8 +23100,8 @@
         "選別": [
             "せんべつ",
             "selection",
-            "classification",
             "sorting",
+            "culling",
             "screening",
             "triage"
         ],
@@ -23840,12 +23922,6 @@
             "visit",
             "interview"
         ],
-        "面子": [
-            "メンツ",
-            "face (chi:)",
-            "honour",
-            "honor"
-        ],
         "面白": [
             "おもしろ",
             "amusing",
@@ -23893,8 +23969,7 @@
         "音声": [
             "おんせい",
             "voice",
-            "speech",
-            "sound of a voice"
+            "speech"
         ],
         "音程": [
             "おんてい",
@@ -23925,7 +24000,9 @@
         ],
         "頭取": [
             "とうどり",
-            "(bank) president"
+            "leader",
+            "head",
+            "chief"
         ],
         "頭痛": [
             "ずつう",
@@ -23947,8 +24024,8 @@
         "顔色": [
             "かおいろ",
             "complexion",
-            "one's colour",
-            "one's color"
+            "skin tone",
+            "skin colour"
         ],
         "顔面": [
             "がんめん",
@@ -24060,7 +24137,7 @@
         ],
         "首都": [
             "しゅと",
-            "capital (city)",
+            "(national) capital (city)",
             "metropolis"
         ],
         "首長": [
@@ -24185,7 +24262,8 @@
         "一億": [
             "いちおく",
             "100,000,000",
-            "one hundred million"
+            "one hundred million",
+            "10^8"
         ],
         "一党": [
             "いっとう",
@@ -24257,7 +24335,7 @@
         ],
         "一線": [
             "いっせん",
-            "line"
+            "one line"
         ],
         "一般": [
             "いっぱん",
@@ -24297,7 +24375,9 @@
         ],
         "万里": [
             "ばんり",
-            "thousands of miles"
+            "great distance",
+            "thousands of miles",
+            "ten thousand ri"
         ],
         "三枚": [
             "さんまい",
@@ -24388,9 +24468,7 @@
         "世帯": [
             "せたい",
             "household",
-            "home",
-            "family",
-            "housekeeping"
+            "family"
         ],
         "両党": [
             "りょうとう",
@@ -24486,7 +24564,9 @@
         ],
         "主査": [
             "しゅさ",
-            "chief examiner or investigator"
+            "chief examiner",
+            "chief investigator",
+            "first reader"
         ],
         "主筆": [
             "しゅひつ",
@@ -25035,9 +25115,9 @@
         "停電": [
             "ていでん",
             "power outage",
-            "electricity outage",
-            "blackout",
-            "failure of electricity supply"
+            "power failure",
+            "power cut",
+            "blackout"
         ],
         "偶像": [
             "ぐうぞう",
@@ -25097,8 +25177,9 @@
         ],
         "光線": [
             "こうせん",
+            "ray (of light)",
             "beam",
-            "light ray"
+            "light"
         ],
         "児童": [
             "じどう",
@@ -25225,7 +25306,7 @@
         ],
         "全額": [
             "ぜんがく",
-            "total",
+            "total (money)",
             "full amount",
             "sum"
         ],
@@ -25326,7 +25407,7 @@
         ],
         "内蔵": [
             "ないぞう",
-            "internal (e.g. disk)",
+            "internal (e.g. mechanism, feature)",
             "built-in",
             "equipped (with)"
         ],
@@ -25514,7 +25595,8 @@
             "しゅっけつ",
             "bleeding",
             "haemorrhage",
-            "hemorrhage"
+            "hemorrhage",
+            "bleed"
         ],
         "分冊": [
             "ぶんさつ",
@@ -25660,7 +25742,8 @@
         ],
         "劇画": [
             "げきが",
-            "comic strip with dramatic story"
+            "gekiga",
+            "manga with a realistic, dramatic art style and mature themes"
         ],
         "劇的": [
             "げきてき",
@@ -25918,10 +26001,6 @@
             "1,000,000,000",
             "billion"
         ],
-        "千島": [
-            "ちしま",
-            "Kurile Islands"
-        ],
         "千里": [
             "せんり",
             "1000 ri"
@@ -26100,10 +26179,9 @@
         ],
         "原型": [
             "げんけい",
-            "prototype",
             "model",
-            "pattern",
-            "archetypal"
+            "prototype",
+            "archetype"
         ],
         "原油": [
             "げんゆ",
@@ -26153,7 +26231,8 @@
         "反復": [
             "はんぷく",
             "repetition",
-            "iteration"
+            "repeat",
+            "reiteration"
         ],
         "反省": [
             "はんせい",
@@ -26222,8 +26301,8 @@
         ],
         "受賞": [
             "じゅしょう",
-            "winning (a prize)",
-            "receiving (an award)",
+            "winning a prize",
+            "receiving an award",
             "being awarded"
         ],
         "受領": [
@@ -26379,7 +26458,8 @@
         ],
         "名門": [
             "めいもん",
-            "noted family",
+            "distinguished family",
+            "famous family",
             "noble family"
         ],
         "含有": [
@@ -26517,7 +26597,7 @@
         ],
         "団長": [
             "だんちょう",
-            "leader of a delegation (body, party)"
+            "leader of a group"
         ],
         "図版": [
             "ずはん",
@@ -26545,12 +26625,13 @@
         ],
         "固有": [
             "こゆう",
-            "characteristic",
-            "traditional",
-            "peculiar",
-            "inherent",
-            "native",
-            "eigen-"
+            "characteristic (of)",
+            "peculiar (to)",
+            "inherent (in)",
+            "endemic",
+            "unique (to)",
+            "native (to)",
+            "intrinsic"
         ],
         "国勢": [
             "こくせい",
@@ -26601,7 +26682,9 @@
         "園児": [
             "えんじ",
             "kindergarten pupil",
-            "kindergartener"
+            "kindergartener",
+            "preschooler",
+            "child in daycare"
         ],
         "園芸": [
             "えんげい",
@@ -26626,8 +26709,7 @@
         ],
         "圧力": [
             "あつりょく",
-            "(physics) pressure",
-            "stress"
+            "(physics) pressure"
         ],
         "圧勝": [
             "あっしょう",
@@ -26754,8 +26836,9 @@
         ],
         "塗料": [
             "とりょう",
-            "paints",
-            "painting material"
+            "paint",
+            "coating",
+            "varnish"
         ],
         "塗装": [
             "とそう",
@@ -26765,7 +26848,9 @@
         "塩分": [
             "えんぶん",
             "salt",
-            "salt content"
+            "salt content",
+            "amount of salt",
+            "salinity"
         ],
         "塩化": [
             "えんか",
@@ -26815,8 +26900,9 @@
         ],
         "増刷": [
             "ぞうさつ",
-            "additional printing (esp. of books, etc.)",
-            "additional run"
+            "additional printing",
+            "additional print run",
+            "reprint"
         ],
         "増減": [
             "ぞうげん",
@@ -27288,7 +27374,7 @@
         "対比": [
             "たいひ",
             "contrast",
-            "comparison"
+            "juxtaposition"
         ],
         "対照": [
             "たいしょう",
@@ -27376,7 +27462,8 @@
         ],
         "将校": [
             "しょうこう",
-            "commissioned officer"
+            "commissioned officer",
+            "military officer"
         ],
         "将軍": [
             "しょうぐん",
@@ -27504,6 +27591,7 @@
         ],
         "岩屋": [
             "いわや",
+            "cave",
             "cavern",
             "grotto"
         ],
@@ -27561,7 +27649,7 @@
             "craft"
         ],
         "左腕": [
-            "さわん",
+            "ひだりうで",
             "left arm"
         ],
         "巨人": [
@@ -27694,6 +27782,11 @@
             "ぼうし",
             "hat",
             "cap"
+        ],
+        "幅広": [
+            "はばひろ",
+            "wide (esp. of clothing)",
+            "broad"
         ],
         "干満": [
             "かんまん",
@@ -28084,8 +28177,8 @@
         "恋愛": [
             "れんあい",
             "love",
-            "love-making",
-            "passion",
+            "romance",
+            "tender passion",
             "emotion",
             "affections"
         ],
@@ -28290,7 +28383,7 @@
         "技師": [
             "ぎし",
             "engineer",
-            "technician"
+            "technical officer"
         ],
         "技法": [
             "ぎほう",
@@ -28949,9 +29042,9 @@
         ],
         "時効": [
             "じこう",
+            "(law) prescription",
             "statute of limitations",
-            "lapse of rights after a period of time",
-            "prescription (including acquisitive and extinctive prescription)"
+            "limitation period"
         ],
         "普賢": [
             "ふげん",
@@ -28986,9 +29079,9 @@
         ],
         "暴徒": [
             "ぼうと",
-            "insurgent",
-            "rioter",
-            "mob"
+            "rioters",
+            "mob",
+            "insurgents"
         ],
         "暴落": [
             "ぼうらく",
@@ -29287,7 +29380,7 @@
         "査定": [
             "さてい",
             "assessment (of value, damages, etc.)",
-            "revision (of a budget)"
+            "scrutiny (of budget requests, etc.)"
         ],
         "査察": [
             "ささつ",
@@ -29390,7 +29483,7 @@
             "きょくう",
             "far right (in politics)",
             "extreme right",
-            "ultraconservative"
+            "ultraright"
         ],
         "極寒": [
             "ごっかん",
@@ -29686,7 +29779,8 @@
         ],
         "気圧": [
             "きあつ",
-            "atmospheric pressure"
+            "atmospheric pressure",
+            "air pressure"
         ],
         "気温": [
             "きおん",
@@ -29828,7 +29922,9 @@
         ],
         "汚職": [
             "おしょく",
-            "corruption"
+            "corruption (esp. by a government employee)",
+            "bribery",
+            "graft"
         ],
         "決算": [
             "けっさん",
@@ -29922,7 +30018,9 @@
         ],
         "法律": [
             "ほうりつ",
-            "law"
+            "law",
+            "legislation",
+            "act"
         ],
         "波乱": [
             "はらん",
@@ -30010,7 +30108,10 @@
         ],
         "海岸": [
             "かいがん",
+            "seashore",
             "coast",
+            "seaside",
+            "waterfront",
             "beach"
         ],
         "海底": [
@@ -30090,7 +30191,8 @@
             "mixing",
             "blending",
             "adding",
-            "adulteration"
+            "adulteration",
+            "contamination"
         ],
         "混合": [
             "こんごう",
@@ -30166,8 +30268,9 @@
         ],
         "清貧": [
             "せいひん",
-            "honourable poverty",
-            "honorable poverty"
+            "poverty without selfish desire",
+            "honourable poverty (honorable)",
+            "being poor yet honest"
         ],
         "清酒": [
             "せいしゅ",
@@ -30684,9 +30787,13 @@
             "conditions",
             "circumstances"
         ],
+        "玉子": [
+            "たまご",
+            "(hen's) egg"
+        ],
         "王将": [
             "おうしょう",
-            "(shogi) king (of the senior player)"
+            "(shogi) (senior player's) king"
         ],
         "珍味": [
             "ちんみ",
@@ -30814,15 +30921,16 @@
         ],
         "療法": [
             "りょうほう",
+            "(method of) treatment",
             "therapy",
-            "treatment",
             "remedy",
             "cure"
         ],
         "発令": [
             "はつれい",
             "official announcement",
-            "proclamation"
+            "proclamation",
+            "issuance (of an order, ordinance, or warning)"
         ],
         "発刊": [
             "はっかん",
@@ -31036,7 +31144,7 @@
         "短冊": [
             "たんざく",
             "tanzaku",
-            "long, narrow strip of paper on which Japanese poems are written (vertically)"
+            "long, narrow strip of paper used for writing poetry, wishes, decorations, etc."
         ],
         "短命": [
             "たんめい",
@@ -31078,7 +31186,9 @@
         ],
         "短編": [
             "たんぺん",
-            "short (e.g. story, film)"
+            "short story",
+            "short film",
+            "short poem"
         ],
         "短調": [
             "たんちょう",
@@ -31534,8 +31644,10 @@
         ],
         "筆記": [
             "ひっき",
-            "(taking) notes",
-            "copying"
+            "writing down",
+            "taking notes",
+            "copying",
+            "noting"
         ],
         "筆跡": [
             "ひっせき",
@@ -31744,6 +31856,7 @@
             "しゅうりょう",
             "end",
             "close",
+            "conclusion",
             "termination"
         ],
         "経営": [
@@ -31781,8 +31894,8 @@
         ],
         "続編": [
             "ぞくへん",
-            "continuation",
-            "sequel"
+            "sequel",
+            "continuation"
         ],
         "綿布": [
             "めんぷ",
@@ -31947,7 +32060,8 @@
         ],
         "署名": [
             "しょめい",
-            "signature"
+            "signature",
+            "autograph"
         ],
         "署員": [
             "しょいん",
@@ -32177,7 +32291,9 @@
         ],
         "自律": [
             "じりつ",
-            "(phil) autonomy (in Kantian ethics)"
+            "autonomy",
+            "self-control",
+            "self-discipline"
         ],
         "自省": [
             "じせい",
@@ -32768,6 +32884,7 @@
             "record",
             "document",
             "minutes",
+            "log",
             "recording",
             "putting on record",
             "keeping a record (of)",
@@ -32885,9 +33002,9 @@
         ],
         "調停": [
             "ちょうてい",
+            "mediation",
             "arbitration",
-            "conciliation",
-            "mediation"
+            "intervention"
         ],
         "調印": [
             "ちょういん",
@@ -33075,7 +33192,9 @@
         "貯蔵": [
             "ちょぞう",
             "storage",
-            "preservation"
+            "preservation",
+            "stocking",
+            "stockpiling"
         ],
         "貯金": [
             "ちょきん",
@@ -33263,7 +33382,8 @@
         ],
         "軍医": [
             "ぐんい",
-            "military physician or surgeon"
+            "military doctor",
+            "army surgeon"
         ],
         "軍団": [
             "ぐんだん",
@@ -33299,10 +33419,6 @@
             "military authorities",
             "army circles"
         ],
-        "軒並": [
-            "のきなみ",
-            "row of houses"
-        ],
         "軒先": [
             "のきさき",
             "edge of the eaves",
@@ -33318,7 +33434,9 @@
         ],
         "軟弱": [
             "なんじゃく",
-            "weakness"
+            "soft and lacking firmness",
+            "weak",
+            "fragile"
         ],
         "軟禁": [
             "なんきん",
@@ -33496,7 +33614,7 @@
         ],
         "農薬": [
             "のうやく",
-            "agricultural chemical (i.e. pesticide, herbicide, fungicide, etc.)",
+            "agricultural chemical",
             "agrochemical",
             "agrichemical"
         ],
@@ -33574,7 +33692,8 @@
             "turnaround",
             "turnabout",
             "turning the tables",
-            "sudden change"
+            "sudden change",
+            "comeback"
         ],
         "逆風": [
             "ぎゃくふう",
@@ -33809,11 +33928,9 @@
         ],
         "重荷": [
             "おもに",
-            "load",
-            "heavy burden",
-            "encumbrance",
-            "heavy freight",
-            "heavy responsibility"
+            "heavy load",
+            "heavy luggage",
+            "heavy freight"
         ],
         "重複": [
             "じゅうふく",
@@ -33922,7 +34039,7 @@
         ],
         "鉱山": [
             "こうざん",
-            "mine (ore)"
+            "mine (gold, coal, etc.)"
         ],
         "鉱業": [
             "こうぎょう",
@@ -33987,7 +34104,7 @@
         ],
         "長編": [
             "ちょうへん",
-            "long (e.g. novel, film)"
+            "long work"
         ],
         "門下": [
             "もんか",
@@ -34262,7 +34379,8 @@
         ],
         "青雲": [
             "せいうん",
-            "blue sky"
+            "blue sky",
+            "azure sky"
         ],
         "面接": [
             "めんせつ",
@@ -34681,9 +34799,9 @@
         ],
         "一撃": [
             "いちげき",
-            "blow",
-            "hit",
-            "stroke"
+            "one blow",
+            "one hit",
+            "one stroke"
         ],
         "一斉": [
             "いっせい",
@@ -34797,14 +34915,15 @@
         ],
         "丁目": [
             "ちょうめ",
-            "district of a town",
-            "city block (of irregular size)"
+            "nth district of a town",
+            "nth city block"
         ],
         "丁重": [
             "ていちょう",
             "polite",
             "courteous",
-            "hospitable"
+            "hospitable",
+            "respectful"
         ],
         "丈夫": [
             "じょうぶ",
@@ -34820,9 +34939,7 @@
         ],
         "三振": [
             "さんしん",
-            "(baseb) strikeout",
-            "strike out",
-            "fanning out"
+            "(baseb) strikeout"
         ],
         "上司": [
             "じょうし",
@@ -34838,6 +34955,13 @@
             "じょうじゅん",
             "first third of a month",
             "first ten days of a month"
+        ],
+        "上皇": [
+            "じょうこう",
+            "(hon) retired emperor",
+            "ex-emperor",
+            "former emperor",
+            "emperor emeritus"
         ],
         "上級": [
             "じょうきゅう",
@@ -35222,10 +35346,11 @@
         ],
         "乱闘": [
             "らんとう",
-            "fray",
-            "fighting",
-            "brawling",
-            "scuffle"
+            "confused fight",
+            "brawl",
+            "melee",
+            "scuffle",
+            "free-for-all"
         ],
         "乳房": [
             "ちぶさ",
@@ -35369,7 +35494,7 @@
         ],
         "今宵": [
             "こよい",
-            "this evening",
+            "(poet) this evening",
             "tonight"
         ],
         "今頃": [
@@ -35831,7 +35956,9 @@
         ],
         "侵食": [
             "しんしょく",
-            "encroachment"
+            "encroachment",
+            "invasion",
+            "erosion (e.g. of market share, rights)"
         ],
         "便宜": [
             "べんぎ",
@@ -35918,7 +36045,9 @@
             "ほゆう",
             "possession",
             "retention",
-            "maintenance"
+            "maintenance",
+            "holding",
+            "keeping"
         ],
         "保温": [
             "ほおん",
@@ -36481,7 +36610,8 @@
         ],
         "兄貴": [
             "あにき",
-            "(fam) (hon) elder brother"
+            "(fam) elder brother",
+            "big brother"
         ],
         "充実": [
             "じゅうじつ",
@@ -36519,12 +36649,11 @@
         ],
         "先輩": [
             "せんぱい",
-            "senior (at work or school)",
+            "senior (at school, work, etc.)",
             "superior",
             "elder",
-            "older graduate",
-            "progenitor",
-            "old-timer"
+            "older person",
+            "predecessor"
         ],
         "先遣": [
             "せんけん",
@@ -36537,8 +36666,9 @@
         ],
         "先頃": [
             "さきごろ",
-            "recently",
-            "the other day"
+            "the other day",
+            "some time ago",
+            "recently"
         ],
         "先駆": [
             "せんく",
@@ -36764,8 +36894,9 @@
         ],
         "兵隊": [
             "へいたい",
-            "soldier",
-            "sailor"
+            "armed forces",
+            "military",
+            "troops"
         ],
         "典型": [
             "てんけい",
@@ -36790,7 +36921,7 @@
         ],
         "兼業": [
             "けんぎょう",
-            "perusing as a side business",
+            "pursuing as a side business",
             "doing in addition to one's main work",
             "running (businesses) simultaneously"
         ],
@@ -36843,7 +36974,7 @@
         ],
         "円弧": [
             "えんこ",
-            "arc"
+            "(math) circular arc"
         ],
         "円滑": [
             "えんかつ",
@@ -36890,7 +37021,8 @@
         "冥福": [
             "めいふく",
             "happiness in the next world",
-            "heavenly bliss"
+            "heavenly bliss",
+            "repose of one's soul"
         ],
         "冬至": [
             "とうじ",
@@ -37606,9 +37738,10 @@
             "solo"
         ],
         "博士": [
-            "はかせ",
-            "expert",
-            "learned person"
+            "はくし",
+            "doctor",
+            "PhD",
+            "Dr."
         ],
         "博多": [
             "はかた",
@@ -37714,7 +37847,7 @@
         ],
         "卵巣": [
             "らんそう",
-            "ovary"
+            "(anat) ovary"
         ],
         "卸値": [
             "おろしね",
@@ -37741,7 +37874,9 @@
         ],
         "原価": [
             "げんか",
-            "cost price"
+            "cost price",
+            "purchase price",
+            "cost"
         ],
         "原案": [
             "げんあん",
@@ -38149,13 +38284,12 @@
         ],
         "同郷": [
             "どうきょう",
-            "same village",
-            "same town",
-            "same province"
+            "(being from the) same town (province, birthplace, etc.)"
         ],
         "名案": [
             "めいあん",
-            "good idea"
+            "good idea",
+            "good plan"
         ],
         "名称": [
             "めいしょう",
@@ -38172,7 +38306,9 @@
         ],
         "名義": [
             "めいぎ",
-            "name (esp. on a deed, contract, etc.)"
+            "name (esp. on a deed, contract, work, etc.)",
+            "formal name",
+            "published name"
         ],
         "名誉": [
             "めいよ",
@@ -38682,8 +38818,8 @@
         ],
         "均衡": [
             "きんこう",
-            "equilibrium",
-            "balance"
+            "balance",
+            "equilibrium"
         ],
         "坊主": [
             "ぼうず",
@@ -38849,8 +38985,10 @@
         ],
         "堅持": [
             "けんじ",
-            "holding on to",
-            "sticking to"
+            "adhering to (a view, policy, etc.)",
+            "sticking to",
+            "holding fast to",
+            "steadfastly maintaining"
         ],
         "堅調": [
             "けんちょう",
@@ -39069,6 +39207,7 @@
         ],
         "外傷": [
             "がいしょう",
+            "external injury",
             "external wound"
         ],
         "外堀": [
@@ -39212,8 +39351,9 @@
         ],
         "天災": [
             "てんさい",
+            "natural disaster",
             "natural calamity",
-            "disaster"
+            "act of God"
         ],
         "天皇": [
             "てんのう",
@@ -39652,7 +39792,7 @@
         ],
         "嫌疑": [
             "けんぎ",
-            "suspicion"
+            "suspicion (of having committed a crime, wrongdoing)"
         ],
         "嫡出": [
             "ちゃくしゅつ",
@@ -39902,9 +40042,9 @@
         ],
         "宣告": [
             "せんこく",
-            "sentence",
-            "verdict",
-            "pronouncement"
+            "(law) sentencing",
+            "pronouncement of a verdict",
+            "passing of sentence"
         ],
         "宣戦": [
             "せんせん",
@@ -40050,8 +40190,9 @@
         ],
         "密航": [
             "みっこう",
-            "smuggling (people)",
-            "stowing away"
+            "stowing away",
+            "smuggling oneself",
+            "clandestine travel abroad"
         ],
         "密輸": [
             "みつゆ",
@@ -40297,14 +40438,18 @@
         "尋常": [
             "じんじょう",
             "common",
-            "usual"
+            "ordinary",
+            "usual",
+            "average",
+            "normal"
         ],
         "小僧": [
             "こぞう",
             "youngster",
             "boy",
             "kid",
-            "brat"
+            "brat",
+            "lad"
         ],
         "小刀": [
             "こがたな",
@@ -40338,6 +40483,7 @@
         "小銭": [
             "こぜに",
             "small change",
+            "pocket change",
             "coins"
         ],
         "少佐": [
@@ -40377,8 +40523,7 @@
         ],
         "就業": [
             "しゅうぎょう",
-            "employment",
-            "starting work"
+            "starting work (for the day)"
         ],
         "就職": [
             "しゅうしょく",
@@ -40670,7 +40815,8 @@
             "ingenious",
             "skillful",
             "clever",
-            "deft"
+            "deft",
+            "sophisticated"
         ],
         "巧拙": [
             "こうせつ",
@@ -40754,7 +40900,10 @@
         ],
         "師範": [
             "しはん",
-            "instructor"
+            "instructor (esp. of martial or traditional arts)",
+            "teacher",
+            "master",
+            "coach"
         ],
         "帰属": [
             "きぞく",
@@ -40836,11 +40985,8 @@
         ],
         "平衡": [
             "へいこう",
-            "even scale",
-            "equilibrium",
             "balance",
-            "equalization",
-            "equalisation"
+            "equilibrium"
         ],
         "年俸": [
             "ねんぽう",
@@ -41155,6 +41301,7 @@
         "弓道": [
             "きゅうどう",
             "kyudo",
+            "kyudo",
             "Japanese archery"
         ],
         "弔問": [
@@ -41170,8 +41317,10 @@
         ],
         "弔辞": [
             "ちょうじ",
-            "message of condolence",
-            "memorial address"
+            "memorial address",
+            "words of condolence",
+            "funeral oration",
+            "eulogy"
         ],
         "弔電": [
             "ちょうでん",
@@ -41318,7 +41467,10 @@
         ],
         "役柄": [
             "やくがら",
-            "role"
+            "role",
+            "duty",
+            "position",
+            "part"
         ],
         "彼氏": [
             "かれし",
@@ -41513,8 +41665,8 @@
         ],
         "心筋": [
             "しんきん",
-            "(anat) heart muscle",
-            "cardiac muscle",
+            "(anat) cardiac muscle",
+            "heart muscle",
             "myocardium"
         ],
         "心酔": [
@@ -41535,8 +41687,8 @@
         "必至": [
             "ひっし",
             "inevitable",
-            "necessary",
-            "foregone"
+            "unavoidable",
+            "certain"
         ],
         "必需": [
             "ひつじゅ",
@@ -41618,8 +41770,9 @@
         ],
         "応急": [
             "おうきゅう",
-            "emergency",
-            "first-aid"
+            "emergency fix",
+            "tentative measure",
+            "temporary solution"
         ],
         "応接": [
             "おうせつ",
@@ -42341,6 +42494,13 @@
             "cartoon",
             "comics"
         ],
+        "戯言": [
+            "たわごと",
+            "nonsense",
+            "silly talk",
+            "drivel",
+            "rubbish"
+        ],
         "戸棚": [
             "とだな",
             "cupboard",
@@ -42531,14 +42691,11 @@
         ],
         "抑止": [
             "よくし",
-            "check",
-            "checkmate",
-            "stave off",
-            "control",
+            "keeping in check",
+            "holding back",
+            "deterrence",
             "restraint",
-            "inhibit",
-            "deterrent",
-            "deterrence"
+            "suppression"
         ],
         "抑留": [
             "よくりゅう",
@@ -42552,7 +42709,10 @@
         ],
         "投影": [
             "とうえい",
-            "projection"
+            "projection (of a shadow)",
+            "casting (a reflection)",
+            "reflection",
+            "cast shadow"
         ],
         "投棄": [
             "とうき",
@@ -42680,8 +42840,10 @@
         ],
         "抹殺": [
             "まっさつ",
-            "erasure",
-            "obliteration"
+            "elimination (of a person, group, etc.)",
+            "killing off",
+            "disposal",
+            "purging"
         ],
         "抹消": [
             "まっしょう",
@@ -42709,7 +42871,8 @@
             "ちゅうせん",
             "lottery",
             "raffle",
-            "drawing (of lots)"
+            "drawing (of lots)",
+            "balloting"
         ],
         "担保": [
             "たんぽ",
@@ -42734,9 +42897,9 @@
         ],
         "拍子": [
             "ひょうし",
-            "(musical) time",
-            "tempo",
-            "beat",
+            "(music) time",
+            "meter",
+            "metre",
             "rhythm"
         ],
         "拍手": [
@@ -42957,10 +43120,15 @@
             "promotion",
             "encouragement"
         ],
+        "振込": [
+            "ふりこみ",
+            "payment made via bank deposit transfer"
+        ],
         "挿入": [
             "そうにゅう",
             "insertion",
-            "incorporation",
+            "interposition",
+            "interpolation",
             "infixing"
         ],
         "挿絵": [
@@ -43036,7 +43204,6 @@
         "授賞": [
             "じゅしょう",
             "awarding a prize",
-            "prize-giving",
             "giving an award"
         ],
         "掌中": [
@@ -43302,11 +43469,6 @@
             "posing (a problem)",
             "bringing up (an issue)",
             "presenting"
-        ],
-        "揚句": [
-            "あげく",
-            "after (a long process)",
-            "at the end of"
         ],
         "握力": [
             "あくりょく",
@@ -43983,6 +44145,9 @@
         "方策": [
             "ほうさく",
             "plan",
+            "measure",
+            "means",
+            "scheme",
             "policy"
         ],
         "施工": [
@@ -44106,9 +44271,12 @@
         ],
         "日頃": [
             "ひごろ",
-            "usually",
-            "habitually",
-            "always"
+            "usual",
+            "normal",
+            "everyday",
+            "habitual",
+            "ordinary",
+            "daily"
         ],
         "旦那": [
             "だんな",
@@ -44288,7 +44456,8 @@
             "ざんてい",
             "provisional",
             "temporary",
-            "tentative"
+            "tentative",
+            "interim"
         ],
         "暴挙": [
             "ぼうきょ",
@@ -44489,7 +44658,7 @@
         ],
         "本隊": [
             "ほんたい",
-            "main body (of an army)",
+            "main body (of troops)",
             "main force"
         ],
         "朱印": [
@@ -44570,10 +44739,6 @@
             "まつばやし",
             "pine forest"
         ],
-        "松葉": [
-            "まつば",
-            "pine needle"
-        ],
         "枚挙": [
             "まいきょ",
             "enumeration"
@@ -44594,7 +44759,7 @@
         ],
         "枝豆": [
             "えだまめ",
-            "edamame (green soybeans)"
+            "(food) edamame (green soybeans)"
         ],
         "枠内": [
             "わくない",
@@ -44643,8 +44808,8 @@
         ],
         "栄冠": [
             "えいかん",
-            "laurels",
-            "garland"
+            "crown of victory",
+            "laurels"
         ],
         "栄誉": [
             "えいよ",
@@ -44925,7 +45090,8 @@
         "検証": [
             "けんしょう",
             "verification",
-            "inspection"
+            "confirmation",
+            "substantiation"
         ],
         "検閲": [
             "けんえつ",
@@ -45103,7 +45269,7 @@
         ],
         "権益": [
             "けんえき",
-            "(one's) interests"
+            "rights and interests (esp. those a country holds abroad)"
         ],
         "横柄": [
             "おうへい",
@@ -45552,7 +45718,8 @@
         ],
         "汽車": [
             "きしゃ",
-            "train (esp. long distance train)"
+            "steam locomotive",
+            "steam train"
         ],
         "沈没": [
             "ちんぼつ",
@@ -45803,7 +45970,9 @@
         ],
         "派生": [
             "はせい",
-            "derivation"
+            "derivation",
+            "development",
+            "offshoot"
         ],
         "派遣": [
             "はけん",
@@ -46195,6 +46364,7 @@
         ],
         "漁獲": [
             "ぎょかく",
+            "fishery",
             "fishing",
             "catch",
             "haul"
@@ -46223,10 +46393,8 @@
         ],
         "漆黒": [
             "しっこく",
-            "(form) jet-black",
-            "pitch-dark",
-            "raven-black",
-            "stygian"
+            "pitch-black",
+            "jet-black"
         ],
         "演壇": [
             "えんだん",
@@ -46952,10 +47120,9 @@
         ],
         "狭間": [
             "はざま",
-            "interval",
-            "space",
-            "interstice",
-            "threshold"
+            "gap",
+            "narrow space between things",
+            "interstice"
         ],
         "猛威": [
             "もうい",
@@ -47007,8 +47174,7 @@
         ],
         "猟銃": [
             "りょうじゅう",
-            "hunting gun",
-            "sportsgun"
+            "hunting gun (usu. shotgun or rifle)"
         ],
         "猫舌": [
             "ねこじた",
@@ -47189,7 +47355,7 @@
         ],
         "甘酢": [
             "あまず",
-            "sweet vinegar"
+            "(food) sweet vinegar"
         ],
         "甚大": [
             "じんだい",
@@ -47683,8 +47849,9 @@
         "盛況": [
             "せいきょう",
             "success",
-            "prosperity",
-            "boom"
+            "boom",
+            "being well-attended (of an event)",
+            "prosperity"
         ],
         "盛衰": [
             "せいすい",
@@ -47704,7 +47871,7 @@
         ],
         "盟約": [
             "めいやく",
-            "oath",
+            "(form) oath",
             "pledge",
             "pact",
             "covenant",
@@ -48330,11 +48497,6 @@
             "secret story",
             "unknown episode"
         ],
-        "租界": [
-            "そかい",
-            "concession",
-            "settlement"
-        ],
         "租税": [
             "そぜい",
             "taxes",
@@ -48769,8 +48931,9 @@
         ],
         "節約": [
             "せつやく",
+            "saving (e.g. time, money, resources)",
             "economising",
-            "saving"
+            "economizing"
         ],
         "範囲": [
             "はんい",
@@ -48876,7 +49039,8 @@
         ],
         "粘膜": [
             "ねんまく",
-            "mucous membrane"
+            "(anat) mucous membrane",
+            "mucosa"
         ],
         "粛清": [
             "しゅくせい",
@@ -49243,7 +49407,8 @@
             "result",
             "consequence",
             "outcome",
-            "effect"
+            "effect",
+            "product"
         ],
         "結核": [
             "けっかく",
@@ -49378,6 +49543,8 @@
             "けいぞく",
             "continuation",
             "continuance",
+            "maintenance",
+            "persistence",
             "going on"
         ],
         "維持": [
@@ -49851,8 +50018,8 @@
         ],
         "耐性": [
             "たいせい",
-            "resistance (e.g. to antibiotics)",
-            "tolerance (e.g. drug tolerance)"
+            "resistance (to heat, corrosion, etc.)",
+            "tolerance (to a drug, pain, etc.)"
         ],
         "耐火": [
             "たいか",
@@ -50035,7 +50202,7 @@
         ],
         "胞子": [
             "ほうし",
-            "spore"
+            "(biol) spore"
         ],
         "胴体": [
             "どうたい",
@@ -50078,7 +50245,9 @@
         ],
         "脇見": [
             "わきみ",
-            "looking from the side"
+            "looking aside",
+            "looking away (e.g. while driving)",
+            "looking the other way"
         ],
         "脈拍": [
             "みゃくはく",
@@ -50252,7 +50421,7 @@
         ],
         "臨床": [
             "りんしょう",
-            "clinical (e.g. pathology, physiology)"
+            "clinical (e.g. pathology, training, trial)"
         ],
         "臨時": [
             "りんじ",
@@ -50284,7 +50453,8 @@
         ],
         "自慢": [
             "じまん",
-            "pride",
+            "pride (in one's achievements, possessions, etc.)",
+            "self-praise",
             "boast"
         ],
         "自我": [
@@ -50470,7 +50640,8 @@
         "芝生": [
             "しばふ",
             "lawn",
-            "grass"
+            "grass",
+            "turf"
         ],
         "芝草": [
             "しばくさ",
@@ -50676,8 +50847,7 @@
         "薬剤": [
             "やくざい",
             "medicine",
-            "drug",
-            "chemical"
+            "drug"
         ],
         "藻類": [
             "そうるい",
@@ -50864,6 +51034,7 @@
             "えいせい",
             "hygiene",
             "sanitation",
+            "cleanliness",
             "health"
         ],
         "衝動": [
@@ -51002,8 +51173,8 @@
         ],
         "裸婦": [
             "らふ",
-            "nude woman",
-            "naked woman"
+            "(art) nude woman",
+            "female nude"
         ],
         "裸足": [
             "はだし",
@@ -51117,6 +51288,7 @@
         ],
         "要素": [
             "ようそ",
+            "element",
             "component",
             "factor",
             "item (e.g. in list)"
@@ -51499,7 +51671,10 @@
         "評論": [
             "ひょうろん",
             "criticism",
-            "critique"
+            "critique",
+            "review",
+            "comment",
+            "critical essay"
         ],
         "評議": [
             "ひょうぎ",
@@ -51667,8 +51842,8 @@
         "調剤": [
             "ちょうざい",
             "making up a prescription",
-            "dispensing medicine",
-            "preparing medicine"
+            "dispensing a prescription",
+            "preparing a medicine"
         ],
         "調整": [
             "ちょうせい",
@@ -52359,13 +52534,11 @@
         ],
         "迅速": [
             "じんそく",
-            "quick",
-            "fast",
+            "(very) quick",
             "rapid",
             "swift",
+            "speedy",
             "prompt",
-            "streamlined",
-            "expedited",
             "expeditious"
         ],
         "迎撃": [
@@ -52408,7 +52581,9 @@
         ],
         "返却": [
             "へんきゃく",
-            "return of something",
+            "return (of something borrowed or entrusted)",
+            "returning",
+            "giving back",
             "repayment"
         ],
         "返還": [
@@ -52600,7 +52775,8 @@
             "そっこう",
             "swift attack",
             "quick attack",
-            "fast break"
+            "fast break",
+            "breakaway"
         ],
         "連峰": [
             "れんぽう",
@@ -52814,9 +52990,11 @@
         ],
         "道筋": [
             "みちすじ",
-            "path",
+            "course (of a road, moving object, etc.)",
+            "way",
             "route",
-            "itinerary"
+            "path",
+            "road"
         ],
         "道義": [
             "どうぎ",
@@ -52992,9 +53170,9 @@
         ],
         "遺物": [
             "いぶつ",
-            "relic",
-            "remains",
-            "memento"
+            "(archeol) artifact",
+            "relic (of a past civilization)",
+            "archaeological find"
         ],
         "遺産": [
             "いさん",
@@ -53367,7 +53545,7 @@
         ],
         "鉛筆": [
             "えんぴつ",
-            "pencil"
+            "(wooden) pencil"
         ],
         "銃器": [
             "じゅうき",
@@ -53459,7 +53637,7 @@
         ],
         "錯覚": [
             "さっかく",
-            "optical illusion",
+            "(psych) illusion",
             "hallucination"
         ],
         "錯誤": [
@@ -53505,7 +53683,9 @@
         ],
         "鏡台": [
             "きょうだい",
-            "dresser"
+            "dresser",
+            "dressing table",
+            "vanity table"
         ],
         "鐘楼": [
             "しょうろう",
@@ -53840,7 +54020,7 @@
             "いんよう",
             "cosmic dual forces",
             "yin and yang",
-            "sun and moon, etc."
+            "sun and moon"
         ],
         "陳列": [
             "ちんれつ",
@@ -53907,11 +54087,15 @@
             "たいいん",
             "troops",
             "group members",
-            "team members"
+            "team members",
+            "SDF officials"
         ],
         "隊長": [
             "たいちょう",
-            "commanding officer"
+            "captain",
+            "commander",
+            "commanding officer",
+            "leader"
         ],
         "階級": [
             "かいきゅう",
@@ -54100,7 +54284,7 @@
         ],
         "雑炊": [
             "ぞうすい",
-            "rice gruel containing vegetables, fish, etc., and seasoned with miso or soy sauce"
+            "(food) rice porridge made by simmering cooked rice in a seasoned broth, often containing vegetables, fish, etc. (usu. made from leftovers)"
         ],
         "雑煮": [
             "ぞうに",
@@ -54173,11 +54357,6 @@
             "deafness",
             "hearing loss"
         ],
-        "雪崩": [
-            "なだれ",
-            "avalanche",
-            "snowslide"
-        ],
         "雪渓": [
             "せっけい",
             "snowy valley"
@@ -54220,7 +54399,7 @@
         "需要": [
             "じゅよう",
             "demand",
-            "request"
+            "need"
         ],
         "震源": [
             "しんげん",
@@ -54331,10 +54510,9 @@
             "おんきょう",
             "sound",
             "noise",
+            "audio",
             "acoustics",
-            "reverberation",
-            "echo",
-            "audio"
+            "reverberation"
         ],
         "韻律": [
             "いんりつ",
@@ -54451,7 +54629,8 @@
             "こもん",
             "adviser",
             "advisor",
-            "consultant"
+            "consultant",
+            "counselor"
         ],
         "顧客": [
             "こきゃく",
@@ -54833,11 +55012,11 @@
         ],
         "魅惑": [
             "みわく",
-            "attraction",
             "fascination",
-            "lure",
             "captivation",
-            "charm"
+            "charm",
+            "lure",
+            "allurement"
         ],
         "魔力": [
             "まりょく",
@@ -54912,6 +55091,11 @@
         "麦芽": [
             "ばくが",
             "malt"
+        ],
+        "麻婆": [
+            "マーボー",
+            "(food) mapo (style of dish) (chi:)",
+            "dish featuring minced meat stir-fried and seasoned with chili bean paste (e.g. mabo nasu)"
         ],
         "麻布": [
             "あさぬの",

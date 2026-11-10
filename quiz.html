@@ -68,9 +68,9 @@ var picks = {}
 var hint = ""
 
 async function loadData() {
-    let res = await fetch("jlpt.json#5")
+    let res = await fetch("data/jlpt.json#5")
     jlptKanjis = await res.json()
-    res = await fetch("pairs.json#1")
+    res = await fetch("data/pairs.json#1")
     jlptWords = await res.json()
     selectLevel()
     levelSelect.onchange = selectLevel

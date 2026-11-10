@@ -72,8 +72,8 @@ let query = document.getElementById("query")
 let entryList = document.getElementById("entry-list")
 
 function init() {
-    fetch("krad.json#2").then(r => r.json()).then(d => krad = d)
-    fetch("edict.json#1").then(r => r.json()).then(d => edict = d)
+    fetch("data/krad.json#2").then(r => r.json()).then(d => krad = d)
+    fetch("data/edict.json#1").then(r => r.json()).then(d => edict = d)
     buildButtons()
 }
 
